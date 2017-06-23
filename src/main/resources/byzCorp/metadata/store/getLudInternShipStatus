@@ -1,0 +1,60 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userClassName": "getLudInternShipStatus",
+        "model": "lookUpDetail",
+        "storeId": "getLudInternShipStatus"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "getLudStatus1",
+    "designerId": "27f46349-0712-4bc0-8382-7acdba3d44e9",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "getLudInternShipStatus",
+                "url": "/byzCorp/lookUp/getLudInternShipStatus"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "url": "string"
+            },
+            "name": "MyAjaxProxy2",
+            "designerId": "e9071dd6-7c2f-4338-ad82-c58dbf90a01c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "getLudInternShipStatus"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "176ad010-087c-4597-8ee7-78b04555f5ac"
+                }
+            ]
+        }
+    ]
+}

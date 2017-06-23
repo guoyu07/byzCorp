@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "lockview",
+        "designer|userClassName": "LoginViewViewModel1"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "LoginViewViewModel1",
+    "designerId": "fdc9c996-1bc8-4617-9c1e-70068c4d532c"
+}

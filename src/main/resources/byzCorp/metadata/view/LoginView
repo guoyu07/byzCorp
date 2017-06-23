@@ -1,0 +1,693 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "loginview",
+        "designer|userClassName": "LoginView",
+        "height": null,
+        "layout": "border",
+        "reference": "loginview",
+        "width": null
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "reference": "string",
+        "width": "auto"
+    },
+    "name": "MyViewport",
+    "designerId": "8540b5a1-1347-40e7-91d6-29d3eb6117c3",
+    "viewControllerInstanceId": "2d834ea9-3072-4b30-8240-c2690a7f3daa",
+    "viewModelInstanceId": "3483f5a3-dc6f-4585-b041-dcfe6c004085",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyStyle": [
+                    "background-image:url(resources/images/color.jpg) !important"
+                ],
+                "container|align": "middle",
+                "container|pack": "center",
+                "dock": null,
+                "itemId": "loginform",
+                "layout": "hbox",
+                "layout|region": "center",
+                "margin": null,
+                "reference": "loginform",
+                "title": "Oturum Açın",
+                "titleAlign": "center"
+            },
+            "configAlternates": {
+                "designer|userAlias": "string",
+                "designer|userClassName": "string",
+                "height": "auto",
+                "title": "string",
+                "width": "auto",
+                "designer|initialView": "boolean",
+                "itemId": "string",
+                "reference": "string",
+                "dock": "string",
+                "layout": "string",
+                "manageHeight": "boolean",
+                "margin": "auto",
+                "titleAlign": "string",
+                "bodyStyle": "object",
+                "container|align": "string",
+                "container|pack": "string",
+                "layout|region": "string"
+            },
+            "name": "MyPanel14",
+            "designerId": "f60ec5e9-c2a1-497d-b558-4ad697a024cd",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "dock": null,
+                        "height": 140,
+                        "id": "loginLayout",
+                        "layout": "vbox",
+                        "margin": "20 40 20 40",
+                        "title": null,
+                        "width": 325
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "title": "string",
+                        "container|align": "string",
+                        "dock": "string",
+                        "id": "string",
+                        "layout": "string",
+                        "margin": "auto",
+                        "width": "auto"
+                    },
+                    "name": "MyForm3",
+                    "designerId": "4047bd8c-cb3f-473b-b75f-310cd9a10c4e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "height": 100,
+                                "layout|flex": 1,
+                                "margin": "5 5 5 5",
+                                "text": "Hesabınıza giriş yapın"
+                            },
+                            "configAlternates": {
+                                "disabled": "boolean",
+                                "height": "auto",
+                                "layout|flex": "number",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyLabel",
+                            "designerId": "b40bb166-3f84-4af9-8ddc-415a7107a979"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "Kullanıcı Adı",
+                                "fieldLabel": null,
+                                "hideLabel": true,
+                                "id": "txtLoginUserName",
+                                "margin": "5 5 5 5",
+                                "reference": "txtLoginUserName"
+                            },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "hideLabel": "boolean",
+                                "margin": "auto",
+                                "id": "string",
+                                "reference": "string"
+                            },
+                            "name": "MyTextField10",
+                            "designerId": "07b28c4a-a81d-4f44-98e9-cf080801011e"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "Şifre",
+                                "fieldLabel": null,
+                                "hideEmptyLabel": false,
+                                "hideLabel": true,
+                                "id": "txtLoginPassword",
+                                "inputType": "password",
+                                "margin": "5 5 5 5",
+                                "reference": "txtLoginPassword"
+                            },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "hideEmptyLabel": "boolean",
+                                "hideLabel": "boolean",
+                                "inputType": "string",
+                                "margin": "auto",
+                                "id": "string",
+                                "reference": "string"
+                            },
+                            "name": "MyTextField11",
+                            "designerId": "70c66ca9-b5fa-4a21-b7ae-afa965781fc1"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|uiInterfaceName": "default-small",
+                                "dock": null,
+                                "iconAlign": "right",
+                                "iconCls": "x-fa fa-angle-right",
+                                "id": "signIn",
+                                "margin": "5 5 5 5",
+                                "text": "Giriş Yap",
+                                "ui": "default-small"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "text": "string",
+                                "layout|region": "string",
+                                "width": "auto",
+                                "designer|uiInterfaceName": "string",
+                                "dock": "string",
+                                "iconAlign": "string",
+                                "iconCls": "string",
+                                "margin": "auto",
+                                "ui": "string"
+                            },
+                            "name": "MyButton",
+                            "designerId": "dd0d7726-8702-4e14-8787-c882dceaa011",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSignInClick",
+                                        "implHandler": [
+                                            "var refs = this.getReferences();",
+                                            "Ext.Ajax.request({",
+                                            "    url:'/byzCorp/user/getUser',",
+                                            "    params : {",
+                                            "        userName : refs.txtLoginUserName.getValue(),",
+                                            "        password : refs.txtLoginPassword.getValue()",
+                                            "    },",
+                                            "    success : function(res){",
+                                            "        var api = Ext.decode(res.responseText);",
+                                            "        if(api.length>1){",
+                                            "            if(api[1].success){",
+                                            "                var userName = refs.txtLoginUserName.getValue();",
+                                            "                var password = refs.txtLoginPassword.getValue();",
+                                            "",
+                                            "                if(api[0].USERNAME === userName){",
+                                            "                    if(api[0].USERPASSWORD === password){",
+                                            "                        refs.loginform.destroy();",
+                                            "                        var mainview = Ext.create('widget.mainview');",
+                                            "                        var lblGet = mainview.getReferences().lblUserInfo;",
+                                            "                        var lblNewValue = api[0].USERFIRSTNAME + ' '+ api[0].USERLASTNAME+ ' / '+api[0].USERTITLE;",
+                                            "                        lblGet.setText(lblNewValue);",
+                                            "                    }else{",
+                                            "                        Ext.Msg.alert('Uyarı', 'Hatalı şifre girdiniz.');",
+                                            "                    }",
+                                            "",
+                                            "                }else{",
+                                            "                    Ext.Msg.alert('Uyarı', 'Hatalı kullanıcı adı girdiniz.');",
+                                            "                }",
+                                            "            }else{",
+                                            "                Ext.Msg.alert('Uyarı', 'Veri tabanında kayıt bulunamadı.');",
+                                            "            }",
+                                            "        }else{",
+                                            "            Ext.Msg.alert('Uyarı', 'Hatalı kullanıcı adı veya şifre girdiniz.');",
+                                            "",
+                                            "        }",
+                                            "",
+                                            "    }",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onSignInClick",
+                                    "designerId": "97560e21-cf82-456c-b9d1-c177d26891a0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": null,
+                                "hidden": true,
+                                "iconAlign": "right",
+                                "iconCls": "fa fa-facebook",
+                                "id": "faceBook",
+                                "margin": "5 5 5 5",
+                                "text": "Facebook ile Giriş Yap"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "text": "string",
+                                "layout|region": "string",
+                                "width": "auto",
+                                "dock": "string",
+                                "margin": "auto",
+                                "iconAlign": "string",
+                                "iconCls": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyButton6",
+                            "designerId": "92b433b4-87c1-4ee3-9541-772cd058b527",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSignInClick2",
+                                        "implHandler": [
+                                            "/*debugger;",
+                                            "var refs = this.getReferences();",
+                                            "form = button.up('loginform');",
+                                            "var mainview = Ext.create('widget.mainview');",
+                                            "mainview.show();",
+                                            "form.hide();*/",
+                                            "",
+                                            "debugger;",
+                                            "var refs = this.getReferences();",
+                                            "var mainview = Ext.create('widget.mainview');",
+                                            "mainview.show();",
+                                            "refs.loginform.destroy();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onSignInClick2",
+                                    "designerId": "9b3ac721-140c-4776-9e7c-c19c13d6347e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|uiInterfaceName": "notRed-small",
+                                "dock": null,
+                                "hidden": true,
+                                "iconAlign": "right",
+                                "iconCls": "fa fa-question",
+                                "id": "forgoutPassword",
+                                "margin": "5 5 10 5",
+                                "text": "Şifremi Unuttum",
+                                "ui": "notRed-small"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "text": "string",
+                                "layout|region": "string",
+                                "width": "auto",
+                                "dock": "string",
+                                "margin": "auto",
+                                "iconAlign": "string",
+                                "iconCls": "string",
+                                "designer|uiInterfaceName": "string",
+                                "ui": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyButton7",
+                            "designerId": "e49e04b2-a4fc-429f-a81b-e6a7b47aae4d",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSignInClick21",
+                                        "implHandler": [
+                                            "/*debugger;",
+                                            "var refs = this.getReferences();",
+                                            "form = button.up('loginform');",
+                                            "var mainview = Ext.create('widget.mainview');",
+                                            "mainview.show();",
+                                            "form.hide();*/",
+                                            "",
+                                            "debugger;",
+                                            "var refs = this.getReferences();",
+                                            "var mainview = Ext.create('widget.mainview');",
+                                            "mainview.show();",
+                                            "refs.loginform.destroy();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onSignInClick21",
+                                    "designerId": "1f8b960e-2c84-4e6d-90a2-e86b583cb2b3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "dock": null,
+                        "height": 270,
+                        "hidden": true,
+                        "id": "accountLayout",
+                        "layout": "vbox",
+                        "margin": "20 40 20 40",
+                        "title": null,
+                        "width": 325
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "title": "string",
+                        "container|align": "string",
+                        "dock": "string",
+                        "id": "string",
+                        "layout": "string",
+                        "margin": "auto",
+                        "width": "auto",
+                        "hidden": "boolean"
+                    },
+                    "name": "MyForm5",
+                    "designerId": "5df5b5fb-ea7a-44f4-a2ab-cd2f18e337e6",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "height": 100,
+                                "layout|flex": 1,
+                                "margin": "5 5 5 5",
+                                "text": "Yeni hesap oluşturun"
+                            },
+                            "configAlternates": {
+                                "height": "auto",
+                                "layout|flex": "number",
+                                "margin": "auto",
+                                "text": "string",
+                                "disabled": "boolean"
+                            },
+                            "name": "MyLabel",
+                            "designerId": "852da59e-d448-41ce-aa1e-dbeee5ae3d5a"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "Adı",
+                                "fieldLabel": null,
+                                "hideLabel": true,
+                                "margin": "5 5 5 5"
+                            },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "hideLabel": "boolean",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField10",
+                            "designerId": "f88ddb3b-da6e-4723-a04a-06ffdc90f0e1"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "Soyadı",
+                                "fieldLabel": null,
+                                "hideLabel": true,
+                                "margin": "5 5 5 5"
+                            },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "hideLabel": "boolean",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField12",
+                            "designerId": "61fc7b08-baa4-4843-a99a-cba8eadfa33f"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "Kullanıcı Adı",
+                                "fieldLabel": null,
+                                "hideEmptyLabel": false,
+                                "hideLabel": true,
+                                "margin": "5 5 5 5"
+                            },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "hideEmptyLabel": "boolean",
+                                "hideLabel": "boolean",
+                                "inputType": "string",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField11",
+                            "designerId": "7675e43b-03cf-47bc-8312-2a2cfe064886"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "Email Adresi",
+                                "fieldLabel": null,
+                                "hideEmptyLabel": false,
+                                "hideLabel": true,
+                                "inputType": "email",
+                                "margin": "5 5 5 5"
+                            },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "hideEmptyLabel": "boolean",
+                                "hideLabel": "boolean",
+                                "inputType": "string",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField13",
+                            "designerId": "6daaf7cf-cc73-4583-9857-3e341d5d124b"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "Şifre",
+                                "fieldLabel": null,
+                                "hideEmptyLabel": false,
+                                "hideLabel": true,
+                                "inputType": "password",
+                                "margin": "5 5 5 5"
+                            },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "hideEmptyLabel": "boolean",
+                                "hideLabel": "boolean",
+                                "inputType": "string",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField14",
+                            "designerId": "3c68ddf7-781d-4525-a7d7-0097080e36d4"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Şartlar ve koşulları kabul ediyorum",
+                                "fieldLabel": null,
+                                "layout|flex": 1,
+                                "margin": "5 5 5 5"
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "layout|flex": "number",
+                                "margin": "auto"
+                            },
+                            "name": "MyCheckbox",
+                            "designerId": "2670ca5c-892e-4d4b-9961-e1b948e7f424"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|uiInterfaceName": "default-toolbar-small",
+                                "dock": null,
+                                "iconAlign": "right",
+                                "iconCls": "x-fa fa-user-plus",
+                                "id": "signIn1",
+                                "margin": "5 5 10 5",
+                                "text": "Hesap Oluştur",
+                                "ui": "default-toolbar-small"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "text": "string",
+                                "layout|region": "string",
+                                "width": "auto",
+                                "dock": "string",
+                                "iconAlign": "string",
+                                "iconCls": "string",
+                                "margin": "auto",
+                                "designer|uiInterfaceName": "string",
+                                "ui": "string"
+                            },
+                            "name": "MyButton",
+                            "designerId": "8816156f-75cf-424a-8316-e6e4eb7d4182",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSignInClick1",
+                                        "implHandler": [
+                                            "/*debugger;",
+                                            "var refs = this.getReferences();",
+                                            "form = button.up('loginform');",
+                                            "var mainview = Ext.create('widget.mainview');",
+                                            "mainview.show();",
+                                            "form.hide();*/",
+                                            "",
+                                            "debugger;",
+                                            "var refs = this.getReferences();",
+                                            "var mainview = Ext.create('widget.mainview');",
+                                            "mainview.show();",
+                                            "refs.loginform.destroy();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onSignInClick1",
+                                    "designerId": "a73443d2-7213-4012-912b-dc59d5d98bcc"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

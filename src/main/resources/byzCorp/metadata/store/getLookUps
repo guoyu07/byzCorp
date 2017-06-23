@@ -1,0 +1,58 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "getLookUps",
+        "model": "getLookUp",
+        "storeId": "getLookUps"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyStore",
+    "designerId": "fbf6c87c-2da3-45bb-9a9d-1914c293e8b7",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "getLookUps",
+                "url": "/byzCorp/lookUp/getLookUps"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "url": "string"
+            },
+            "name": "MyAjaxProxy1",
+            "designerId": "7f4e3320-4b5c-489d-a06a-716d87409374",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "getLookUps"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "c6884f62-390a-497b-a8ef-95f6f49812df"
+                }
+            ]
+        }
+    ]
+}

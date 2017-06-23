@@ -1,0 +1,60 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userClassName": "getLudDepartments",
+        "model": "lookUpDetail",
+        "storeId": "getLudDepartments"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "getLookUpDetails1",
+    "designerId": "5105280e-32ae-44e2-b405-18a98c671070",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "getLudDepartments",
+                "url": "/byzCorp/lookUp/getLudDepartments"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "url": "string"
+            },
+            "name": "MyAjaxProxy2",
+            "designerId": "997c657c-3efa-42ff-bf43-f958fcaf9b57",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "getLudDepartments"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "c3ab6a21-632b-4e58-8115-56c9a421aac2"
+                }
+            ]
+        }
+    ]
+}

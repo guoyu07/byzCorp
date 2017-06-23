@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="kullaniciListesi" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4d19a5dd-a314-45ac-b9d9-f495bb775016">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="11"/>
+	<property name="ireport.y" value="0"/>
+	<field name="STUDENTNO" class="java.lang.String"/>
+	<field name="STUDENTFIRSTNAME" class="java.lang.String"/>
+	<field name="STUDENTLASTNAME" class="java.lang.String"/>
+	<field name="STUDENTDEPARTMENT" class="java.lang.String"/>
+	<field name="STUDENTCLASS" class="java.lang.String"/>
+	<field name="STUDENTPERIOD" class="java.lang.String"/>
+	<field name="STUDENTSTATUSNAME" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="115" y="19" width="325" height="20" uuid="c4b1db95-bcbd-48cc-83aa-c18e8a1d549b"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[KARADENİZ TEKNİK ÜNİVERSİTESİ]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="0" width="115" height="74" uuid="0061ede9-6219-48b9-a031-1f9711ca8d8e"/>
+				<imageExpression><![CDATA["C:\\Users\\byz\\IdeaProjects\\byzcorp\\src\\main\\resources\\reports\\images\\logo_KTU.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="115" y="54" width="325" height="20" uuid="64ac77e5-fee1-4ba6-96a9-ace4e92818c5"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Öğrenci Listesi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="65" height="15" uuid="11a99d6a-2958-44bb-9461-4aaa1a5b09fe"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Döküman No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="15" width="65" height="15" uuid="dde12dd4-99b6-4435-91ac-fae7a5c6ef8a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Yayın Tarihi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="30" width="65" height="15" uuid="e1ba763d-b3cc-4d01-b2a1-f98231aa460c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Revizyon No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="59" width="65" height="15" uuid="9695beab-a21e-4950-a275-64aa1e29f033"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Sayfa No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="45" width="65" height="15" uuid="dd42a263-bccc-4f3a-83b1-6c95870e594d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Revizyon Tarihi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="59" width="5" height="15" uuid="895e49ff-154c-42d0-b6e4-6dd5cd9367c6"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="30" width="5" height="15" uuid="b8f38be4-92b0-4069-a8c8-76f975fbd66d"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="15" width="5" height="15" uuid="6a16926b-eed3-49cf-9484-3226ea0bdaf9"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="0" width="5" height="15" uuid="dc869dd7-01e7-432c-8e16-9585e1227788"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="45" width="5" height="15" uuid="1d4ba465-2f8f-48dc-a9be-220fc59c0f27"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="510" y="30" width="45" height="15" uuid="eddc66b1-7ea4-422c-897d-d563377e71e8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[002]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="510" y="15" width="45" height="15" uuid="1f5bc0c0-7f6b-4a4f-852f-42b849a17b76"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[17/06/17]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="510" y="0" width="45" height="15" uuid="bf884d58-805a-41a7-9f68-b657bb951630"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[FR.002]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="510" y="45" width="45" height="14" uuid="6b991f61-0fe5-4cfd-bcfd-03c34d9f7bda"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[17/06/17]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="510" y="59" width="21" height="15" uuid="1195d6e3-4fd2-4400-b654-4cbcb1356c8e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9" pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+"/"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="531" y="59" width="24" height="15" uuid="6951f81c-6068-4b83-b01e-b9256ce607dd"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="25" y="0" width="52" height="29" backcolor="#9999FF" uuid="ef6bc667-742c-4e3d-bf61-6d6a744727e0"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" isBold="true" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Öğrenci No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="77" y="0" width="100" height="29" backcolor="#9999FF" uuid="40d3bccd-c5bd-453c-b526-ffc48320300d"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" isBold="true" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Adı]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="177" y="0" width="107" height="29" backcolor="#9999FF" uuid="ab5661b1-d408-4707-b7a0-9e749c1ea2d2"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" isBold="true" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Soyadı]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="284" y="0" width="100" height="29" backcolor="#9999FF" uuid="fc5e5c59-6d76-49ca-bce3-c893c030fcfb"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" isBold="true" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Bölümü]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="384" y="0" width="37" height="29" backcolor="#9999FF" uuid="818299cb-e1a3-4314-9969-4307280f62fe"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" isBold="true" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Sınıfı]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="421" y="0" width="89" height="29" backcolor="#9999FF" uuid="d5986950-5e14-411d-9121-4f7a78b4e323"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" isBold="true" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Aktif Dönemi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="510" y="0" width="45" height="29" backcolor="#9999FF" uuid="b77bdbc7-10b7-42a2-8069-215196c59994"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" isBold="true" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Statü]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="25" height="29" backcolor="#9999FF" uuid="8f461914-6a83-42c4-a4a4-eb855719efed"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" isBold="true" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[S. No]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="25" y="0" width="52" height="20" uuid="5ec19585-7608-4755-b0aa-e42fb3b64bd2"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STUDENTNO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="0" width="100" height="20" uuid="a8603359-2993-44db-a9a0-4b985cb6534f"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STUDENTFIRSTNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="0" width="107" height="20" uuid="717cdc7a-50d2-4b46-8fc5-0dd46fda7c97"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STUDENTLASTNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="0" width="100" height="20" uuid="f0811d50-cf83-441b-af3d-ac2f5d815b25"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STUDENTDEPARTMENT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="0" width="37" height="20" uuid="72d39d09-84e0-41b2-8bec-bf46d292a2fd"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STUDENTCLASS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="421" y="0" width="89" height="20" uuid="96e785e7-3307-4813-98af-c04fcc5f3c6a"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STUDENTPERIOD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="510" y="0" width="45" height="20" uuid="8b00a618-2a48-4b6c-b8a8-8af0c89943ef"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STUDENTSTATUSNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="25" height="20" uuid="c48cb26b-0667-4eee-997d-b83bc3dce305"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

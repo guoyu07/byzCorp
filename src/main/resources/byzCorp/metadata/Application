@@ -1,0 +1,51 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "Navigation"
+        ],
+        "models": [
+            "getUser",
+            "getLookUp",
+            "lookUpDetail",
+            "getRole",
+            "Status",
+            "getStudents",
+            "getInternShips"
+        ],
+        "name": "byzCorp",
+        "stores": [
+            "getUsers",
+            "getLookUps",
+            "getLookUpDetails",
+            "getRoles",
+            "getStudents",
+            "getLudDepartments",
+            "getLudClasses",
+            "getLudPeriods",
+            "getLudTitles",
+            "getLudStatus",
+            "getLudInternShipStatus",
+            "getLudInternShipTypes"
+        ],
+        "views": [
+            "MainView",
+            "LoginView",
+            "LockView"
+        ]
+    },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "name": "string",
+        "views": "typedarray",
+        "models": "typedarray",
+        "stores": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

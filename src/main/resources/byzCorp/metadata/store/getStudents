@@ -1,0 +1,62 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userClassName": "getStudents",
+        "model": "getStudents",
+        "storeId": "getStudents",
+        "trackRemoved": false
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string",
+        "autoLoad": "boolean",
+        "trackRemoved": "boolean"
+    },
+    "name": "getAllUsers1",
+    "designerId": "e973a0df-35c0-414d-bb0e-007a150fc703",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "getStudents",
+                "url": "/byzCorp/student/getStudents"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "url": "string"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "b1ed463c-4d68-4d9b-bd00-4883662696ff",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "getStudents"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "b1227dde-8ab3-45c3-9f36-fbd3258cf55a"
+                }
+            ]
+        }
+    ]
+}

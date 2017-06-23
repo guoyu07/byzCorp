@@ -1,0 +1,62 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userClassName": "getInternShips",
+        "model": "getInternShips",
+        "storeId": "getInternShips",
+        "trackRemoved": false
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string",
+        "autoLoad": "boolean",
+        "trackRemoved": "boolean"
+    },
+    "name": "getAllStudents1",
+    "designerId": "530000e9-57e9-4226-92e9-da5772e334d9",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "getInternShips",
+                "url": "/byzCorp/internShip/getInternShips"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "url": "string"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "55658b5c-398a-4743-a8ff-4ca6da967f7d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "getInternShips"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "5888f891-2584-4959-88f8-99e9b85e0cfd"
+                }
+            ]
+        }
+    ]
+}
