@@ -51,7 +51,7 @@ Ext.define('byzCorp.view.LoginView', {
             items: [
                 {
                     xtype: 'form',
-                    height: 205,
+                    height: 140,
                     id: 'loginLayout',
                     margin: '20 40 20 40',
                     width: 325,
@@ -90,7 +90,7 @@ Ext.define('byzCorp.view.LoginView', {
                             xtype: 'button',
                             id: 'signIn',
                             margin: '5 5 5 5',
-                            ui: 'loginGreen-small',
+                            ui: 'default-small',
                             iconAlign: 'right',
                             iconCls: 'x-fa fa-angle-right',
                             text: 'Giriş Yap',
@@ -100,7 +100,8 @@ Ext.define('byzCorp.view.LoginView', {
                         },
                         {
                             xtype: 'button',
-                            id: 'signIn2',
+                            hidden: true,
+                            id: 'faceBook',
                             margin: '5 5 5 5',
                             iconAlign: 'right',
                             iconCls: 'fa fa-facebook',
@@ -111,7 +112,8 @@ Ext.define('byzCorp.view.LoginView', {
                         },
                         {
                             xtype: 'button',
-                            id: 'signIn3',
+                            hidden: true,
+                            id: 'forgoutPassword',
                             margin: '5 5 10 5',
                             ui: 'notRed-small',
                             iconAlign: 'right',
@@ -126,6 +128,7 @@ Ext.define('byzCorp.view.LoginView', {
                 {
                     xtype: 'form',
                     height: 270,
+                    hidden: true,
                     id: 'accountLayout',
                     margin: '20 40 20 40',
                     width: 325,

@@ -17,8 +17,8 @@
         "model": "model",
         "storeId": "string"
     },
-    "name": "getLudTitles1",
-    "designerId": "7f4e07f7-dab0-49ae-b74c-4adf1b6159cd",
+    "name": "getLudPeriods1",
+    "designerId": "c38a92c7-eced-4be0-91e1-cdb1080af096",
     "cn": [
         {
             "type": "Ext.data.proxy.Ajax",
@@ -36,7 +36,7 @@
                 "url": "string"
             },
             "name": "MyAjaxProxy2",
-            "designerId": "4e089c95-63bd-43cb-b22c-522edc25e985",
+            "designerId": "590823d1-799e-4f35-8496-16613844fe7e",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -52,7 +52,7 @@
                         "designer|displayName": "string"
                     },
                     "name": "MyJsonReader2",
-                    "designerId": "a118ec79-146e-4ee2-a318-900556809982"
+                    "designerId": "9ce33dbd-b02e-44eb-8c37-c5826ce9d443"
                 }
             ]
         }

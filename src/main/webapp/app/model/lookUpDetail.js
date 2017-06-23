@@ -35,6 +35,9 @@ Ext.define('byzCorp.model.lookUpDetail', {
         },
         {
             name: 'LOOKUPDETAILVALUE'
+        },
+        {
+            name: 'LOOKUPDETAILSTATUSNAME'
         }
     ]
 });

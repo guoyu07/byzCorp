@@ -20,34 +20,40 @@ Ext.define('byzCorp.view.LoginViewViewController', {
     onSignInClick: function(button, e, eOpts) {
         var refs = this.getReferences();
         Ext.Ajax.request({
-            url:'/user/getUser',
+            url:'/byzCorp/user/getUser',
             params : {
                 userName : refs.txtLoginUserName.getValue(),
                 password : refs.txtLoginPassword.getValue()
             },
             success : function(res){
                 var api = Ext.decode(res.responseText);
-                if(api[1].success){
-                    var userName = refs.txtLoginUserName.getValue();
-                    var password = refs.txtLoginPassword.getValue();
+                if(api.length>1){
+                    if(api[1].success){
+                        var userName = refs.txtLoginUserName.getValue();
+                        var password = refs.txtLoginPassword.getValue();
 
-                    if(api[0].USERNAME === userName){
-                        if(api[0].USERPASSWORD === password){
-                            refs.loginform.destroy();
-                            var mainview = Ext.create('widget.mainview');
-                            var lblGet = mainview.getReferences().lblUserInfo;
-                            var lblNewValue = api[0].USERFIRSTNAME + ' '+ api[0].USERLASTNAME+ ' / '+api[0].USERTITLE;
-                            lblGet.setText(lblNewValue);
+                        if(api[0].USERNAME === userName){
+                            if(api[0].USERPASSWORD === password){
+                                refs.loginform.destroy();
+                                var mainview = Ext.create('widget.mainview');
+                                var lblGet = mainview.getReferences().lblUserInfo;
+                                var lblNewValue = api[0].USERFIRSTNAME + ' '+ api[0].USERLASTNAME+ ' / '+api[0].USERTITLE;
+                                lblGet.setText(lblNewValue);
+                            }else{
+                                Ext.Msg.alert('Uyarı', 'Hatalı şifre girdiniz.');
+                            }
+
                         }else{
-                            Ext.Msg.alert('Uyarı', 'Hatalı şifre girdiniz.');
+                            Ext.Msg.alert('Uyarı', 'Hatalı kullanıcı adı girdiniz.');
                         }
-
                     }else{
-                        Ext.Msg.alert('Uyarı', 'Hatalı kullanıcı adı girdiniz.');
+                        Ext.Msg.alert('Uyarı', 'Veri tabanında kayıt bulunamadı.');
                     }
                 }else{
-                    Ext.Msg.alert('Uyarı', 'Veri tabanında kayıt bulunamadı.');
+                    Ext.Msg.alert('Uyarı', 'Hatalı kullanıcı adı veya şifre girdiniz.');
+
                 }
+
             }
         });
     },

@@ -17,14 +17,6 @@ Ext.define('byzCorp.view.MainViewViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.mainview',
 
-    onOgrenciIslemleriClick: function(item, e, eOpts) {
-        /*var refs = this.getReferences();
-        refs.studentsGrid.getStore().addListener('beforeload',function(store,options){
-        options._params.txtValue = "";
-        });
-        debugger;*/
-    },
-
     onStudentGridRowClick: function(tableview, record, tr, rowIndex, e, eOpts) {
         debugger;
         var refs = this.getReferences();
@@ -38,7 +30,6 @@ Ext.define('byzCorp.view.MainViewViewController', {
         refs.cmbStudentClass.setValue(data.STUDENTCLASSID);
         refs.cmbStudentDepartment.setValue(data.STUDENTDEPARTMENTID);
         refs.cmbStudentStatus.setValue(data.STUDENTSTATUS);
-        refs.cmbStudentStatus1.setValue(data.STUDENTSTATUS);
     },
 
     onStudentListPdfClick: function(item, e, eOpts) {
@@ -117,31 +108,6 @@ Ext.define('byzCorp.view.MainViewViewController', {
     },
 
     onDeleteInternShipClick: function(button, e, eOpts) {
-        debugger;
-        var refs = this.getReferences();
-        var record = refs.internShipsGrid.getSelectionModel();
-        if(!record.hasSelection()){
-            Ext.Msg.alert('Uyarı', 'Lütfen önce listeden öğrenci seçiniz..');
-        }else{
-            Ext.Ajax.request({
-                url:'/byzCorp/internShip/deleteInternShip',
-                params : {
-                    internShipId : record.getSelected().items[0].data.INTERNSHIPID
-                },
-                success : function(res){debugger;
-                    var api = Ext.decode(res.responseText);
-                    if(api.success){
-                        refs.internShipsGrid.getStore().load();
-                        refs.saveInternShipForm.getForm().reset();
-                    }else{
-                        Ext.Msg.alert('Uyarı', 'Kayıt işlemi gerçekleşmedi.');
-                    }
-                }
-            });
-        }
-    },
-
-    onDeleteInternShipClick1: function(button, e, eOpts) {
         debugger;
         var refs = this.getReferences();
         var record = refs.internShipsGrid.getSelectionModel();

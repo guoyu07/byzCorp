@@ -39,9 +39,10 @@ Ext.application({
         'getLudClasses',
         'getLudPeriods',
         'getLudTitles',
-        'getLudStatus',
         'getLudInternShipStatus',
-        'getLudInternShipTypes'
+        'getLudInternShipTypes',
+        'getInternShips',
+        'getLudStatus'
     ],
     views: [
         'MainView',

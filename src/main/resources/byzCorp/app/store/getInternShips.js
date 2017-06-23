@@ -27,9 +27,7 @@ Ext.define('byzCorp.store.getInternShips', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'getInternShips',
-            autoLoad: false,
             model: 'byzCorp.model.getInternShips',
-            trackRemoved: false,
             proxy: {
                 type: 'ajax',
                 url: '/byzCorp/internShip/getInternShips',

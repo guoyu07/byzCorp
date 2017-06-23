@@ -7,5 +7,9 @@ Ext.theme.addManifest([
     {
         "ui": "notRed",
         "xtype": "button"
+    },
+    {
+        "ui": "yellow",
+        "xtype": "button"
     }
 ]);

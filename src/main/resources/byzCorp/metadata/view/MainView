@@ -210,37 +210,7 @@
                                         "tooltip": "object"
                                     },
                                     "name": "MyMenuItem3",
-                                    "designerId": "6857b42d-cc7c-4092-9e27-568ff4a3b847",
-                                    "cn": [
-                                        {
-                                            "type": "viewcontrollereventbinding",
-                                            "reference": {
-                                                "name": "listeners",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fn": "onOgrenciIslemleriClick",
-                                                "implHandler": [
-                                                    "/*var refs = this.getReferences();",
-                                                    "refs.studentsGrid.getStore().addListener('beforeload',function(store,options){",
-                                                    "    options._params.txtValue = \"\";",
-                                                    "});",
-                                                    "debugger;*/"
-                                                ],
-                                                "name": "click",
-                                                "scope": "me"
-                                            },
-                                            "configAlternates": {
-                                                "fn": "string",
-                                                "implHandler": "code",
-                                                "name": "string",
-                                                "scope": "string"
-                                            },
-                                            "name": "onOgrenciIslemleriClick",
-                                            "designerId": "c7b04daf-a6f5-4b76-b2f2-c6fec61f994c"
-                                        }
-                                    ]
+                                    "designerId": "6857b42d-cc7c-4092-9e27-568ff4a3b847"
                                 },
                                 {
                                     "type": "Ext.menu.Item",
@@ -603,8 +573,7 @@
                                                             "refs.cmbStudentPeriod.setValue(data.STUDENTPERIODID);",
                                                             "refs.cmbStudentClass.setValue(data.STUDENTCLASSID);",
                                                             "refs.cmbStudentDepartment.setValue(data.STUDENTDEPARTMENTID);",
-                                                            "refs.cmbStudentStatus.setValue(data.STUDENTSTATUS);",
-                                                            "refs.cmbStudentStatus1.setValue(data.STUDENTSTATUS);"
+                                                            "refs.cmbStudentStatus.setValue(data.STUDENTSTATUS);"
                                                         ],
                                                         "name": "rowclick",
                                                         "scope": "me"
@@ -1056,7 +1025,7 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "autoLoadOnValue": true,
-                                                        "displayField": "LOOKUPDETAILNAME",
+                                                        "displayField": null,
                                                         "emptyText": "Statü",
                                                         "fieldLabel": null,
                                                         "formBind": false,
@@ -1065,7 +1034,7 @@
                                                         "queryParam": null,
                                                         "reference": "cmbStudentStatus",
                                                         "store": "getLudStatus",
-                                                        "valueField": "LOOKUPDETAILID",
+                                                        "valueField": null,
                                                         "valueNotFoundText": "Kayıt bulunamadı"
                                                     },
                                                     "configAlternates": {
@@ -1314,7 +1283,7 @@
                                                 "layout|region": "center",
                                                 "margin": "5 0 0 0",
                                                 "reference": "internShipsGrid",
-                                                "store": null,
+                                                "store": "getInternShips",
                                                 "title": "Staj Bilgileri"
                                             },
                                             "configAlternates": {
@@ -1495,7 +1464,7 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "designer|displayName": "internShipGrid",
-                                                        "id": "internShipGrid1"
+                                                        "id": "internShipGrid"
                                                     },
                                                     "configAlternates": {
                                                         "designer|displayName": "string",
@@ -1551,6 +1520,7 @@
                                                         "displayInfo": true,
                                                         "dock": "bottom",
                                                         "prependButtons": true,
+                                                        "store": null,
                                                         "width": 360
                                                     },
                                                     "configAlternates": {
@@ -1558,7 +1528,8 @@
                                                         "dock": "string",
                                                         "width": "auto",
                                                         "designer|displayName": "string",
-                                                        "prependButtons": "boolean"
+                                                        "prependButtons": "boolean",
+                                                        "store": "store"
                                                     },
                                                     "name": "MyPagingToolbar1",
                                                     "designerId": "01836548-3950-4018-80c4-78308ef5eb05",
@@ -2535,7 +2506,7 @@
                                                                 "id": "cmbLookUpDetailStatus1",
                                                                 "minChars": 1,
                                                                 "reference": "cmbInternShipDetailStatus",
-                                                                "store": "getLudStatus",
+                                                                "store": "getLudInternShipStatus",
                                                                 "valueField": null
                                                             },
                                                             "configAlternates": {
@@ -2668,54 +2639,7 @@
                                                                         "ui": "string"
                                                                     },
                                                                     "name": "MyButton8",
-                                                                    "designerId": "d11c51e8-9a41-490a-9ee6-e2af41468deb",
-                                                                    "cn": [
-                                                                        {
-                                                                            "type": "viewcontrollereventbinding",
-                                                                            "reference": {
-                                                                                "name": "listeners",
-                                                                                "type": "array"
-                                                                            },
-                                                                            "codeClass": null,
-                                                                            "userConfig": {
-                                                                                "fn": "onDeleteInternShipClick1",
-                                                                                "implHandler": [
-                                                                                    "debugger;",
-                                                                                    "var refs = this.getReferences();",
-                                                                                    "var record = refs.internShipsGrid.getSelectionModel();",
-                                                                                    "        if(!record.hasSelection()){",
-                                                                                    "            Ext.Msg.alert('Uyarı', 'Lütfen önce listeden öğrenci seçiniz..');",
-                                                                                    "        }else{",
-                                                                                    "            Ext.Ajax.request({",
-                                                                                    "                url:'/byzCorp/internShip/deleteInternShip',",
-                                                                                    "                params : {",
-                                                                                    "                    internShipId : record.getSelected().items[0].data.INTERNSHIPID",
-                                                                                    "                },",
-                                                                                    "                success : function(res){debugger;",
-                                                                                    "                    var api = Ext.decode(res.responseText);",
-                                                                                    "                    if(api.success){",
-                                                                                    "                        refs.internShipsGrid.getStore().load();",
-                                                                                    "                        refs.saveInternShipForm.getForm().reset();",
-                                                                                    "                    }else{",
-                                                                                    "                        Ext.Msg.alert('Uyarı', 'Kayıt işlemi gerçekleşmedi.');",
-                                                                                    "                    }",
-                                                                                    "                }",
-                                                                                    "            });",
-                                                                                    "        }"
-                                                                                ],
-                                                                                "name": "click",
-                                                                                "scope": "me"
-                                                                            },
-                                                                            "configAlternates": {
-                                                                                "fn": "string",
-                                                                                "implHandler": "code",
-                                                                                "name": "string",
-                                                                                "scope": "string"
-                                                                            },
-                                                                            "name": "onDeleteInternShipClick1",
-                                                                            "designerId": "d87497dc-fa48-4624-978e-8f272e166e8b"
-                                                                        }
-                                                                    ]
+                                                                    "designerId": "d11c51e8-9a41-490a-9ee6-e2af41468deb"
                                                                 }
                                                             ]
                                                         }
@@ -3032,15 +2956,15 @@
                                                             "codeClass": null,
                                                             "userConfig": {
                                                                 "autoLoadOnValue": true,
-                                                                "displayField": "LOOKUPDETAILNAME",
-                                                                "emptyText": "Aktif",
+                                                                "displayField": null,
+                                                                "emptyText": "Statü",
                                                                 "fieldLabel": null,
                                                                 "formBind": true,
                                                                 "id": "cmbUserStatus",
                                                                 "minChars": 1,
                                                                 "reference": "cmbUserStatus",
                                                                 "store": "getLudStatus",
-                                                                "valueField": "LOOKUPDETAILID"
+                                                                "valueField": null
                                                             },
                                                             "configAlternates": {
                                                                 "emptyText": "string",

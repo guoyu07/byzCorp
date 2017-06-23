@@ -17,22 +17,178 @@ Ext.define('byzCorp.view.MainViewViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.mainview',
 
-    onKaydetClick: function(button, e, eOpts) {
+    onOgrenciIslemleriClick: function(item, e, eOpts) {
+        /*var refs = this.getReferences();
+        refs.studentsGrid.getStore().addListener('beforeload',function(store,options){
+        options._params.txtValue = "";
+        });
+        debugger;*/
+    },
+
+    onStudentGridRowClick: function(tableview, record, tr, rowIndex, e, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        var data = record.data;
+        refs.txtStudentId.setValue(data.STUDENTID);
+        refs.txtStudentNo.setValue(data.STUDENTNO);
+        refs.txtStudentFirstName.setValue(data.STUDENTFIRSTNAME);
+        refs.txtStudentLastName.setValue(data.STUDENTLASTNAME);
+        refs.txtStudentCountryId.setValue(data.STUDENTCOUNTRYID);
+        refs.cmbStudentPeriod.setValue(data.STUDENTPERIODID);
+        refs.cmbStudentClass.setValue(data.STUDENTCLASSID);
+        refs.cmbStudentDepartment.setValue(data.STUDENTDEPARTMENTID);
+        refs.cmbStudentStatus.setValue(data.STUDENTSTATUS);
+        refs.cmbStudentStatus1.setValue(data.STUDENTSTATUS);
+    },
+
+    onStudentListPdfClick: function(item, e, eOpts) {
+        var refs = this.getReferences();
+        document.location = '/byzCorp/student/studentPDF?txtValue='+refs.txtSearch.getValue();
+    },
+
+    onSaveOrUpdateStudentClick: function(button, e, eOpts) {
+        debugger;
         var refs = this.getReferences();
         Ext.Ajax.request({
-            url:'/user/saveOrUpdateUser',
+            url:'/byzCorp/student/saveOrUpdateStudent',
             params : {
-                data : Ext.encode(formYogunBakim.getForm().getValues())
+                data : Ext.encode(refs.saveStudentForm.getForm().getValues())
             },
-            success : function(res){
+            success : function(res){debugger;
                 var api = Ext.decode(res.responseText);
-                if(api[1].success){
-                    refs.usersGrid.getStore().load();
+                if(api.success){
+                    refs.studentsGrid.getStore().load();
+                    refs.saveStudentForm.getForm().reset();
                 }else{
-                    Ext.Msg.alert('Uyarı', 'Veri tabanında kayıt bulunamadı.');
+                    Ext.Msg.alert('Uyarı', 'Kayıt işlemi gerçekleşmedi.');
                 }
             }
         });
+    },
+
+    onStudentFormResetClick: function(button, e, eOpts) {
+        var refs = this.getReferences();
+        refs.saveStudentForm.getForm().reset();
+    },
+
+    onInternShipGridRowClick1: function(tableview, record, tr, rowIndex, e, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        var data = record.data;
+        refs.txtInternShipId.setValue(data.INTERNSHIPID);
+        refs.cmbInternShipStudent.setValue(data.INTERNSHIPSTUDENTID);
+        refs.dateStartInternShip.setRawValue(data.INTERNSHIPSTARTDATE);
+        refs.dateEndInternShip.setRawValue(data.INTERNSHIPENDDATE);
+        refs.cmbInternShipPeriod.setValue(data.INTERNSHIPPERIODID);
+        refs.cmbInternShipType.setValue(data.INTERNSHIPTYPEID);
+        refs.cmbInternShipStatu.setValue(data.INTERNSHIPSTATUSID);
+    },
+
+    onInternShipListPdfClick1: function(item, e, eOpts) {
+        var refs = this.getReferences();
+        document.location = '/byzCorp/internShip/internShipPDF?txtValue='+refs.txtSearch.getValue();
+    },
+
+    onSaveOrUpdateInternShipFormClick: function(button, e, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        Ext.Ajax.request({
+            url:'/byzCorp/internShip/saveOrUpdateInternShip',
+            params : {
+                data : Ext.encode(refs.internShipForm.getForm().getValues())
+            },
+            success : function(res){debugger;
+                var api = Ext.decode(res.responseText);
+                if(api.success){
+                    refs.internShipsGrid.getStore().load();
+                    refs.saveInternShipForm.getForm().reset();
+                    alert('000 - Kayıt İşlemi Başarılı.');
+                }else{
+                    Ext.Msg.alert('Uyarı', 'Kayıt işlemi gerçekleşmedi.');
+                }
+            }
+        });
+    },
+
+    onFormInternShipFormResetClick: function(button, e, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        refs.internShipForm.getForm().reset();
+    },
+
+    onDeleteInternShipClick: function(button, e, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        var record = refs.internShipsGrid.getSelectionModel();
+        if(!record.hasSelection()){
+            Ext.Msg.alert('Uyarı', 'Lütfen önce listeden öğrenci seçiniz..');
+        }else{
+            Ext.Ajax.request({
+                url:'/byzCorp/internShip/deleteInternShip',
+                params : {
+                    internShipId : record.getSelected().items[0].data.INTERNSHIPID
+                },
+                success : function(res){debugger;
+                    var api = Ext.decode(res.responseText);
+                    if(api.success){
+                        refs.internShipsGrid.getStore().load();
+                        refs.saveInternShipForm.getForm().reset();
+                    }else{
+                        Ext.Msg.alert('Uyarı', 'Kayıt işlemi gerçekleşmedi.');
+                    }
+                }
+            });
+        }
+    },
+
+    onDeleteInternShipClick1: function(button, e, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        var record = refs.internShipsGrid.getSelectionModel();
+        if(!record.hasSelection()){
+            Ext.Msg.alert('Uyarı', 'Lütfen önce listeden öğrenci seçiniz..');
+        }else{
+            Ext.Ajax.request({
+                url:'/byzCorp/internShip/deleteInternShip',
+                params : {
+                    internShipId : record.getSelected().items[0].data.INTERNSHIPID
+                },
+                success : function(res){debugger;
+                    var api = Ext.decode(res.responseText);
+                    if(api.success){
+                        refs.internShipsGrid.getStore().load();
+                        refs.saveInternShipForm.getForm().reset();
+                    }else{
+                        Ext.Msg.alert('Uyarı', 'Kayıt işlemi gerçekleşmedi.');
+                    }
+                }
+            });
+        }
+    },
+
+    onSaveOrUpdateUserClick: function(button, e, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        Ext.Ajax.request({
+            url:'/byzCorp/user/saveOrUpdateUser',
+            params : {
+                data : Ext.encode(refs.kullaniciKayitForm.getForm().getValues())
+            },
+            success : function(res){debugger;
+                var api = Ext.decode(res.responseText);
+                if(api.success){
+                    refs.usersGrid.getStore().load();
+                    refs.kullaniciKayitForm.getForm().reset();
+                }else{
+                    Ext.Msg.alert('Uyarı', 'Kayıt işlemi gerçekleşmedi.');
+                }
+            }
+        });
+    },
+
+    onUserFormResetClick: function(button, e, eOpts) {
+        var refs = this.getReferences();
+        refs.kullaniciKayitForm.getForm().reset();
     },
 
     onUserGridRowClick: function(tableview, record, tr, rowIndex, e, eOpts) {
@@ -49,16 +205,13 @@ Ext.define('byzCorp.view.MainViewViewController', {
         refs.cmbUserStatus.setValue(data.USERSTATUS);
     },
 
-    onExcelClick: function(item, e, eOpts) {
-        debugger;
-        item.saveDocumentAs({
-            type: 'xlsx',
-            title: 'My export',
-            fileName: 'myExport.xlsx'
-        });
+    onUserPdfClick: function(item, e, eOpts) {
+        var refs = this.getReferences();
+        document.location = '/byzCorp/user/userPDF?txtValue='+refs.txtSearch.getValue();
     },
 
     onLookUpGridRowClick: function(tableview, record, tr, rowIndex, e, eOpts) {
+        debugger;
         var refs = this.getReferences();
         var lookUpDetailGrid = refs.lookUpDetailGrid;
         lookUpDetailGrid.setCollapsed(false);
@@ -69,7 +222,55 @@ Ext.define('byzCorp.view.MainViewViewController', {
         });
     },
 
+    onLookUpDetailGridRowClick: function(tableview, record, tr, rowIndex, e, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        var data = record.data;
+
+        refs.txtLookUpDetailId.setValue(data.LOOKUPDETAILID);
+        refs.txtLookUpDetailDesc.setValue(data.LOOKUPDETAILNAME);
+        refs.txtLookUpDetailValue.setValue(data.LOOKUPDETAILVALUE);
+        refs.cmbLookUpDetailStatus.setValue(data.LOOKUPDETAILSTATUS);
+    },
+
+    onSaveOrUpdateLookUpDetail: function(button, e, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        var record = refs.lookUpGrid.getSelectionModel();
+        if(!record.hasSelection()){
+            Ext.Msg.alert('Uyarı', 'Lütfen önce lookUp Başlık seçiniz..');
+        }else{
+            Ext.Ajax.request({
+                url:'/byzCorp/lookUp/saveOrUpdateLookUpDetail',
+                params : {
+                    data : Ext.encode(refs.saveOrUpdateLookUpDetailForm.getForm().getValues()),
+                    lookUpId : record.getSelected().items[0].data.LOOKUPID
+                },
+                success : function(res){debugger;
+                    var api = Ext.decode(res.responseText);
+                    if(api.success){
+                        refs.lookUpDetailGrid.getStore().load({
+                            params:{
+                                lookUpId : record.getSelected().items[0].data.LOOKUPID
+                            }
+                        });
+                        refs.saveOrUpdateLookUpDetailForm.getForm().reset();
+                    }else{
+                        Ext.Msg.alert('Uyarı', 'Kayıt işlemi gerçekleşmedi.');
+                    }
+                }
+            });
+        }
+
+    },
+
+    onUserFormResetClick11: function(button, e, eOpts) {
+        var refs = this.getReferences();
+        refs.kullaniciKayitForm.getForm().reset();
+    },
+
     onLogOutClick: function(button, e, eOpts) {
+        debugger;
         var refs = this.getReferences();
         Ext.Msg.show({
             title : 'Dikkat',
@@ -85,13 +286,16 @@ Ext.define('byzCorp.view.MainViewViewController', {
                 cancel : 'İptal'
             },
             multiline : false,
-            fn : function(buttonValue, inputText, showConfig){
+            fn : function(buttonValue, inputText, showConfig){debugger;
                 if(buttonValue==='yes'){
                     var loginview = Ext.create('widget.loginview');
                     loginview.show();
                     refs.maincontainer.destroy();
-                }else if(buttonValue==='no'){
+                }else if(buttonValue==='no'){debugger;
                     var lockview = Ext.create('widget.lockview');
+                    var lblGet = lockview.getReferences().lblUserLockInfo;
+                    var lblNewValue = lblUserInfo.getvalue();
+                    lblGet.setText(lblNewValue);
                     lockview.show();
                     refs.maincontainer.destroy();
                 }else{
@@ -102,7 +306,7 @@ Ext.define('byzCorp.view.MainViewViewController', {
         });
     },
 
-    onTxtAraKeyup: function(textfield, e, eOpts) {
+    onTxtSearchKeyup: function(textfield, e, eOpts) {
         debugger;
         var refs = this.getReferences();
         var txtValue = textfield.value;
@@ -113,7 +317,17 @@ Ext.define('byzCorp.view.MainViewViewController', {
         });
         refs.lookUpGrid.getStore().load({
             params:{
-                lookUpName : txtValue
+                txtValue : txtValue
+            }
+        });
+        refs.studentsGrid.getStore().load({
+            params:{
+                txtValue : txtValue
+            }
+        });
+        refs.internShipsGrid.getStore().load({
+            params:{
+                txtValue : txtValue
             }
         });
     }

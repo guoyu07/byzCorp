@@ -31,7 +31,7 @@ Ext.define('byzCorp.store.getLookUpDetails', {
             model: 'byzCorp.model.lookUpDetail',
             proxy: {
                 type: 'ajax',
-                url: '/lookUp/getLookUpDetails',
+                url: '/byzCorp/lookUp/getLookUpDetails',
                 reader: {
                     type: 'json'
                 }

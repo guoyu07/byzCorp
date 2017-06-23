@@ -64,9 +64,11 @@ Ext.define('byzCorp.view.LockView', {
                         {
                             xtype: 'label',
                             flex: 1,
+                            reference: 'lblUserLockInfo',
                             disabled: true,
                             height: 100,
-                            itemId: 'mylabel',
+                            id: 'lblUserLockInfo',
+                            itemId: 'lblUserLockInfo',
                             margin: '5 5 5 5',
                             text: 'Kullanıcı Adı gelecek'
                         },
