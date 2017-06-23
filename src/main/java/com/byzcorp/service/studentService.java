@@ -45,7 +45,7 @@ public class studentService {
         String txtStudentPeriodId = formData.getString("cmbStudentPeriod-inputEl");
         Long cmbStudentClassId = Long.parseLong(formData.getString("cmbStudentClass-inputEl"));
         Long cmbStudentDepartmentId = Long.parseLong(formData.getString("cmbStudentDepartment-inputEl"));
-        Long cmbStudentStatus = Long.parseLong(formData.getString("cmbStudentStatus-inputEl"));
+        Long cmbStudentStatus = Long.parseLong(formData.getString("cmbStudentStatu-inputEl"));
 
         return dao.saveOrUpdateStudent(txtStudentId,txtStudentNo,txtStudentFirstName,txtStudentLastName,txtStudentCountryId,txtStudentPeriodId,cmbStudentClassId,cmbStudentDepartmentId,cmbStudentStatus);
     }

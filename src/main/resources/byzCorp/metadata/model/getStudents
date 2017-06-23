@@ -155,22 +155,6 @@
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyField19",
-            "designerId": "2573a319-5505-4aae-a204-89f0efc77941"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "STUDENTSTATUSNAME"
-            },
-            "configAlternates": {
-                "name": "string"
-            },
             "name": "MyField20",
             "designerId": "0fe71ec1-1cd2-4ee3-acce-942468ccddff"
         },

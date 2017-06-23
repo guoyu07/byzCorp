@@ -202,6 +202,13 @@ Ext.define('byzCorp.view.MainView', {
                                             width: 145,
                                             dataIndex: 'STUDENTPERIOD',
                                             text: 'Aktif Dönem'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            autoRender: true,
+                                            width: 76,
+                                            dataIndex: 'STUDENTSTATUS',
+                                            text: 'Statü'
                                         }
                                     ],
                                     viewConfig: {
@@ -217,6 +224,7 @@ Ext.define('byzCorp.view.MainView', {
                                         {
                                             xtype: 'pagingtoolbar',
                                             dock: 'bottom',
+                                            id: 'studentsGridPaging',
                                             width: 360,
                                             afterPageText: '{0}',
                                             beforePageText: 'Sayfa',
@@ -261,7 +269,7 @@ Ext.define('byzCorp.view.MainView', {
                                     xtype: 'form',
                                     collapseMode: 'mini',
                                     region: 'west',
-                                    id: 'ogrKayitContainer',
+                                    id: 'saveStudentContainer',
                                     width: 285,
                                     layout: 'border',
                                     collapsible: false,
@@ -272,7 +280,7 @@ Ext.define('byzCorp.view.MainView', {
                                             xtype: 'form',
                                             region: 'north',
                                             reference: 'saveStudentForm',
-                                            height: 281,
+                                            height: 243,
                                             id: 'ogrKayitForm',
                                             margin: '5 5 0 0',
                                             layout: 'form',
@@ -319,7 +327,9 @@ Ext.define('byzCorp.view.MainView', {
                                                 },
                                                 {
                                                     xtype: 'combobox',
+                                                    formBind: true,
                                                     reference: 'cmbStudentDepartment',
+                                                    autoRender: true,
                                                     id: 'cmbStudentDepartment',
                                                     emptyText: 'Bölümü',
                                                     autoLoadOnValue: true,
@@ -330,6 +340,7 @@ Ext.define('byzCorp.view.MainView', {
                                                 },
                                                 {
                                                     xtype: 'combobox',
+                                                    formBind: true,
                                                     reference: 'cmbStudentClass',
                                                     id: 'cmbStudentClass',
                                                     emptyText: 'Sınıfı',
@@ -341,7 +352,7 @@ Ext.define('byzCorp.view.MainView', {
                                                 },
                                                 {
                                                     xtype: 'combobox',
-                                                    formBind: false,
+                                                    formBind: true,
                                                     reference: 'cmbStudentPeriod',
                                                     id: 'cmbStudentPeriod',
                                                     emptyText: 'Aktif Dönem',
@@ -353,21 +364,22 @@ Ext.define('byzCorp.view.MainView', {
                                                 },
                                                 {
                                                     xtype: 'combobox',
-                                                    formBind: false,
-                                                    reference: 'cmbStudentStatus',
-                                                    id: 'cmbStudentStatus',
+                                                    formBind: true,
+                                                    reference: 'cmbStudentStatu',
+                                                    id: 'cmbStudentStatu',
                                                     emptyText: 'Statü',
                                                     autoLoadOnValue: true,
+                                                    displayField: 'LOOKUPDETAILNAME',
                                                     minChars: 0,
                                                     store: 'getLudStatus',
-                                                    valueNotFoundText: 'Kayıt bulunamadı'
+                                                    valueField: 'LOOKUPDETAILID'
                                                 }
                                             ]
                                         },
                                         {
                                             xtype: 'form',
                                             region: 'center',
-                                            id: 'buttonForm',
+                                            id: 'studentButtonForm',
                                             margin: '0 5 5 0',
                                             bodyPadding: 10,
                                             header: false,
@@ -423,11 +435,201 @@ Ext.define('byzCorp.view.MainView', {
                             title: 'Staj İşlemleri',
                             items: [
                                 {
-                                    xtype: 'container',
-                                    region: 'center',
-                                    reference: 'gridsContainer',
-                                    id: 'gridsContainer',
+                                    xtype: 'panel',
+                                    region: 'west',
+                                    id: 'saveInternShipContainer',
+                                    width: 285,
                                     layout: 'border',
+                                    header: false,
+                                    title: 'My Panel',
+                                    items: [
+                                        {
+                                            xtype: 'form',
+                                            region: 'north',
+                                            reference: 'saveInternShipForm',
+                                            height: 329,
+                                            id: 'saveInternShipForm',
+                                            margin: '5 5 0 0',
+                                            scrollable: true,
+                                            layout: 'form',
+                                            bodyPadding: 10,
+                                            header: false,
+                                            items: [
+                                                {
+                                                    xtype: 'textfield',
+                                                    formBind: true,
+                                                    reference: 'txtInternShipId',
+                                                    autoRender: true,
+                                                    hidden: true,
+                                                    id: 'txtInternShipId',
+                                                    fieldLabel: 'Label'
+                                                },
+                                                {
+                                                    xtype: 'combobox',
+                                                    formBind: true,
+                                                    reference: 'cmbInternShipStudent',
+                                                    autoRender: true,
+                                                    id: 'cmbInternShipStudent',
+                                                    width: 150,
+                                                    emptyText: 'Öğrenci',
+                                                    autoLoadOnValue: true,
+                                                    displayField: 'STUDENTIDANDFIRSTANDLASTNAME',
+                                                    minChars: 0,
+                                                    queryParam: 'txtValue',
+                                                    store: 'getStudents',
+                                                    valueField: 'STUDENTID'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    height: 150,
+                                                    id: 'txtInternShipDay',
+                                                    hideLabel: true,
+                                                    emptyText: 'Staj Süresi'
+                                                },
+                                                {
+                                                    xtype: 'datefield',
+                                                    formBind: true,
+                                                    reference: 'dateStartInternShip',
+                                                    autoRender: true,
+                                                    height: 150,
+                                                    id: 'dateStartInternShip',
+                                                    emptyText: 'Staj Başlangıç Zamanı',
+                                                    format: 'd/m/Y'
+                                                },
+                                                {
+                                                    xtype: 'datefield',
+                                                    formBind: true,
+                                                    reference: 'dateEndInternShip',
+                                                    height: 150,
+                                                    id: 'dateEndInternShip',
+                                                    emptyText: 'Staj Bitiş Zamanı',
+                                                    format: 'd/m/Y'
+                                                },
+                                                {
+                                                    xtype: 'combobox',
+                                                    formBind: true,
+                                                    reference: 'cmbInternShipPeriod',
+                                                    height: 150,
+                                                    id: 'cmbInternShipPeriod',
+                                                    emptyText: 'Staj Dönemi',
+                                                    autoLoadOnValue: true,
+                                                    displayField: 'LOOKUPDETAILNAME',
+                                                    queryCaching: false,
+                                                    queryParam: 'lookUpId',
+                                                    store: 'getLudPeriods',
+                                                    valueField: 'LOOKUPDETAILID'
+                                                },
+                                                {
+                                                    xtype: 'combobox',
+                                                    formBind: true,
+                                                    reference: 'cmbInternShipType',
+                                                    height: 150,
+                                                    id: 'cmbInternShipType',
+                                                    emptyText: 'Staj Tipi',
+                                                    autoLoadOnValue: true,
+                                                    displayField: 'LOOKUPDETAILNAME',
+                                                    queryParam: 'lookUpId',
+                                                    store: 'getLudInternShipTypes',
+                                                    valueField: 'LOOKUPDETAILID'
+                                                },
+                                                {
+                                                    xtype: 'combobox',
+                                                    formBind: true,
+                                                    reference: 'cmbInternShipStatu',
+                                                    height: 150,
+                                                    id: 'cmbInternShipStatu',
+                                                    emptyText: 'Statü',
+                                                    autoLoadOnValue: true,
+                                                    displayField: 'LOOKUPDETAILNAME',
+                                                    queryParam: 'lookUpId',
+                                                    store: 'getLudInternShipStatus',
+                                                    valueField: 'LOOKUPDETAILID'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    height: 150,
+                                                    id: 'txtInternShipPlace',
+                                                    emptyText: 'Staj Yeri'
+                                                },
+                                                {
+                                                    xtype: 'textareafield',
+                                                    height: 150,
+                                                    id: 'txtInternShipDesc',
+                                                    hideEmptyLabel: false,
+                                                    emptyText: 'Açıklama'
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'form',
+                                            region: 'center',
+                                            reference: 'internShipButtonForm',
+                                            id: 'internShipButtonForm',
+                                            margin: '0 5 5 0',
+                                            bodyPadding: 10,
+                                            header: false,
+                                            title: 'My Form',
+                                            layout: {
+                                                type: 'hbox',
+                                                pack: 'center'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    flex: 1,
+                                                    id: 'saveOrUpdateInternShipForm',
+                                                    margin: '5 5 5 5',
+                                                    iconCls: 'fa fa-floppy-o',
+                                                    text: 'Kaydet',
+                                                    listeners: {
+                                                        click: {
+                                                            fn: 'onSaveOrUpdateInternShipFormClick',
+                                                            scope: 'controller'
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    flex: 1,
+                                                    reference: 'internShipFormReset',
+                                                    id: 'internShipFormReset',
+                                                    margin: '5 5 5 5',
+                                                    ui: 'yellow-small',
+                                                    iconCls: 'fa fa-eraser',
+                                                    text: 'Temizle',
+                                                    listeners: {
+                                                        click: {
+                                                            fn: 'onFormInternShipFormResetClick',
+                                                            scope: 'controller'
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    flex: 1,
+                                                    id: 'deleteInternShip',
+                                                    margin: '5 5 5 5',
+                                                    ui: 'notRed-small',
+                                                    iconCls: 'fa fa-trash-o',
+                                                    text: 'Sil',
+                                                    listeners: {
+                                                        click: {
+                                                            fn: 'onDeleteInternShipClick',
+                                                            scope: 'controller'
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'panel',
+                                    region: 'center',
+                                    id: 'internShipGrids',
+                                    layout: 'border',
+                                    header: false,
+                                    title: 'My Panel',
                                     items: [
                                         {
                                             xtype: 'gridpanel',
@@ -495,7 +697,7 @@ Ext.define('byzCorp.view.MainView', {
                                                 id: 'internShipGrid',
                                                 listeners: {
                                                     rowclick: {
-                                                        fn: 'onInternShipGridRowClick1',
+                                                        fn: 'onInternShipGridRowClick',
                                                         scope: 'controller'
                                                     }
                                                 }
@@ -510,7 +712,6 @@ Ext.define('byzCorp.view.MainView', {
                                                     items: [
                                                         {
                                                             xtype: 'splitbutton',
-                                                            width: 150,
                                                             iconCls: 'fa fa-print',
                                                             text: 'Yazdır',
                                                             menu: {
@@ -530,183 +731,6 @@ Ext.define('byzCorp.view.MainView', {
                                                                     }
                                                                 ]
                                                             }
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    xtype: 'container',
-                                                    dock: 'left',
-                                                    id: 'stajKayitContainer',
-                                                    width: 285,
-                                                    layout: 'border',
-                                                    items: [
-                                                        {
-                                                            xtype: 'form',
-                                                            region: 'north',
-                                                            reference: 'internShipForm',
-                                                            height: 310,
-                                                            id: 'internShipForm',
-                                                            margin: '5 5 0 0',
-                                                            layout: 'form',
-                                                            bodyPadding: 10,
-                                                            header: false,
-                                                            items: [
-                                                                {
-                                                                    xtype: 'textfield',
-                                                                    formBind: true,
-                                                                    reference: 'txtInternShipId',
-                                                                    autoRender: true,
-                                                                    hidden: true,
-                                                                    id: 'txtInternShipId',
-                                                                    fieldLabel: 'Label'
-                                                                },
-                                                                {
-                                                                    xtype: 'combobox',
-                                                                    formBind: true,
-                                                                    reference: 'cmbInternShipStudent',
-                                                                    autoRender: true,
-                                                                    id: 'cmbInternShipStudent',
-                                                                    emptyText: 'Öğrenci',
-                                                                    autoLoadOnValue: true,
-                                                                    displayField: 'STUDENTIDANDFIRSTANDLASTNAME',
-                                                                    minChars: 0,
-                                                                    queryParam: 'txtValue',
-                                                                    store: 'getStudents',
-                                                                    valueField: 'STUDENTID'
-                                                                },
-                                                                {
-                                                                    xtype: 'textfield',
-                                                                    id: 'txtInternShipDay',
-                                                                    hideLabel: true,
-                                                                    emptyText: 'Staj Süresi'
-                                                                },
-                                                                {
-                                                                    xtype: 'datefield',
-                                                                    formBind: true,
-                                                                    reference: 'dateStartInternShip',
-                                                                    autoRender: true,
-                                                                    id: 'dateStartInternShip',
-                                                                    emptyText: 'Staj Başlangıç Zamanı',
-                                                                    format: 'd/m/Y'
-                                                                },
-                                                                {
-                                                                    xtype: 'datefield',
-                                                                    formBind: true,
-                                                                    reference: 'dateEndInternShip',
-                                                                    id: 'dateEndInternShip',
-                                                                    emptyText: 'Staj Bitiş Zamanı',
-                                                                    format: 'd/m/Y'
-                                                                },
-                                                                {
-                                                                    xtype: 'combobox',
-                                                                    formBind: true,
-                                                                    reference: 'cmbInternShipPeriod',
-                                                                    id: 'cmbInternShipPeriod',
-                                                                    emptyText: 'Staj Dönemi',
-                                                                    autoLoadOnValue: true,
-                                                                    displayField: 'LOOKUPDETAILNAME',
-                                                                    queryCaching: false,
-                                                                    queryParam: 'lookUpId',
-                                                                    store: 'getLudPeriods',
-                                                                    valueField: 'LOOKUPDETAILID'
-                                                                },
-                                                                {
-                                                                    xtype: 'combobox',
-                                                                    formBind: true,
-                                                                    reference: 'cmbInternShipType',
-                                                                    id: 'cmbInternShipType',
-                                                                    emptyText: 'Staj Tipi',
-                                                                    autoLoadOnValue: true,
-                                                                    displayField: 'LOOKUPDETAILNAME',
-                                                                    queryParam: 'lookUpId',
-                                                                    store: 'getLudInternShipTypes',
-                                                                    valueField: 'LOOKUPDETAILID'
-                                                                },
-                                                                {
-                                                                    xtype: 'combobox',
-                                                                    formBind: true,
-                                                                    reference: 'cmbInternShipStatu',
-                                                                    id: 'cmbInternShipStatu',
-                                                                    emptyText: 'Statü',
-                                                                    autoLoadOnValue: true,
-                                                                    displayField: 'LOOKUPDETAILNAME',
-                                                                    queryParam: 'lookUpId',
-                                                                    store: 'getLudInternShipStatus',
-                                                                    valueField: 'LOOKUPDETAILID'
-                                                                },
-                                                                {
-                                                                    xtype: 'textfield',
-                                                                    id: 'txtInternShipPlace',
-                                                                    emptyText: 'Staj Yeri'
-                                                                },
-                                                                {
-                                                                    xtype: 'textareafield',
-                                                                    id: 'txtInternShipDesc',
-                                                                    hideEmptyLabel: false,
-                                                                    emptyText: 'Açıklama'
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            xtype: 'form',
-                                                            region: 'center',
-                                                            reference: 'saveInternShipForm',
-                                                            id: 'saveInternShipForm',
-                                                            margin: '0 5 5 0',
-                                                            bodyPadding: 10,
-                                                            header: false,
-                                                            title: 'My Form',
-                                                            layout: {
-                                                                type: 'hbox',
-                                                                pack: 'center'
-                                                            },
-                                                            items: [
-                                                                {
-                                                                    xtype: 'button',
-                                                                    flex: 1,
-                                                                    id: 'saveOrUpdateInternShipForm',
-                                                                    margin: '5 5 5 5',
-                                                                    iconCls: 'fa fa-floppy-o',
-                                                                    text: 'Kaydet',
-                                                                    listeners: {
-                                                                        click: {
-                                                                            fn: 'onSaveOrUpdateInternShipFormClick',
-                                                                            scope: 'controller'
-                                                                        }
-                                                                    }
-                                                                },
-                                                                {
-                                                                    xtype: 'button',
-                                                                    flex: 1,
-                                                                    reference: 'internShipFormReset',
-                                                                    id: 'internShipFormReset',
-                                                                    margin: '5 5 5 5',
-                                                                    ui: 'yellow-small',
-                                                                    iconCls: 'fa fa-eraser',
-                                                                    text: 'Temizle',
-                                                                    listeners: {
-                                                                        click: {
-                                                                            fn: 'onFormInternShipFormResetClick',
-                                                                            scope: 'controller'
-                                                                        }
-                                                                    }
-                                                                },
-                                                                {
-                                                                    xtype: 'button',
-                                                                    flex: 1,
-                                                                    id: 'deleteInternShip',
-                                                                    margin: '5 5 5 5',
-                                                                    ui: 'notRed-small',
-                                                                    iconCls: 'fa fa-trash-o',
-                                                                    text: 'Sil',
-                                                                    listeners: {
-                                                                        click: {
-                                                                            fn: 'onDeleteInternShipClick',
-                                                                            scope: 'controller'
-                                                                        }
-                                                                    }
-                                                                }
-                                                            ]
                                                         }
                                                     ]
                                                 }
@@ -751,11 +775,12 @@ Ext.define('byzCorp.view.MainView', {
                                             dockedItems: [
                                                 {
                                                     xtype: 'form',
-                                                    reference: 'saveOrUpdateLookUpDetailForm',
+                                                    reference: 'saveOrUpdateInternShipDetailForm',
                                                     dock: 'left',
                                                     height: 246,
-                                                    id: 'saveOrUpdateLookUpDetailForm1',
+                                                    id: 'saveOrUpdateInternShipDetailForm',
                                                     margin: '5 5 0 0',
+                                                    scrollable: true,
                                                     width: 285,
                                                     layout: 'form',
                                                     bodyPadding: 10,
@@ -805,15 +830,18 @@ Ext.define('byzCorp.view.MainView', {
                                                             reference: 'cmbInternShipDetailStatus',
                                                             id: 'cmbLookUpDetailStatus1',
                                                             emptyText: 'Statü',
+                                                            displayField: 'LOOKUPDETAILNAME',
                                                             minChars: 1,
-                                                            store: 'getLudInternShipStatus'
+                                                            store: 'getLudInternShipStatus',
+                                                            valueField: 'LOOKUPDETAILID'
                                                         }
                                                     ],
                                                     dockedItems: [
                                                         {
                                                             xtype: 'form',
                                                             dock: 'bottom',
-                                                            id: 'internShipButtonForm',
+                                                            height: 46,
+                                                            id: 'internShipDetailButtonForm',
                                                             margin: '0 0 0 0',
                                                             width: 100,
                                                             bodyPadding: 10,
@@ -835,7 +863,7 @@ Ext.define('byzCorp.view.MainView', {
                                                                 {
                                                                     xtype: 'button',
                                                                     flex: 1,
-                                                                    reference: 'userFormReset',
+                                                                    reference: 'internShipDetailFormReset',
                                                                     id: 'internShipDetailFormReset',
                                                                     margin: '5 5 5 5',
                                                                     ui: 'yellow-small',
@@ -876,19 +904,124 @@ Ext.define('byzCorp.view.MainView', {
                                     title: 'Kullanıcı Yönetimi',
                                     items: [
                                         {
-                                            xtype: 'container',
+                                            xtype: 'gridpanel',
+                                            region: 'center',
+                                            reference: 'usersGrid',
+                                            id: 'UsersGrid',
+                                            itemId: 'UsersGrid',
+                                            margin: '5 0 5 5',
+                                            header: false,
+                                            autoLoad: true,
+                                            forceFit: false,
+                                            store: 'getUsers',
+                                            columns: [
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    autoRender: true,
+                                                    width: 198,
+                                                    sortable: true,
+                                                    dataIndex: 'USERFIRSTANDLASTNAME',
+                                                    text: 'Adı Soyadı'
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    fixed: true,
+                                                    autoRender: true,
+                                                    width: 121,
+                                                    dataIndex: 'USERNAME',
+                                                    text: 'Kullanıcı Adı'
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    fixed: true,
+                                                    autoRender: true,
+                                                    width: 208,
+                                                    dataIndex: 'USERTITLE',
+                                                    text: 'Ünvanı'
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    fixed: true,
+                                                    autoRender: true,
+                                                    width: 203,
+                                                    dataIndex: 'USEREMAIL',
+                                                    text: 'Email'
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    fixed: true,
+                                                    autoRender: true,
+                                                    dataIndex: 'USERROLENAME',
+                                                    text: 'Rolü'
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    fixed: true,
+                                                    autoRender: true,
+                                                    dataIndex: 'USERSTATUSNAME',
+                                                    text: 'Statü'
+                                                }
+                                            ],
+                                            viewConfig: {
+                                                id: 'userGrid',
+                                                itemId: 'userGrid',
+                                                listeners: {
+                                                    rowclick: {
+                                                        fn: 'onUserGridRowClick',
+                                                        scope: 'controller'
+                                                    }
+                                                }
+                                            },
+                                            dockedItems: [
+                                                {
+                                                    xtype: 'pagingtoolbar',
+                                                    dock: 'bottom',
+                                                    id: 'usersGridPaging',
+                                                    itemId: 'usersGridPaging',
+                                                    displayInfo: true,
+                                                    prependButtons: true,
+                                                    items: [
+                                                        {
+                                                            xtype: 'splitbutton',
+                                                            iconCls: 'fa fa-print',
+                                                            text: 'Yazdır',
+                                                            menu: {
+                                                                xtype: 'menu',
+                                                                items: [
+                                                                    {
+                                                                        xtype: 'menuitem',
+                                                                        id: 'excel',
+                                                                        iconCls: 'fa fa-file-pdf-o',
+                                                                        text: 'Pdf',
+                                                                        listeners: {
+                                                                            click: {
+                                                                                fn: 'onUserPdfClick',
+                                                                                scope: 'controller'
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
                                             region: 'west',
-                                            id: 'kullaniciKayitContainer',
+                                            id: 'saveUserForm',
                                             width: 285,
                                             layout: 'border',
+                                            header: false,
                                             items: [
                                                 {
                                                     xtype: 'form',
                                                     region: 'north',
                                                     reference: 'kullaniciKayitForm',
-                                                    height: 215,
+                                                    height: 226,
                                                     id: 'kullaniciKayitForm',
-                                                    margin: '5 5 0 0',
+                                                    margin: '5 0 0 0',
                                                     layout: 'form',
                                                     bodyPadding: 10,
                                                     header: false,
@@ -961,15 +1094,18 @@ Ext.define('byzCorp.view.MainView', {
                                                             id: 'cmbUserStatus',
                                                             emptyText: 'Statü',
                                                             autoLoadOnValue: true,
+                                                            displayField: 'LOOKUPDETAILNAME',
                                                             minChars: 1,
-                                                            store: 'getLudStatus'
+                                                            store: 'getLudStatus',
+                                                            valueField: 'LOOKUPDETAILID'
                                                         }
                                                     ]
                                                 },
                                                 {
                                                     xtype: 'form',
                                                     region: 'center',
-                                                    margin: '0 5 5 0',
+                                                    id: 'userButtonForm',
+                                                    margin: '0 0 5 0',
                                                     bodyPadding: 10,
                                                     header: false,
                                                     title: '',
@@ -1006,109 +1142,6 @@ Ext.define('byzCorp.view.MainView', {
                                                                     fn: 'onUserFormResetClick',
                                                                     scope: 'controller'
                                                                 }
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            xtype: 'gridpanel',
-                                            region: 'center',
-                                            reference: 'usersGrid',
-                                            id: 'UsersGrid',
-                                            itemId: 'UsersGrid',
-                                            margin: '5 0 5 0',
-                                            header: false,
-                                            autoLoad: true,
-                                            forceFit: false,
-                                            store: 'getUsers',
-                                            columns: [
-                                                {
-                                                    xtype: 'gridcolumn',
-                                                    autoRender: true,
-                                                    width: 198,
-                                                    sortable: true,
-                                                    dataIndex: 'USERFIRSTANDLASTNAME',
-                                                    text: 'Adı Soyadı'
-                                                },
-                                                {
-                                                    xtype: 'gridcolumn',
-                                                    fixed: true,
-                                                    autoRender: true,
-                                                    width: 121,
-                                                    dataIndex: 'USERNAME',
-                                                    text: 'Kullanıcı Adı'
-                                                },
-                                                {
-                                                    xtype: 'gridcolumn',
-                                                    fixed: true,
-                                                    autoRender: true,
-                                                    width: 208,
-                                                    dataIndex: 'USERTITLE',
-                                                    text: 'Ünvanı'
-                                                },
-                                                {
-                                                    xtype: 'gridcolumn',
-                                                    fixed: true,
-                                                    autoRender: true,
-                                                    width: 203,
-                                                    dataIndex: 'USEREMAIL',
-                                                    text: 'Email'
-                                                },
-                                                {
-                                                    xtype: 'gridcolumn',
-                                                    fixed: true,
-                                                    autoRender: true,
-                                                    dataIndex: 'USERROLENAME',
-                                                    text: 'Rolü'
-                                                },
-                                                {
-                                                    xtype: 'gridcolumn',
-                                                    fixed: true,
-                                                    autoRender: true,
-                                                    dataIndex: 'USERSTATUSNAME',
-                                                    text: 'Statü'
-                                                }
-                                            ],
-                                            viewConfig: {
-                                                id: 'userGrid',
-                                                itemId: 'userGrid',
-                                                listeners: {
-                                                    rowclick: {
-                                                        fn: 'onUserGridRowClick',
-                                                        scope: 'controller'
-                                                    }
-                                                }
-                                            },
-                                            dockedItems: [
-                                                {
-                                                    xtype: 'pagingtoolbar',
-                                                    dock: 'bottom',
-                                                    id: 'usersGridPaging',
-                                                    itemId: 'usersGridPaging',
-                                                    displayInfo: true,
-                                                    items: [
-                                                        {
-                                                            xtype: 'splitbutton',
-                                                            iconCls: 'fa fa-print',
-                                                            text: 'Yazdır',
-                                                            menu: {
-                                                                xtype: 'menu',
-                                                                items: [
-                                                                    {
-                                                                        xtype: 'menuitem',
-                                                                        id: 'excel',
-                                                                        iconCls: 'fa fa-file-pdf-o',
-                                                                        text: 'Pdf',
-                                                                        listeners: {
-                                                                            click: {
-                                                                                fn: 'onUserPdfClick',
-                                                                                scope: 'controller'
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                ]
                                                             }
                                                         }
                                                     ]
@@ -1269,8 +1302,10 @@ Ext.define('byzCorp.view.MainView', {
                                                                     id: 'cmbLookUpDetailStatus',
                                                                     emptyText: 'Statü',
                                                                     autoLoadOnValue: true,
+                                                                    displayField: 'LOOKUPDETAILNAME',
                                                                     minChars: 1,
-                                                                    store: 'getLudStatus'
+                                                                    store: 'getLudStatus',
+                                                                    valueField: 'LOOKUPDETAILID'
                                                                 }
                                                             ]
                                                         },
@@ -1303,15 +1338,15 @@ Ext.define('byzCorp.view.MainView', {
                                                                 {
                                                                     xtype: 'button',
                                                                     flex: 1,
-                                                                    reference: 'userFormReset',
-                                                                    id: 'userFormReset2',
+                                                                    reference: 'lookUpDetailFormReset',
+                                                                    id: 'lookUpDetailFormReset',
                                                                     margin: '5 5 5 5',
                                                                     ui: 'yellow-small',
                                                                     iconCls: 'fa fa-eraser',
                                                                     text: 'Temizle',
                                                                     listeners: {
                                                                         click: {
-                                                                            fn: 'onUserFormResetClick11',
+                                                                            fn: 'lookUpDetailFormResetClick',
                                                                             scope: 'controller'
                                                                         }
                                                                     }

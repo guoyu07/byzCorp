@@ -102,13 +102,7 @@ Ext.define('byzCorp.view.MainView', {
                                     iconCls: 'fa fa-graduation-cap',
                                     text: 'Öğrenci İşlemleri',
                                     tooltip: 'Öğrenci kayıt/güncelle/sil işlemlerini tek bir ekrandan kolayca yapın..',
-                                    focusable: true,
-                                    listeners: {
-                                        click: {
-                                            fn: 'onOgrenciIslemleriClick',
-                                            scope: 'controller'
-                                        }
-                                    }
+                                    focusable: true
                                 },
                                 {
                                     xtype: 'menuitem',
@@ -208,6 +202,13 @@ Ext.define('byzCorp.view.MainView', {
                                             width: 145,
                                             dataIndex: 'STUDENTPERIOD',
                                             text: 'Aktif Dönem'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            autoRender: true,
+                                            width: 76,
+                                            dataIndex: 'STUDENTSTATUS',
+                                            text: 'Statü'
                                         }
                                     ],
                                     viewConfig: {
@@ -223,6 +224,7 @@ Ext.define('byzCorp.view.MainView', {
                                         {
                                             xtype: 'pagingtoolbar',
                                             dock: 'bottom',
+                                            id: 'studentsGridPaging',
                                             width: 360,
                                             afterPageText: '{0}',
                                             beforePageText: 'Sayfa',
@@ -325,7 +327,9 @@ Ext.define('byzCorp.view.MainView', {
                                                 },
                                                 {
                                                     xtype: 'combobox',
+                                                    formBind: true,
                                                     reference: 'cmbStudentDepartment',
+                                                    autoRender: true,
                                                     id: 'cmbStudentDepartment',
                                                     emptyText: 'Bölümü',
                                                     autoLoadOnValue: true,
@@ -336,6 +340,7 @@ Ext.define('byzCorp.view.MainView', {
                                                 },
                                                 {
                                                     xtype: 'combobox',
+                                                    formBind: true,
                                                     reference: 'cmbStudentClass',
                                                     id: 'cmbStudentClass',
                                                     emptyText: 'Sınıfı',
@@ -347,7 +352,7 @@ Ext.define('byzCorp.view.MainView', {
                                                 },
                                                 {
                                                     xtype: 'combobox',
-                                                    formBind: false,
+                                                    formBind: true,
                                                     reference: 'cmbStudentPeriod',
                                                     id: 'cmbStudentPeriod',
                                                     emptyText: 'Aktif Dönem',
@@ -359,16 +364,15 @@ Ext.define('byzCorp.view.MainView', {
                                                 },
                                                 {
                                                     xtype: 'combobox',
-                                                    formBind: false,
-                                                    reference: 'cmbStudentStatus',
-                                                    id: 'cmbStudentStatus',
+                                                    formBind: true,
+                                                    reference: 'cmbStudentStatu',
+                                                    id: 'cmbStudentStatu',
                                                     emptyText: 'Statü',
                                                     autoLoadOnValue: true,
                                                     displayField: 'LOOKUPDETAILNAME',
                                                     minChars: 0,
                                                     store: 'getLudStatus',
-                                                    valueField: 'LOOKUPDETAILID',
-                                                    valueNotFoundText: 'Kayıt bulunamadı'
+                                                    valueField: 'LOOKUPDETAILSTATUS'
                                                 }
                                             ]
                                         },
@@ -503,7 +507,7 @@ Ext.define('byzCorp.view.MainView', {
                                                 id: 'internShipGrid',
                                                 listeners: {
                                                     rowclick: {
-                                                        fn: 'onInternShipGridRowClick1',
+                                                        fn: 'onInternShipGridRowClick',
                                                         scope: 'controller'
                                                     }
                                                 }
@@ -515,7 +519,6 @@ Ext.define('byzCorp.view.MainView', {
                                                     width: 360,
                                                     displayInfo: true,
                                                     prependButtons: true,
-                                                    store: 'getInternShips',
                                                     items: [
                                                         {
                                                             xtype: 'splitbutton',
@@ -815,7 +818,7 @@ Ext.define('byzCorp.view.MainView', {
                                                             id: 'cmbLookUpDetailStatus1',
                                                             emptyText: 'Statü',
                                                             minChars: 1,
-                                                            store: 'getLudStatus'
+                                                            store: 'getLudInternShipStatus'
                                                         }
                                                     ],
                                                     dockedItems: [
@@ -858,13 +861,7 @@ Ext.define('byzCorp.view.MainView', {
                                                                     margin: '5 5 5 5',
                                                                     ui: 'notRed-small',
                                                                     iconCls: 'fa fa-trash-o',
-                                                                    text: 'Sil',
-                                                                    listeners: {
-                                                                        click: {
-                                                                            fn: 'onDeleteInternShipClick1',
-                                                                            scope: 'controller'
-                                                                        }
-                                                                    }
+                                                                    text: 'Sil'
                                                                 }
                                                             ]
                                                         }
@@ -974,7 +971,7 @@ Ext.define('byzCorp.view.MainView', {
                                                             formBind: true,
                                                             reference: 'cmbUserStatus',
                                                             id: 'cmbUserStatus',
-                                                            emptyText: 'Aktif',
+                                                            emptyText: 'Statü',
                                                             autoLoadOnValue: true,
                                                             displayField: 'LOOKUPDETAILNAME',
                                                             minChars: 1,

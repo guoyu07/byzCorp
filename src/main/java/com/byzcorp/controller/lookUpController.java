@@ -47,10 +47,10 @@ public class lookUpController {
     }
 
     @RequestMapping(value = "/getLookUpDetails")
-    public List<Map<String, Object>> getLookUpDetails(Long lookUpId) {
+    public List<Map<String, Object>> getLookUpDetails(Long lookUpId, String query) {
         List<Map<String, Object>> result = null;
         try {
-            result = service.getLookUpDetails(lookUpId);
+            result = service.getLookUpDetails(lookUpId, query);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,10 +58,10 @@ public class lookUpController {
     }
 
     @RequestMapping(value = "/getLudTitles")
-    public List<Map<String, Object>> getLudTitles() {
+    public List<Map<String, Object>> getLudTitles(String query) {
         List<Map<String, Object>> result = null;
         try {
-            result = service.getLudTitles();
+            result = service.getLudTitles(query);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -69,10 +69,10 @@ public class lookUpController {
     }
 
     @RequestMapping(value = "/getLudPeriods")
-    public List<Map<String, Object>> getLudPeriods() {
+    public List<Map<String, Object>> getLudPeriods(String query) {
         List<Map<String, Object>> result = null;
         try {
-            result = service.getLudPeriods();
+            result = service.getLudPeriods(query);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -80,10 +80,10 @@ public class lookUpController {
     }
 
     @RequestMapping(value = "/getLudDepartments")
-    public List<Map<String, Object>> getLudDepartments() {
+    public List<Map<String, Object>> getLudDepartments(String query) {
         List<Map<String, Object>> result = null;
         try {
-            result = service.getLudDepartments();
+            result = service.getLudDepartments(query);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -91,10 +91,10 @@ public class lookUpController {
     }
 
     @RequestMapping(value = "/getLudClasses")
-    public List<Map<String, Object>> getLudClasses() {
+    public List<Map<String, Object>> getLudClasses(String query) {
         List<Map<String, Object>> result = null;
         try {
-            result = service.getLudClasses();
+            result = service.getLudClasses(query);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -102,10 +102,10 @@ public class lookUpController {
     }
 
     @RequestMapping(value = "/getLudStatus")
-    public List<Map<String, Object>> getLudStatus() {
+    public List<Map<String, Object>> getLudStatus(String query) {
         List<Map<String, Object>> result = null;
         try {
-            result = service.getLudStatus();
+            result = service.getLudStatus(query);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -113,10 +113,10 @@ public class lookUpController {
     }
 
     @RequestMapping(value = "/getLudInternShipStatus")
-    public List<Map<String, Object>> getLudInternShipStatus() {
+    public List<Map<String, Object>> getLudInternShipStatus(String query) {
         List<Map<String, Object>> result = null;
         try {
-            result = service.getLudInternShipStatus();
+            result = service.getLudInternShipStatus(query);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -124,10 +124,10 @@ public class lookUpController {
     }
 
     @RequestMapping(value = "/getLudInternShipTypes")
-    public List<Map<String, Object>> getLudInternShipTypes() {
+    public List<Map<String, Object>> getLudInternShipTypes(String query) {
         List<Map<String, Object>> result = null;
         try {
-            result = service.getLudInternShipTypes();
+            result = service.getLudInternShipTypes(query);
         } catch (Exception e) {
             e.printStackTrace();
         }

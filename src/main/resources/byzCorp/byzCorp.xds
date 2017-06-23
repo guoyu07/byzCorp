@@ -8,13 +8,13 @@
         },
         "canvasControls": {
             "viewportSize": {
-                "name": "Large",
+                "name": "Small",
                 "builtIn": true,
-                "height": 1024,
-                "width": 1280
+                "height": 600,
+                "width": 800
             }
         },
-        "urlPrefix": "http://localhost:8088/",
+        "urlPrefix": "http://localhost:20183/",
         "exportPath": "C:/Users/byz/IdeaProjects/byzcorp/src/main/webapp/",
         "lockUrlPrefix": true,
         "buildShouldOverwriteIndex": true,
@@ -24,7 +24,7 @@
         "genTimestamps": false,
         "cacheBust": false,
         "installStatus": "Not Installed",
-        "urlPrefixTemplate": "http://localhost:8088/{path}",
+        "urlPrefixTemplate": "http://localhost:20183/{path}",
         "sdkPath": "",
         "lastBuildSelection": {
             "value": "webBuild",

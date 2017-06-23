@@ -49,9 +49,6 @@ Ext.define('byzCorp.model.getStudents', {
             name: 'STUDENTSTATUS'
         },
         {
-            name: 'STUDENTSTATUSNAME'
-        },
-        {
             name: 'STUDENTID'
         },
         {

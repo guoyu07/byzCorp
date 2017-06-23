@@ -28,14 +28,14 @@ public class studentDao {
                 " s.studentCountryId," +
                 " s.studentId," +
                 " s.studentNo," +
-                " s.STUDENTSTATUS," +
-                " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 7 and lud.lookUpDetailId = s.studentStatus) as studentStatusName," +
+                " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 7 and lud.lookUpDetailId = s.studentStatusId) as studentStatus," +
                 //" case s.studentStatus when 1 then 'Aktif' else 'Pasif' end as studentStatusName," +
                 " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.studentPeriodId) as studentPeriod," +
                 " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 3 and lud.lookUpDetailId = s.studentClassId) as studentClass," +
                 " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 2 and lud.lookUpDetailId = s.studentDepartmentId) as studentDepartment," +
                 " (select lud.lookUpDetailId from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.studentPeriodId) as studentPeriodId," +
                 " (select lud.lookUpDetailId from ktu.LOOKUPDETAIL lud where lud.lookUpId = 3 and lud.lookUpDetailId = s.studentClassId) as studentClassId," +
+                " (select lud.lookUpDetailId from ktu.LOOKUPDETAIL lud where lud.lookUpId = 7 and lud.lookUpDetailId = s.studentStatusId) as studentStatusId," +
                 " (select lud.lookUpDetailId from ktu.LOOKUPDETAIL lud where lud.lookUpId = 2 and lud.lookUpDetailId = s.studentDepartmentId) as studentDepartmentId" +
                 " from ktu.STUDENT s";
         if (txtValue != null) {
@@ -43,7 +43,7 @@ public class studentDao {
                     " or lower(s.studentLastName) like lower('%" + txtValue + "%')" +
                     " or s.studentCountryId like lower('%" + txtValue + "%')" +
                     " or s.studentNo like lower('%" + txtValue + "%')" +
-                    " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 7 and lud.lookUpDetailId = s.studentStatus) like lower('%" + txtValue + "%')" +
+                    " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 7 and lud.lookUpDetailId = s.studentStatusId) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.studentPeriodId) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 3 and lud.lookUpDetailId = s.studentClassId) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 2 and lud.lookUpDetailId = s.studentDepartmentId) like lower('%" + txtValue + "%')";
@@ -64,7 +64,7 @@ public class studentDao {
                         " STUDENTPERIODID," +
                         " STUDENTCLASSID," +
                         " STUDENTDEPARTMENTID," +
-                        " studentStatus) values (" +
+                        " studentStatusId) values (" +
                         "ktu.studentsSeq.nextval,'"
                         + txtStudentNo + "','"
                         + txtStudentFirstName + "','"
@@ -85,7 +85,7 @@ public class studentDao {
                         " u.STUDENTPERIODID='" + txtStudentPeriodId + "'," +
                         " u.STUDENTCLASSID=" + cmbStudentClassId + "," +
                         " u.STUDENTDEPARTMENTID=" + cmbStudentDepartmentId + "," +
-                        " u.studentStatus=" + cmbStudentStatus +
+                        " u.studentStatusId=" + cmbStudentStatus +
                         " where u.studentId=" + txtStudentId;
                 System.out.println(" row updated.");
             }

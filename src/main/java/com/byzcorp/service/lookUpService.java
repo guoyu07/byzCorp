@@ -26,33 +26,33 @@ public class lookUpService {
         return dao.getActiveLookUps(lookUpName);
     }
 
-    public List<Map<String,Object>> getLookUpDetails (Long lookUpId) throws SQLException {
-        return dao.getLookUpDetails(lookUpId);
+    public List<Map<String,Object>> getLookUpDetails (Long lookUpId, String query) throws SQLException {
+        return dao.getLookUpDetails(lookUpId, query);
     }
 
-    public List<Map<String,Object>> getLudTitles () throws SQLException {
-        return dao.getLudTitles();
+    public List<Map<String,Object>> getLudTitles (String query) throws SQLException {
+        return dao.getLudTitles(query);
     }
-    public List<Map<String,Object>> getLudPeriods () throws SQLException {
-        return dao.getLudPeriods();
+    public List<Map<String,Object>> getLudPeriods (String query) throws SQLException {
+        return dao.getLudPeriods(query);
     }
-    public List<Map<String,Object>> getLudDepartments () throws SQLException {
-        return dao.getLudDepartments();
+    public List<Map<String,Object>> getLudDepartments (String query) throws SQLException {
+        return dao.getLudDepartments(query);
     }
-    public List<Map<String,Object>> getLudClasses () throws SQLException {
-        return dao.getLudClasses();
-    }
-
-    public List<Map<String,Object>> getLudStatus () throws SQLException {
-        return dao.getLudStatus();
+    public List<Map<String,Object>> getLudClasses (String query) throws SQLException {
+        return dao.getLudClasses(query);
     }
 
-    public List<Map<String,Object>> getLudInternShipStatus () throws SQLException {
-        return dao.getLudInternShipStatus();
+    public List<Map<String,Object>> getLudStatus (String query) throws SQLException {
+        return dao.getLudStatus(query);
     }
 
-    public List<Map<String,Object>> getLudInternShipTypes () throws SQLException {
-        return dao.getLudInternShipTypes();
+    public List<Map<String,Object>> getLudInternShipStatus (String query) throws SQLException {
+        return dao.getLudInternShipStatus(query);
+    }
+
+    public List<Map<String,Object>> getLudInternShipTypes (String query) throws SQLException {
+        return dao.getLudInternShipTypes(query);
     }
     @Transactional(readOnly = false)
     public Boolean saveOrUpdateLookUpDetail(JSONObject formData, Long lookUpId){
