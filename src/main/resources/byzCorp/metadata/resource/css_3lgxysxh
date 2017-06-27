@@ -1,0 +1,24 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css_3lgxysxh",
+        "id": "generalCss",
+        "remote": true,
+        "update": "full",
+        "url": "resources/css/generalCss.css"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "id": "string",
+        "remote": "boolean",
+        "update": "string",
+        "url": "uri"
+    },
+    "name": "css",
+    "designerId": "0a213bd2-25fa-430d-99d1-0a3a1748a694"
+}

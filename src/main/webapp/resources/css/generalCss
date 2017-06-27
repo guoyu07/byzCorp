@@ -1,0 +1,8 @@
+.firstRow .x-grid-cell
+    {
+        background-color:lightgreen;
+    }
+.lastRow .x-grid-cell
+    {
+        background-color:#FF8080;
+    }

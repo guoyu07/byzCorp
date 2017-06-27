@@ -1,0 +1,58 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "getInternShipsDetails",
+        "model": "getInternShipDetails",
+        "storeId": "getInternShipsDetails"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "getInternShips1",
+    "designerId": "9a3435a0-c937-4830-bc0a-8bb4c31dffd8",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "getInternShipsDetails",
+                "url": "/byzCorp/internShip/getInternShipsDetails"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "url": "string"
+            },
+            "name": "MyAjaxProxy1",
+            "designerId": "07949c66-4fce-4e1f-bd9b-7d3c45eea966",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "getInternShipsDetails"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "051fe884-14d9-405e-ae3b-e6aea866ce32"
+                }
+            ]
+        }
+    ]
+}
