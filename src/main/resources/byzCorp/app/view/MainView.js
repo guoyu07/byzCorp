@@ -1363,7 +1363,7 @@ Ext.define('byzCorp.view.MainView', {
                                                         reference: 'lookUpDetailGrid',
                                                         height: 207,
                                                         margin: '0 0 0 0',
-                                                        collapsed: false,
+                                                        collapsed: true,
                                                         collapsible: true,
                                                         title: 'LookUp Detayları',
                                                         forceFit: true,

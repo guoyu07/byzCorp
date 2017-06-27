@@ -4586,7 +4586,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "collapsed": false,
+                                                "collapsed": true,
                                                 "collapsible": true,
                                                 "designer|displayName": "lookUpDetailGrid",
                                                 "forceFit": true,
