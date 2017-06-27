@@ -16,7 +16,7 @@ public class userDao {
     @Autowired
     private JdbcTemplate sql;
 
-//byrmbyz branch test 1
+//byrmbyz branch test 2
     public List<Map<String, Object>> getUser(String userName, String password) throws SQLException {
         String query = "select" +
                 " u.userFirstName," +
