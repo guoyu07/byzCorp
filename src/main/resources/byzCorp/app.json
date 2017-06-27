@@ -53,6 +53,11 @@
          "exclude": [
             "fashion"
          ]
+      },
+      {
+         "path": "resources/css/generalCss.css",
+         "remote": true,
+         "update": "full"
       }
    ],
    "loader": {

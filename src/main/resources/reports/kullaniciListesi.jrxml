@@ -14,7 +14,7 @@
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<title>
+	<pageHeader>
 		<band height="73" splitType="Stretch">
 			<staticText>
 				<reportElement x="505" y="0" width="5" height="15" uuid="ce611000-aaab-405a-ade6-0dfe07e39084"/>
@@ -147,9 +147,6 @@
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+"/"]]></textFieldExpression>
 			</textField>
 		</band>
-	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
 		<band height="29" splitType="Stretch">
@@ -339,13 +336,23 @@
 			</textField>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="14">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="14" backcolor="#CCCCFF" uuid="0bd745aa-a5b1-40f7-9710-f05a0d1b3a87"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" isBold="true" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[byzCorp © 2017]]></text>
+			</staticText>
+		</band>
 	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>

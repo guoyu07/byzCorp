@@ -45,12 +45,43 @@ public class internShipController {
         return result;
     }
 
+    @RequestMapping(value = "/getInternShipsDetails")
+    public List<Map<String, Object>> getInternShipsDetails(Long internShipId, String query) {
+        List<Map<String, Object>> result = null;
+        try {
+            result = service.getInternShipsDetails(internShipId, query);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    @RequestMapping(value = "/getInternShipDetailsCount")
+    public List<Map<String, Object>> getInternShipDetailsCount(Long internShipId) {
+        List<Map<String, Object>> result = null;
+        try {
+            result = service.getInternShipDetailsCount(internShipId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
     @RequestMapping(value = "/saveOrUpdateInternShip")
-    public @ResponseBody void saveOrUpdateInternShip(HttpServletResponse response, HttpServletRequest request) throws IOException, ParseException {
+    public @ResponseBody void saveOrUpdateInternShip(HttpServletResponse response, HttpServletRequest request) throws IOException, ParseException, SQLException {
         JSONObject formData = studentService.reqGetJsonObject(request.getParameter("data"));
         JSONObject sendJSON = new JSONObject();
-        Boolean success = service.saveOrUpdateInternShip(formData);
-        sendJSON.put("success", success);
+        sendJSON = service.saveOrUpdateInternShip(formData);
+        //sendJSON.put("success", success);
+        response.getWriter().write(sendJSON.toString());
+    }
+
+    @RequestMapping(value = "/saveOrUpdateInternShipsDetail")
+    public @ResponseBody void saveOrUpdateInternShipsDetail(HttpServletResponse response, HttpServletRequest request) throws IOException, ParseException, SQLException {
+        JSONObject formData = studentService.reqGetJsonObject(request.getParameter("data"));
+        JSONObject selected = studentService.reqGetJsonObject(request.getParameter("selected"));
+        JSONObject sendJSON = new JSONObject();
+        sendJSON = service.saveOrUpdateInternShipsDetail(formData, selected);
         response.getWriter().write(sendJSON.toString());
     }
 
@@ -79,6 +110,15 @@ public class internShipController {
         Long internShipId = Long.parseLong(request.getParameter("internShipId"));
         JSONObject sendJSON = new JSONObject();
         Boolean success = service.deleteInternShip(internShipId);
+        sendJSON.put("success", success);
+        response.getWriter().write(sendJSON.toString());
+    }
+
+    @RequestMapping(value = "/deleteInternShipDetail")
+    public @ResponseBody void deleteInternShipDetail(HttpServletResponse response, HttpServletRequest request) throws IOException {
+        Long internShipDetailId = Long.parseLong(request.getParameter("internShipDetailId"));
+        JSONObject sendJSON = new JSONObject();
+        Boolean success = service.deleteInternShipDetail(internShipDetailId);
         sendJSON.put("success", success);
         response.getWriter().write(sendJSON.toString());
     }

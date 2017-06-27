@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="kullaniciListesi" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4d19a5dd-a314-45ac-b9d9-f495bb775016">
 	<property name="ireport.zoom" value="1.2100000000000002"/>
-	<property name="ireport.x" value="11"/>
+	<property name="ireport.x" value="13"/>
 	<property name="ireport.y" value="0"/>
 	<field name="STUDENTNO" class="java.lang.String"/>
 	<field name="STUDENTFIRSTNAME" class="java.lang.String"/>
@@ -9,11 +9,11 @@
 	<field name="STUDENTDEPARTMENT" class="java.lang.String"/>
 	<field name="STUDENTCLASS" class="java.lang.String"/>
 	<field name="STUDENTPERIOD" class="java.lang.String"/>
-	<field name="STUDENTSTATUSNAME" class="java.lang.String"/>
+	<field name="STUDENTSTATUS" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<title>
+	<pageHeader>
 		<band height="74" splitType="Stretch">
 			<staticText>
 				<reportElement x="115" y="19" width="325" height="20" uuid="c4b1db95-bcbd-48cc-83aa-c18e8a1d549b"/>
@@ -146,9 +146,6 @@
 				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
-	</title>
-	<pageHeader>
-		<band height="40" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
 		<band height="29" splitType="Stretch">
@@ -379,7 +376,7 @@
 					<font size="9" pdfEncoding="Cp1254"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{STUDENTSTATUSNAME}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{STUDENTSTATUS}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="0" width="25" height="20" uuid="c48cb26b-0667-4eee-997d-b83bc3dce305"/>
@@ -398,13 +395,23 @@
 			</textField>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="14" backcolor="#CCCCFF" uuid="055a55a9-4019-4c9c-887e-c1b419b4b2d9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="9" isBold="true" pdfEncoding="Cp1254"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[byzCorp © 2017]]></text>
+			</staticText>
+		</band>
 	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>

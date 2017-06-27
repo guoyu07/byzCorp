@@ -1,1 +1,1 @@
-{"_comment":"Please don't edit. This is Architect data.","name":"byzCorp","resources":[],"requires":["font-awesome","exporter"],"theme":"theme-crisp-21ce10e4-b2c9-411c-b677-def2390efa03","classpath":null,"css":[],"js":[]}
+{"_comment":"Please don't edit. This is Architect data.","name":"byzCorp","resources":[],"requires":["font-awesome","exporter"],"theme":"theme-crisp-21ce10e4-b2c9-411c-b677-def2390efa03","classpath":null,"css":[{"path":"resources/css/generalCss","remote":true,"update":"full"}],"js":[]}

@@ -27,6 +27,16 @@ public class lookUpDao {
         return sql.queryForList(query);
     }
 
+    public List<Map<String,Object>> getLookUpDetail (Long lookUpDetailId) throws SQLException {
+        String query = "select" +
+                " lud.LOOKUPDETAILID," +
+                " lud.LOOKUPDETAILNAME," +
+                " lud.LOOKUPDETAILVALUE" +
+                " from ktu.LOOKUPDETAIL lud" +
+                " where lud.lookUpDetailId = "+"'"+lookUpDetailId+"'";
+        return sql.queryForList(query);
+    }
+
     public List<Map<String,Object>> getActiveLookUps (String lookUpName) throws SQLException {
         String query = "select" +
                 " lu.lookUpId," +
@@ -160,6 +170,24 @@ public class lookUpDao {
                 " lud.lookUpDetailValue" +
                 " from ktu.LOOKUPDETAIL lud" +
                 " where lud.LOOKUPID=6";//Staj Statüleri.
+        if(query!=null){
+            q +=" and lower(lud.lookUpDetailName) like lower('%"+query+"%')";
+        }
+        return sql.queryForList(q);
+    }
+
+    public List<Map<String,Object>> getLudInternShipPlace(String query) throws SQLException {
+        if(query==""){
+            query=null;
+        }
+        String q = "select" +
+                " lud.lookUpDetailId," +
+                " lud.lookUpId," +
+                " lud.lookUpDetailName," +
+                " lud.lookUpDetailStatus," +
+                " lud.lookUpDetailValue" +
+                " from ktu.LOOKUPDETAIL lud" +
+                " where lud.LOOKUPID=9";//Staj Yerleri.
         if(query!=null){
             q +=" and lower(lud.lookUpDetailName) like lower('%"+query+"%')";
         }

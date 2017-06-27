@@ -27,7 +27,8 @@ Ext.application({
         'getRole',
         'Status',
         'getStudents',
-        'getInternShips'
+        'getInternShips',
+        'getInternShipDetails'
     ],
     stores: [
         'getUsers',
@@ -42,7 +43,9 @@ Ext.application({
         'getLudInternShipStatus',
         'getLudInternShipTypes',
         'getInternShips',
-        'getLudStatus'
+        'getLudStatus',
+        'getLudInternShipPlace',
+        'getInternShipsDetails'
     ],
     views: [
         'MainView',

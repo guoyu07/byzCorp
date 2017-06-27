@@ -51,6 +51,31 @@ public class studentDao {
         return sql.queryForList(query);
     }
 
+    public List<Map<String, Object>> getStudent(Long studentId) throws SQLException {
+
+        String query = "select" +
+                " s.studentNo ||'-'||s.studentFirstName ||' '|| s.studentLastName as studentIdandFirstandLastName," +
+                " s.studentFirstName ||' '|| s.studentLastName as studentFirstandLastName," +
+                " s.studentFirstName," +
+                " s.studentLastName," +
+                " s.studentCountryId," +
+                " s.studentId," +
+                " s.studentNo," +
+                " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 7 and lud.lookUpDetailId = s.studentStatusId) as studentStatus," +
+                " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.studentPeriodId) as studentPeriod," +
+                " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 3 and lud.lookUpDetailId = s.studentClassId) as studentClass," +
+                " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 2 and lud.lookUpDetailId = s.studentDepartmentId) as studentDepartment," +
+                " (select lud.lookUpDetailId from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.studentPeriodId) as studentPeriodId," +
+                " (select lud.lookUpDetailId from ktu.LOOKUPDETAIL lud where lud.lookUpId = 3 and lud.lookUpDetailId = s.studentClassId) as studentClassId," +
+                " (select lud.lookUpDetailId from ktu.LOOKUPDETAIL lud where lud.lookUpId = 7 and lud.lookUpDetailId = s.studentStatusId) as studentStatusId," +
+                " (select lud.lookUpDetailId from ktu.LOOKUPDETAIL lud where lud.lookUpId = 2 and lud.lookUpDetailId = s.studentDepartmentId) as studentDepartmentId" +
+                " from ktu.STUDENT s";
+        if (studentId != null) {
+            query += " where studentId =" + studentId;
+        }
+        return sql.queryForList(query);
+    }
+
     public Boolean saveOrUpdateStudent(String txtStudentId, String txtStudentNo, String txtStudentFirstName, String txtStudentLastName, String txtStudentCountryId, String txtStudentPeriodId, Long cmbStudentClassId, Long cmbStudentDepartmentId, Long cmbStudentStatus) {
         String query = "";
         try {

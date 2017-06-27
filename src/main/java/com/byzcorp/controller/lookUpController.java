@@ -35,6 +35,17 @@ public class lookUpController {
         return result;
     }
 
+    @RequestMapping(value = "/getLookUpDetail")
+    public List<Map<String, Object>> getLookUpDetail(Long lookUpDetailId) {
+        List<Map<String, Object>> result = null;
+        try {
+            result = service.getLookUpDetail(lookUpDetailId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
     @RequestMapping(value = "/getLookUps")
     public List<Map<String, Object>> getLookUps(String lookUpName) {
         List<Map<String, Object>> result = null;
@@ -117,6 +128,17 @@ public class lookUpController {
         List<Map<String, Object>> result = null;
         try {
             result = service.getLudInternShipStatus(query);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    @RequestMapping(value = "/getLudInternShipPlace")
+    public List<Map<String, Object>> getLudInternShipPlace(String query) {
+        List<Map<String, Object>> result = null;
+        try {
+            result = service.getLudInternShipPlace(query);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -6,12 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "lockview",
+        "designer|userAlias": "lockedview",
         "designer|userClassName": "LockView",
-        "height": 250,
+        "height": null,
+        "id": null,
+        "itemId": "lockedView",
         "layout": "border",
-        "reference": "lockView",
-        "width": 400
+        "reference": "lockedview",
+        "width": null
     },
     "configAlternates": {
         "designer|initialView": "boolean",
@@ -20,7 +22,9 @@
         "height": "auto",
         "layout": "string",
         "reference": "string",
-        "width": "auto"
+        "width": "auto",
+        "id": "string",
+        "itemId": "string"
     },
     "name": "LoginView1",
     "designerId": "4e2cfa9b-7b15-4b7e-a788-5894734a1042",
@@ -36,7 +40,7 @@
             "codeClass": null,
             "userConfig": {
                 "bodyStyle": [
-                    "background-image:url(resources/images/color.jpg) !important"
+                    "background-image:url(resources/images/w1.jpg) !important;background-size: 100%;"
                 ],
                 "container|align": "middle",
                 "container|pack": "center",
@@ -81,8 +85,8 @@
                     "userConfig": {
                         "container|align": "stretch",
                         "dock": null,
-                        "height": 128,
-                        "id": "loginLayout1",
+                        "height": 418,
+                        "id": "lockLayout",
                         "layout": "vbox",
                         "margin": "20 40 20 40",
                         "title": null,
@@ -102,6 +106,40 @@
                     "designerId": "beca71f4-5885-4da3-b52e-daf99d869cf5",
                     "cn": [
                         {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "corpLogo",
+                                "dock": "top",
+                                "height": 270,
+                                "id": "corpLogo1",
+                                "itemId": "corpLogo1",
+                                "layout|flex": 1,
+                                "margin": "5 5 5 5",
+                                "reference": "corpLogo",
+                                "src": "resources/images/logo_KTU.png",
+                                "width": 150
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "dock": "string",
+                                "height": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "reference": "string",
+                                "src": "uri",
+                                "margin": "auto",
+                                "width": "auto"
+                            },
+                            "name": "MyImg3",
+                            "designerId": "cbb33964-9b81-425d-8c26-6c53c5f48921"
+                        },
+                        {
                             "type": "Ext.form.Label",
                             "reference": {
                                 "name": "items",
@@ -112,7 +150,7 @@
                                 "disabled": true,
                                 "height": 100,
                                 "id": "lblUserLockInfo",
-                                "itemId": "lblUserLockInfo",
+                                "itemId": null,
                                 "layout|flex": 1,
                                 "margin": "5 5 5 5",
                                 "reference": "lblUserLockInfo",
@@ -132,6 +170,38 @@
                             "designerId": "ad28ff93-75d7-4c99-9b65-b0457929659e"
                         },
                         {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "height": 100,
+                                "hidden": true,
+                                "id": "lblUserIdLock",
+                                "itemId": null,
+                                "layout|flex": 1,
+                                "margin": "5 5 5 5",
+                                "reference": "lblUserIdLock",
+                                "text": "Kullanıcı Adı gelecek"
+                            },
+                            "configAlternates": {
+                                "disabled": "boolean",
+                                "height": "auto",
+                                "layout|flex": "number",
+                                "margin": "auto",
+                                "text": "string",
+                                "itemId": "string",
+                                "id": "string",
+                                "reference": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyLabel2",
+                            "designerId": "6a9e55df-facc-40ad-9f6b-b45f540920c2"
+                        },
+                        {
                             "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
@@ -143,8 +213,10 @@
                                 "fieldLabel": null,
                                 "hideEmptyLabel": false,
                                 "hideLabel": true,
+                                "id": "lockViewPassword",
                                 "inputType": "password",
-                                "margin": "5 5 5 5"
+                                "margin": "5 5 5 5",
+                                "reference": "lockViewPassword"
                             },
                             "configAlternates": {
                                 "emptyText": "string",
@@ -152,7 +224,9 @@
                                 "hideEmptyLabel": "boolean",
                                 "hideLabel": "boolean",
                                 "inputType": "string",
-                                "margin": "auto"
+                                "margin": "auto",
+                                "id": "string",
+                                "reference": "string"
                             },
                             "name": "MyTextField11",
                             "designerId": "d9a271bb-5034-4227-ac51-3489b362e658"
@@ -169,7 +243,7 @@
                                 "dock": null,
                                 "iconAlign": "right",
                                 "iconCls": "x-fa fa-angle-right",
-                                "id": "signIn4",
+                                "id": "signInLockView",
                                 "margin": "5 5 5 5",
                                 "text": "Giriş Yap",
                                 "ui": "loginGreen-small"
@@ -197,19 +271,53 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "onSignInClick",
+                                        "fn": "onSignInLockViewClick",
                                         "implHandler": [
-                                            "/*debugger;",
-                                            "var refs = this.getReferences();",
-                                            "form = button.up('loginform');",
-                                            "var mainview = Ext.create('widget.mainview');",
-                                            "mainview.show();",
-                                            "form.hide();*/",
                                             "debugger;",
                                             "var refs = this.getReferences();",
-                                            "var mainview = Ext.create('widget.mainview');",
-                                            "mainview.show();",
-                                            "refs.lockform.destroy();"
+                                            "var destroylockview =this.view;",
+                                            "Ext.Ajax.request({",
+                                            "    url:'/byzCorp/user/getUser',",
+                                            "    params : {",
+                                            "        userName : refs.lblUserIdLock.text,",
+                                            "        password : refs.lockViewPassword.getValue()",
+                                            "    },",
+                                            "    success : function(res){debugger;",
+                                            "        var api = Ext.decode(res.responseText);",
+                                            "        if(api.length>1){",
+                                            "            if(api[1].success){debugger;",
+                                            "                var userName = refs.lblUserIdLock.text;",
+                                            "                var password = refs.lockViewPassword.getValue();",
+                                            "",
+                                            "                if(api[0].USERNAME === userName){debugger;",
+                                            "                    if(api[0].USERPASSWORD === password){",
+                                            "                        refs.lockform.destroy();",
+                                            "                        //destroyLockview.destroy();",
+                                            "                        var mainview = Ext.create('widget.mainview');",
+                                            "                        var lblGet = mainview.getReferences().lblUserInfo;",
+                                            "                        var lblGetUserId = mainview.getReferences().lblUserId;",
+                                            "                        var lblNewValue = api[0].USERFIRSTNAME + ' '+ api[0].USERLASTNAME+ ' / '+api[0].USERTITLE;",
+                                            "                        var lblUserIdNewValue = api[0].USERID;",
+                                            "",
+                                            "                        lblGet.setText(lblNewValue);",
+                                            "                        lblGetUserId.setText(lblUserIdNewValue);",
+                                            "                    }else{",
+                                            "                        Ext.Msg.alert('Uyarı', 'Hatalı şifre girdiniz.');",
+                                            "                    }",
+                                            "",
+                                            "                }else{",
+                                            "                    Ext.Msg.alert('Uyarı', 'Hatalı kullanıcı adı girdiniz.');",
+                                            "                }",
+                                            "            }else{",
+                                            "                Ext.Msg.alert('Uyarı', 'Veri tabanında kayıt bulunamadı.');",
+                                            "            }",
+                                            "        }else{",
+                                            "            Ext.Msg.alert('Uyarı', 'Hatalı kullanıcı adı veya şifre girdiniz.');",
+                                            "",
+                                            "        }",
+                                            "",
+                                            "    }",
+                                            "});"
                                         ],
                                         "name": "click",
                                         "scope": "me"
@@ -220,7 +328,7 @@
                                         "name": "string",
                                         "scope": "string"
                                     },
-                                    "name": "onSignInClick",
+                                    "name": "onSignInLockViewClick",
                                     "designerId": "2825697d-8f4b-4d93-b210-b56a98b677d3"
                                 }
                             ]
@@ -237,7 +345,7 @@
                                 "dock": null,
                                 "iconAlign": "right",
                                 "iconCls": "fa fa-sign-out",
-                                "id": "signIn6",
+                                "id": "signOutLockView",
                                 "margin": "5 5 10 5",
                                 "text": "Çıkış",
                                 "ui": "notRed-small"
@@ -265,12 +373,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "onSignInClick21",
+                                        "fn": "onSignOutLockViewClick",
                                         "implHandler": [
+                                            "debugger;",
                                             "var refs = this.getReferences();",
                                             "var loginview = Ext.create('widget.loginview');",
-                                            "loginview.show();",
-                                            "refs.lockform.destroy();"
+                                            "var destroylockview = this.view;",
+                                            "refs.lockform.destroy();",
+                                            "loginview.show();"
                                         ],
                                         "name": "click",
                                         "scope": "me"
@@ -281,8 +391,8 @@
                                         "name": "string",
                                         "scope": "string"
                                     },
-                                    "name": "onSignInClick21",
-                                    "designerId": "b691e1e3-a872-4e66-88cb-cfad4c66b2e6"
+                                    "name": "onSignOutLockViewClick",
+                                    "designerId": "22fa4ef1-6cd2-4203-84ea-04f53336cbb9"
                                 }
                             ]
                         }

@@ -16,7 +16,8 @@
             "getRole",
             "Status",
             "getStudents",
-            "getInternShips"
+            "getInternShips",
+            "getInternShipDetails"
         ],
         "name": "byzCorp",
         "stores": [
@@ -32,7 +33,9 @@
             "getLudInternShipStatus",
             "getLudInternShipTypes",
             "getInternShips",
-            "getLudStatus"
+            "getLudStatus",
+            "getLudInternShipPlace",
+            "getInternShipsDetails"
         ],
         "views": [
             "MainView",

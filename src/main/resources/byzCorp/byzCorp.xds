@@ -8,10 +8,10 @@
         },
         "canvasControls": {
             "viewportSize": {
-                "name": "Small",
+                "name": "Medium",
                 "builtIn": true,
-                "height": 600,
-                "width": 800
+                "height": 768,
+                "width": 1024
             }
         },
         "urlPrefix": "http://localhost:20183/",
@@ -54,6 +54,7 @@
             "e973a0df-35c0-414d-bb0e-007a150fc703",
             "fbf6c87c-2da3-45bb-9a9d-1914c293e8b7",
             "e2c95570-3821-4362-ac5b-89af262e803f",
+            "9a3435a0-c937-4830-bc0a-8bb4c31dffd8",
             "45756b86-3e41-4b78-b85b-b1e10e7e02e7",
             "5105280e-32ae-44e2-b405-18a98c671070",
             "39e5a4d6-8da0-494d-a915-58b161c77cfc",
@@ -61,6 +62,7 @@
             "c38a92c7-eced-4be0-91e1-cdb1080af096",
             "fc7841ed-7366-4475-8385-32702310505b",
             "27f46349-0712-4bc0-8382-7acdba3d44e9",
+            "85c69e45-99bb-4866-ae9e-a50dbee30bbe",
             "094c3bad-9ab2-45cd-aa91-14cfd3d4878e",
             "8b741f1c-4e26-4f8c-8456-45ebb00dd7b3"
         ],
@@ -74,12 +76,14 @@
             "3883fa0d-10ce-499b-a53e-b6fa3151d9bd",
             "59e20ac0-9960-4f91-8e4d-d3a3ffafc3db",
             "ef186db3-80a9-420b-9ee2-306a8bb36fd5",
-            "6d369ab9-d614-4e94-9038-b0564d400864"
+            "6d369ab9-d614-4e94-9038-b0564d400864",
+            "47a8e700-8ad0-4311-911a-7e4d974d0351"
         ],
         "resource": [
             "efa3151d-f411-416b-a78d-276e3b22783a",
             "21ce10e4-b2c9-411c-b677-def2390efa03",
-            "9a1c5c10-30d2-41d1-bbb4-12ef7745387a"
+            "9a1c5c10-30d2-41d1-bbb4-12ef7745387a",
+            "0a213bd2-25fa-430d-99d1-0a3a1748a694"
         ],
         "app": [
             "application"

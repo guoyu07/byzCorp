@@ -18,27 +18,34 @@ Ext.define('byzCorp.view.LoginViewViewController', {
     alias: 'controller.loginview',
 
     onSignInClick: function(button, e, eOpts) {
+        debugger;
         var refs = this.getReferences();
+        var destroyloginView = this.view;
         Ext.Ajax.request({
             url:'/byzCorp/user/getUser',
             params : {
                 userName : refs.txtLoginUserName.getValue(),
                 password : refs.txtLoginPassword.getValue()
             },
-            success : function(res){
+            success : function(res){debugger;
                 var api = Ext.decode(res.responseText);
                 if(api.length>1){
                     if(api[1].success){
                         var userName = refs.txtLoginUserName.getValue();
                         var password = refs.txtLoginPassword.getValue();
 
-                        if(api[0].USERNAME === userName){
+                        if(api[0].USERNAME === userName){debugger;
                             if(api[0].USERPASSWORD === password){
+                                //loginView.destroy();
                                 refs.loginform.destroy();
                                 var mainview = Ext.create('widget.mainview');
                                 var lblGet = mainview.getReferences().lblUserInfo;
+                                var lblGetUserName = mainview.getReferences().lblUserId;
                                 var lblNewValue = api[0].USERFIRSTNAME + ' '+ api[0].USERLASTNAME+ ' / '+api[0].USERTITLE;
+                                var lblUserIdNewValue = api[0].USERNAME;
+
                                 lblGet.setText(lblNewValue);
+                                lblGetUserName.setText(lblUserIdNewValue);
                             }else{
                                 Ext.Msg.alert('Uyarı', 'Hatalı şifre girdiniz.');
                             }

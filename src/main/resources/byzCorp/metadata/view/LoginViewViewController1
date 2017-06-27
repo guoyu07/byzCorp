@@ -7,11 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "lockview",
-        "designer|userClassName": "LoginViewViewController1"
+        "designer|userClassName": "LoginViewViewController1",
+        "id": null
     },
     "configAlternates": {
         "designer|userAlias": "string",
-        "designer|userClassName": "string"
+        "designer|userClassName": "string",
+        "id": "string"
     },
     "name": "LoginViewViewController1",
     "designerId": "a861c542-05a2-4c56-a237-dbf421041f6c"

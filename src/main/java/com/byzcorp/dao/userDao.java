@@ -29,7 +29,7 @@ public class userDao {
                 " lud.LOOKUPDETAILNAME" +
                 " from ktu.LOOKUPDETAIL lud, ktu.LOOKUP lu" +
                 " where lu.LOOKUPID=lud.LOOKUPID" +
-                " and lud.LOOKUPDETAILVALUE=u.USERTITLEID and lud.LOOKUPID=1) as userTitle" +
+                " and lud.LOOKUPDETAILID=u.USERTITLEID and lud.LOOKUPID=1) as userTitle" +
 
                 " from ktu.USERS u" +
                 " where u.userName = " + "'" + userName + "'" +
@@ -54,7 +54,7 @@ public class userDao {
                 " u.userTitleId," +
                 " lud.lookUpDetailName as userTitle" +
                 " from ktu.USERS u, ktu.USERROLE ur, ktu.LOOKUPDETAIL lud" +
-                " where u.userRoleId = ur.userRoleId and lud.lookupid=1 and lud.lookupdetailValue = u.usertitleid";
+                " where u.userRoleId = ur.userRoleId and lud.lookupid=1 and lud.lookupdetailId = u.usertitleid";
         if (txtValue !=null) {
             query += " and (lower(u.userFirstName) like lower('%" + txtValue + "%')" +
                     " or lower(u.userLastName) like lower('%" + txtValue + "%')" +

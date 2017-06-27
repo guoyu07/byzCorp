@@ -56,6 +56,18 @@ Ext.define('byzCorp.model.getInternShips', {
         },
         {
             name: 'STUDENTNO'
+        },
+        {
+            name: 'INTERNSHIPDAY'
+        },
+        {
+            name: 'INTERNSHIPDONEDAY'
+        },
+        {
+            name: 'INTERNSHIPPLACE'
+        },
+        {
+            name: 'INTERNSHIPDESC'
         }
     ]
 });

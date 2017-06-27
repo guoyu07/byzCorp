@@ -22,6 +22,10 @@ public class lookUpService {
         return dao.getLookUp(lookUpId);
     }
 
+    public List<Map<String,Object>> getLookUpDetail (Long lookUpDetailId) throws SQLException {
+        return dao.getLookUpDetail(lookUpDetailId);
+    }
+
     public List<Map<String,Object>> getActiveLookUps (String lookUpName) throws SQLException {
         return dao.getActiveLookUps(lookUpName);
     }
@@ -49,6 +53,10 @@ public class lookUpService {
 
     public List<Map<String,Object>> getLudInternShipStatus (String query) throws SQLException {
         return dao.getLudInternShipStatus(query);
+    }
+
+    public List<Map<String,Object>> getLudInternShipPlace (String query) throws SQLException {
+        return dao.getLudInternShipPlace(query);
     }
 
     public List<Map<String,Object>> getLudInternShipTypes (String query) throws SQLException {

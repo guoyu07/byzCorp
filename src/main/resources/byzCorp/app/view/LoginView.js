@@ -21,6 +21,7 @@ Ext.define('byzCorp.view.LoginView', {
         'byzCorp.view.LoginViewViewModel',
         'byzCorp.view.LoginViewViewController',
         'Ext.form.Panel',
+        'Ext.Img',
         'Ext.form.Label',
         'Ext.form.field.Text',
         'Ext.button.Button',
@@ -40,7 +41,7 @@ Ext.define('byzCorp.view.LoginView', {
             region: 'center',
             reference: 'loginform',
             itemId: 'loginform',
-            bodyStyle: 'background-image:url(resources/images/color.jpg) !important',
+            bodyStyle: 'background-image:url(resources/images/w1.jpg) !important; background-size: 100%',
             title: 'Oturum Açın',
             titleAlign: 'center',
             layout: {
@@ -51,7 +52,7 @@ Ext.define('byzCorp.view.LoginView', {
             items: [
                 {
                     xtype: 'form',
-                    height: 140,
+                    height: 410,
                     id: 'loginLayout',
                     margin: '20 40 20 40',
                     width: 325,
@@ -59,12 +60,25 @@ Ext.define('byzCorp.view.LoginView', {
                         type: 'vbox',
                         align: 'stretch'
                     },
+                    dockedItems: [
+                        {
+                            xtype: 'image',
+                            flex: 1,
+                            dock: 'top',
+                            reference: 'corpLogo',
+                            height: 270,
+                            id: 'corpLogo',
+                            itemId: 'corpLogo',
+                            margin: '5 5 5 5',
+                            src: 'resources/images/logo_KTU.png'
+                        }
+                    ],
                     items: [
                         {
                             xtype: 'label',
                             flex: 1,
                             disabled: true,
-                            height: 100,
+                            height: 98,
                             margin: '5 5 5 5',
                             text: 'Hesabınıza giriş yapın'
                         },
@@ -142,6 +156,7 @@ Ext.define('byzCorp.view.LoginView', {
                             flex: 1,
                             disabled: true,
                             height: 100,
+                            id: 'lblNewAccount',
                             margin: '5 5 5 5',
                             text: 'Yeni hesap oluşturun'
                         },

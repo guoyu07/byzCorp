@@ -15,12 +15,13 @@
 
 Ext.define('byzCorp.view.LockView', {
     extend: 'Ext.container.Viewport',
-    alias: 'widget.lockview',
+    alias: 'widget.lockedview',
 
     requires: [
         'byzCorp.view.LoginViewViewModel1',
         'byzCorp.view.LoginViewViewController1',
         'Ext.form.Panel',
+        'Ext.Img',
         'Ext.form.Label',
         'Ext.form.field.Text',
         'Ext.button.Button'
@@ -30,9 +31,8 @@ Ext.define('byzCorp.view.LockView', {
     viewModel: {
         type: 'lockview'
     },
-    reference: 'lockView',
-    height: 250,
-    width: 400,
+    reference: 'lockedview',
+    itemId: 'lockedView',
     layout: 'border',
 
     items: [
@@ -41,7 +41,7 @@ Ext.define('byzCorp.view.LockView', {
             region: 'center',
             reference: 'lockform',
             itemId: 'lockform',
-            bodyStyle: 'background-image:url(resources/images/color.jpg) !important',
+            bodyStyle: 'background-image:url(resources/images/w1.jpg) !important;background-size: 100%;',
             title: 'Oturum Açın',
             titleAlign: 'center',
             layout: {
@@ -52,14 +52,28 @@ Ext.define('byzCorp.view.LockView', {
             items: [
                 {
                     xtype: 'form',
-                    height: 128,
-                    id: 'loginLayout1',
+                    height: 418,
+                    id: 'lockLayout',
                     margin: '20 40 20 40',
                     width: 325,
                     layout: {
                         type: 'vbox',
                         align: 'stretch'
                     },
+                    dockedItems: [
+                        {
+                            xtype: 'image',
+                            flex: 1,
+                            dock: 'top',
+                            reference: 'corpLogo',
+                            height: 270,
+                            id: 'corpLogo1',
+                            itemId: 'corpLogo1',
+                            margin: '5 5 5 5',
+                            width: 150,
+                            src: 'resources/images/logo_KTU.png'
+                        }
+                    ],
                     items: [
                         {
                             xtype: 'label',
@@ -68,12 +82,24 @@ Ext.define('byzCorp.view.LockView', {
                             disabled: true,
                             height: 100,
                             id: 'lblUserLockInfo',
-                            itemId: 'lblUserLockInfo',
+                            margin: '5 5 5 5',
+                            text: 'Kullanıcı Adı gelecek'
+                        },
+                        {
+                            xtype: 'label',
+                            flex: 1,
+                            reference: 'lblUserIdLock',
+                            disabled: true,
+                            height: 100,
+                            hidden: true,
+                            id: 'lblUserIdLock',
                             margin: '5 5 5 5',
                             text: 'Kullanıcı Adı gelecek'
                         },
                         {
                             xtype: 'textfield',
+                            reference: 'lockViewPassword',
+                            id: 'lockViewPassword',
                             margin: '5 5 5 5',
                             hideEmptyLabel: false,
                             hideLabel: true,
@@ -82,26 +108,26 @@ Ext.define('byzCorp.view.LockView', {
                         },
                         {
                             xtype: 'button',
-                            id: 'signIn4',
+                            id: 'signInLockView',
                             margin: '5 5 5 5',
                             ui: 'loginGreen-small',
                             iconAlign: 'right',
                             iconCls: 'x-fa fa-angle-right',
                             text: 'Giriş Yap',
                             listeners: {
-                                click: 'onSignInClick'
+                                click: 'onSignInLockViewClick'
                             }
                         },
                         {
                             xtype: 'button',
-                            id: 'signIn6',
+                            id: 'signOutLockView',
                             margin: '5 5 10 5',
                             ui: 'notRed-small',
                             iconAlign: 'right',
                             iconCls: 'fa fa-sign-out',
                             text: 'Çıkış',
                             listeners: {
-                                click: 'onSignInClick21'
+                                click: 'onSignOutLockViewClick'
                             }
                         }
                     ]

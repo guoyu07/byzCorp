@@ -10,6 +10,8 @@
         "designer|userAlias": "loginview",
         "designer|userClassName": "LoginView",
         "height": null,
+        "id": null,
+        "itemId": null,
         "layout": "border",
         "reference": "loginview",
         "width": null
@@ -21,7 +23,9 @@
         "height": "auto",
         "layout": "string",
         "reference": "string",
-        "width": "auto"
+        "width": "auto",
+        "id": "string",
+        "itemId": "string"
     },
     "name": "MyViewport",
     "designerId": "8540b5a1-1347-40e7-91d6-29d3eb6117c3",
@@ -37,7 +41,7 @@
             "codeClass": null,
             "userConfig": {
                 "bodyStyle": [
-                    "background-image:url(resources/images/color.jpg) !important"
+                    "background-image:url(resources/images/w1.jpg) !important; background-size: 100%"
                 ],
                 "container|align": "middle",
                 "container|pack": "center",
@@ -82,7 +86,7 @@
                     "userConfig": {
                         "container|align": "stretch",
                         "dock": null,
-                        "height": 140,
+                        "height": 410,
                         "id": "loginLayout",
                         "layout": "vbox",
                         "margin": "20 40 20 40",
@@ -103,6 +107,38 @@
                     "designerId": "4047bd8c-cb3f-473b-b75f-310cd9a10c4e",
                     "cn": [
                         {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "corpLogo",
+                                "dock": "top",
+                                "height": 270,
+                                "id": "corpLogo",
+                                "itemId": "corpLogo",
+                                "layout|flex": 1,
+                                "margin": "5 5 5 5",
+                                "reference": "corpLogo",
+                                "src": "resources/images/logo_KTU.png"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "dock": "string",
+                                "height": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "margin": "auto",
+                                "reference": "string",
+                                "src": "uri"
+                            },
+                            "name": "MyImg",
+                            "designerId": "80fb9df5-14dd-47c7-83cd-a4875ed1db64"
+                        },
+                        {
                             "type": "Ext.form.Label",
                             "reference": {
                                 "name": "items",
@@ -111,7 +147,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "disabled": true,
-                                "height": 100,
+                                "height": 98,
                                 "layout|flex": 1,
                                 "margin": "5 5 5 5",
                                 "text": "Hesabınıza giriş yapın"
@@ -224,27 +260,34 @@
                                     "userConfig": {
                                         "fn": "onSignInClick",
                                         "implHandler": [
+                                            "debugger;",
                                             "var refs = this.getReferences();",
+                                            "var destroyloginView = this.view;",
                                             "Ext.Ajax.request({",
                                             "    url:'/byzCorp/user/getUser',",
                                             "    params : {",
                                             "        userName : refs.txtLoginUserName.getValue(),",
                                             "        password : refs.txtLoginPassword.getValue()",
                                             "    },",
-                                            "    success : function(res){",
+                                            "    success : function(res){debugger;",
                                             "        var api = Ext.decode(res.responseText);",
                                             "        if(api.length>1){",
                                             "            if(api[1].success){",
                                             "                var userName = refs.txtLoginUserName.getValue();",
                                             "                var password = refs.txtLoginPassword.getValue();",
                                             "",
-                                            "                if(api[0].USERNAME === userName){",
+                                            "                if(api[0].USERNAME === userName){debugger;",
                                             "                    if(api[0].USERPASSWORD === password){",
+                                            "                        //loginView.destroy();",
                                             "                        refs.loginform.destroy();",
                                             "                        var mainview = Ext.create('widget.mainview');",
                                             "                        var lblGet = mainview.getReferences().lblUserInfo;",
+                                            "                        var lblGetUserName = mainview.getReferences().lblUserId;",
                                             "                        var lblNewValue = api[0].USERFIRSTNAME + ' '+ api[0].USERLASTNAME+ ' / '+api[0].USERTITLE;",
+                                            "                        var lblUserIdNewValue = api[0].USERNAME;",
+                                            "",
                                             "                        lblGet.setText(lblNewValue);",
+                                            "                        lblGetUserName.setText(lblUserIdNewValue);",
                                             "                    }else{",
                                             "                        Ext.Msg.alert('Uyarı', 'Hatalı şifre girdiniz.');",
                                             "                    }",
@@ -459,6 +502,7 @@
                             "userConfig": {
                                 "disabled": true,
                                 "height": 100,
+                                "id": "lblNewAccount",
                                 "layout|flex": 1,
                                 "margin": "5 5 5 5",
                                 "text": "Yeni hesap oluşturun"
@@ -468,7 +512,8 @@
                                 "layout|flex": "number",
                                 "margin": "auto",
                                 "text": "string",
-                                "disabled": "boolean"
+                                "disabled": "boolean",
+                                "id": "string"
                             },
                             "name": "MyLabel",
                             "designerId": "852da59e-d448-41ce-aa1e-dbeee5ae3d5a"

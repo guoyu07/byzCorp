@@ -17,25 +17,61 @@ Ext.define('byzCorp.view.LoginViewViewController1', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.lockview',
 
-    onSignInClick: function(button, e, eOpts) {
-        /*debugger;
-        var refs = this.getReferences();
-        form = button.up('loginform');
-        var mainview = Ext.create('widget.mainview');
-        mainview.show();
-        form.hide();*/
+    onSignInLockViewClick: function(button, e, eOpts) {
         debugger;
         var refs = this.getReferences();
-        var mainview = Ext.create('widget.mainview');
-        mainview.show();
-        refs.lockform.destroy();
+        var destroylockview =this.view;
+        Ext.Ajax.request({
+            url:'/byzCorp/user/getUser',
+            params : {
+                userName : refs.lblUserIdLock.text,
+                password : refs.lockViewPassword.getValue()
+            },
+            success : function(res){debugger;
+                var api = Ext.decode(res.responseText);
+                if(api.length>1){
+                    if(api[1].success){debugger;
+                        var userName = refs.lblUserIdLock.text;
+                        var password = refs.lockViewPassword.getValue();
+
+                        if(api[0].USERNAME === userName){debugger;
+                            if(api[0].USERPASSWORD === password){
+                                refs.lockform.destroy();
+                                //destroyLockview.destroy();
+                                var mainview = Ext.create('widget.mainview');
+                                var lblGet = mainview.getReferences().lblUserInfo;
+                                var lblGetUserId = mainview.getReferences().lblUserId;
+                                var lblNewValue = api[0].USERFIRSTNAME + ' '+ api[0].USERLASTNAME+ ' / '+api[0].USERTITLE;
+                                var lblUserIdNewValue = api[0].USERID;
+
+                                lblGet.setText(lblNewValue);
+                                lblGetUserId.setText(lblUserIdNewValue);
+                            }else{
+                                Ext.Msg.alert('Uyarı', 'Hatalı şifre girdiniz.');
+                            }
+
+                        }else{
+                            Ext.Msg.alert('Uyarı', 'Hatalı kullanıcı adı girdiniz.');
+                        }
+                    }else{
+                        Ext.Msg.alert('Uyarı', 'Veri tabanında kayıt bulunamadı.');
+                    }
+                }else{
+                    Ext.Msg.alert('Uyarı', 'Hatalı kullanıcı adı veya şifre girdiniz.');
+
+                }
+
+            }
+        });
     },
 
-    onSignInClick21: function(button, e, eOpts) {
+    onSignOutLockViewClick: function(button, e, eOpts) {
+        debugger;
         var refs = this.getReferences();
         var loginview = Ext.create('widget.loginview');
-        loginview.show();
+        var destroylockview = this.view;
         refs.lockform.destroy();
+        loginview.show();
     }
 
 });

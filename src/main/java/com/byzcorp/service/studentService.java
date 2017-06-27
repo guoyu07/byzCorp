@@ -34,6 +34,10 @@ public class studentService {
         return dao.getStudents(txtValue);
     }
 
+    public List<Map<String,Object>> getStudent (Long studentId) throws SQLException {
+        return dao.getStudent(studentId);
+    }
+
     @Transactional(readOnly = false)
     public Boolean saveOrUpdateStudent(JSONObject formData){
 

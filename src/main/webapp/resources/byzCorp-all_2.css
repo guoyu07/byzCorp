@@ -1,3 +1,354 @@
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
+.x-btn-loginGreen-small-frameInfo {
+    font-family: th-3-3-3-3-1-1-1-1-3-3-3-3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
+.x-btn-loginGreen-small-tl {
+    background-position: 0 -6px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
+.x-btn-loginGreen-small-tr {
+    background-position: right -9px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
+.x-btn-loginGreen-small-bl {
+    background-position: 0 -12px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
+.x-btn-loginGreen-small-br {
+    background-position: right -15px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
+.x-btn-loginGreen-small-ml {
+    background-position: 0 top;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
+.x-btn-loginGreen-small-mr {
+    background-position: right top;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
+.x-btn-loginGreen-small-tc {
+    background-position: 0 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
+.x-btn-loginGreen-small-bc {
+    background-position: 0 -3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
+.x-btn-loginGreen-small-tr,
+.x-btn-loginGreen-small-br,
+.x-btn-loginGreen-small-mr {
+    padding-right: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
+.x-btn-loginGreen-small-tl,
+.x-btn-loginGreen-small-bl,
+.x-btn-loginGreen-small-ml {
+    padding-left: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
+.x-btn-loginGreen-small-tc {
+    height: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
+.x-btn-loginGreen-small-bc {
+    height: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:407 */
+.x-btn-loginGreen-small-tl,
+.x-btn-loginGreen-small-bl,
+.x-btn-loginGreen-small-tr,
+.x-btn-loginGreen-small-br,
+.x-btn-loginGreen-small-tc,
+.x-btn-loginGreen-small-bc,
+.x-btn-loginGreen-small-ml,
+.x-btn-loginGreen-small-mr {
+    background-image: url(images/btn/btn-loginGreen-small-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:453 */
+.x-btn-loginGreen-small-ml,
+.x-btn-loginGreen-small-mr {
+    background-image: url(images/btn/btn-loginGreen-small-sides.gif);
+    background-repeat: repeat-y;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
+.x-btn-loginGreen-small-mc {
+    padding: 1px 1px 1px 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-loginGreen-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, frame:3px 3px 3px 3px, corners:url(images/btn/btn-loginGreen-small-corners.gif), sides:url(images/btn/btn-loginGreen-small-sides.gif), frame:3px 3px 3px 3px, corners:url(images/btn/btn-loginGreen-small-corners.gif), sides:url(images/btn/btn-loginGreen-small-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
+.x-btn-loginGreen-small {
+    border-color: #38d465;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:452 */
+.x-btn-button-loginGreen-small {
+    min-height: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:457 */
+.x-ie9m .x-btn-button-loginGreen-small {
+    min-height: auto;
+    height: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:464 */
+.x-btn-inner-loginGreen-small {
+    font: 300 12px/16px helvetica, arial, verdana, sans-serif;
+    color: #fff;
+    padding: 0 5px;
+    max-width: 100%;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:484 */
+.x-ie9 .x-btn-icon-right > .x-btn-inner-loginGreen-small,
+.x-ie9 .x-btn-icon-left > .x-btn-inner-loginGreen-small {
+    max-width: calc(100% - 16px);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:492 */
+.x-safari8m .x-btn-icon-right > .x-btn-inner-loginGreen-small,
+.x-safari8m .x-btn-icon-left > .x-btn-inner-loginGreen-small {
+    max-width: calc(100% - 15px);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:498 */
+.x-ie10p .x-btn-inner-loginGreen-small {
+    max-width: none;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:503 */
+.x-btn-icon-el-loginGreen-small {
+    font-size: 16px;
+    height: 16px;
+    color: #fff;
+    line-height: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:509 */
+.x-btn-icon-left > .x-btn-icon-el-loginGreen-small,
+.x-btn-icon-right > .x-btn-icon-el-loginGreen-small {
+    width: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:514 */
+.x-btn-icon-top > .x-btn-icon-el-loginGreen-small,
+.x-btn-icon-bottom > .x-btn-icon-el-loginGreen-small {
+    min-width: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:519 */
+.x-btn-icon-el-loginGreen-small.x-btn-glyph {
+    opacity: 0.5;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:536 */
+.x-ie8 .x-btn-icon-el-loginGreen-small.x-btn-glyph {
+    color: #9ceab2;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:543 */
+.x-btn-text.x-btn-icon-left > .x-btn-icon-el-loginGreen-small {
+    margin-right: 0px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:554 */
+.x-btn-text.x-btn-icon-right > .x-btn-icon-el-loginGreen-small {
+    margin-left: 0px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:565 */
+.x-btn-text.x-btn-icon-top > .x-btn-icon-el-loginGreen-small {
+    margin-bottom: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:569 */
+.x-btn-text.x-btn-icon-bottom > .x-btn-icon-el-loginGreen-small {
+    margin-top: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:575 */
+.x-btn-arrow-right > .x-btn-icon.x-btn-no-text.x-btn-button-loginGreen-small {
+    padding-right: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:578 */
+.x-btn-arrow-right > .x-btn-text.x-btn-icon-right > .x-btn-icon-el-loginGreen-small {
+    margin-right: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:585 */
+.x-btn-arrow-bottom > .x-btn-button-loginGreen-small,
+.x-btn-split-bottom > .x-btn-button-loginGreen-small {
+    padding-bottom: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:591 */
+.x-btn-wrap-loginGreen-small.x-btn-arrow-right:after {
+    width: 16px;
+    background-image: url(images/button/loginGreen-small-arrow.png);
+    padding-right: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:618 */
+.x-btn-wrap-loginGreen-small.x-btn-arrow-bottom:after {
+    height: 13px;
+    background-image: url(images/button/loginGreen-small-arrow.png);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:658 */
+.x-btn-wrap-loginGreen-small.x-btn-split-right:after {
+    width: 20px;
+    background-image: url(images/button/loginGreen-small-s-arrow.png);
+    padding-right: 20px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:697 */
+.x-btn-wrap-loginGreen-small.x-btn-split-bottom:after {
+    height: 15px;
+    background-image: url(images/button/loginGreen-small-s-arrow-b.png);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:730 */
+.x-btn-split-right > .x-btn-icon.x-btn-no-text.x-btn-button-loginGreen-small {
+    padding-right: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:733 */
+.x-btn-split-right > .x-btn-text.x-btn-icon-right > .x-btn-icon-el-loginGreen-small {
+    margin-right: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:738 */
+.x-btn-focus.x-btn-loginGreen-small {
+    border-color: #157fcc;
+    background-image: none;
+    background-color: #3892d4;
+    -webkit-box-shadow: #d7e9f6 0 1px 0px 0 inset, #d7e9f6 0 -1px 0px 0 inset, #d7e9f6 -1px 0 0px 0 inset, #d7e9f6 1px 0 0px 0 inset;
+    -moz-box-shadow: #d7e9f6 0 1px 0px 0 inset, #d7e9f6 0 -1px 0px 0 inset, #d7e9f6 -1px 0 0px 0 inset, #d7e9f6 1px 0 0px 0 inset;
+    box-shadow: #d7e9f6 0 1px 0px 0 inset, #d7e9f6 0 -1px 0px 0 inset, #d7e9f6 -1px 0 0px 0 inset, #d7e9f6 1px 0 0px 0 inset;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:773 */
+.x-btn-loginGreen-small .x-btn-arrow-el {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 23px;
+    pointer-events: none;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:789 */
+.x-btn-loginGreen-small.x-arrow-focus .x-btn-arrow-el {
+    border: 1px solid #d7e9f6;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:796 */
+.x-btn-over.x-btn-loginGreen-small {
+    border-color: #1375bc;
+    background-image: none;
+    background-color: #3487c3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:823 */
+.x-btn-focus.x-btn-over.x-btn-loginGreen-small {
+    -webkit-box-shadow: #d6e7f3 0 1px 0px 0 inset, #d6e7f3 0 -1px 0px 0 inset, #d6e7f3 -1px 0 0px 0 inset, #d6e7f3 1px 0 0px 0 inset;
+    -moz-box-shadow: #d6e7f3 0 1px 0px 0 inset, #d6e7f3 0 -1px 0px 0 inset, #d6e7f3 -1px 0 0px 0 inset, #d6e7f3 1px 0 0px 0 inset;
+    box-shadow: #d6e7f3 0 1px 0px 0 inset, #d6e7f3 0 -1px 0px 0 inset, #d6e7f3 -1px 0 0px 0 inset, #d6e7f3 1px 0 0px 0 inset;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:851 */
+.x-btn.x-btn-menu-active.x-btn-loginGreen-small,
+.x-btn.x-btn-pressed.x-btn-loginGreen-small {
+    border-color: #105f99;
+    background-image: none;
+    background-color: #2a6e9f;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:879 */
+.x-btn-focus.x-btn-menu-active.x-btn-loginGreen-small,
+.x-btn-focus.x-btn-pressed.x-btn-loginGreen-small {
+    -webkit-box-shadow: #d4e2ec 0 1px 0px 0 inset, #d4e2ec 0 -1px 0px 0 inset, #d4e2ec -1px 0 0px 0 inset, #d4e2ec 1px 0 0px 0 inset;
+    -moz-box-shadow: #d4e2ec 0 1px 0px 0 inset, #d4e2ec 0 -1px 0px 0 inset, #d4e2ec -1px 0 0px 0 inset, #d4e2ec 1px 0 0px 0 inset;
+    box-shadow: #d4e2ec 0 1px 0px 0 inset, #d4e2ec 0 -1px 0px 0 inset, #d4e2ec -1px 0 0px 0 inset, #d4e2ec 1px 0 0px 0 inset;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:908 */
+.x-btn.x-btn-disabled.x-btn-loginGreen-small {
+    border-color: #157fcc;
+    background-image: none;
+    background-color: #3892d4;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:940 */
+.x-btn-focus .x-btn-loginGreen-small-tl,
+.x-btn-focus .x-btn-loginGreen-small-bl,
+.x-btn-focus .x-btn-loginGreen-small-tr,
+.x-btn-focus .x-btn-loginGreen-small-br,
+.x-btn-focus .x-btn-loginGreen-small-tc,
+.x-btn-focus .x-btn-loginGreen-small-bc {
+    background-image: url(images/btn/btn-loginGreen-small-focus-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:948 */
+.x-btn-focus .x-btn-loginGreen-small-ml,
+.x-btn-focus .x-btn-loginGreen-small-mr {
+    background-image: url(images/btn/btn-loginGreen-small-focus-sides.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:952 */
+.x-btn-focus .x-btn-loginGreen-small-mc {
+    background-color: #3892d4;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:964 */
+.x-btn-over .x-btn-loginGreen-small-tl,
+.x-btn-over .x-btn-loginGreen-small-bl,
+.x-btn-over .x-btn-loginGreen-small-tr,
+.x-btn-over .x-btn-loginGreen-small-br,
+.x-btn-over .x-btn-loginGreen-small-tc,
+.x-btn-over .x-btn-loginGreen-small-bc {
+    background-image: url(images/btn/btn-loginGreen-small-over-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:972 */
+.x-btn-over .x-btn-loginGreen-small-ml,
+.x-btn-over .x-btn-loginGreen-small-mr {
+    background-image: url(images/btn/btn-loginGreen-small-over-sides.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:976 */
+.x-btn-over .x-btn-loginGreen-small-mc {
+    background-color: #3487c3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:988 */
+.x-btn-focus.x-btn-over .x-btn-loginGreen-small-tl,
+.x-btn-focus.x-btn-over .x-btn-loginGreen-small-bl,
+.x-btn-focus.x-btn-over .x-btn-loginGreen-small-tr,
+.x-btn-focus.x-btn-over .x-btn-loginGreen-small-br,
+.x-btn-focus.x-btn-over .x-btn-loginGreen-small-tc,
+.x-btn-focus.x-btn-over .x-btn-loginGreen-small-bc {
+    background-image: url(images/btn/btn-loginGreen-small-focus-over-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:996 */
+.x-btn-focus.x-btn-over .x-btn-loginGreen-small-ml,
+.x-btn-focus.x-btn-over .x-btn-loginGreen-small-mr {
+    background-image: url(images/btn/btn-loginGreen-small-focus-over-sides.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1000 */
+.x-btn-focus.x-btn-over .x-btn-loginGreen-small-mc {
+    background-color: #3487c3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1014 */
+.x-btn.x-btn-menu-active .x-btn-loginGreen-small-tl,
+.x-btn.x-btn-menu-active .x-btn-loginGreen-small-bl,
+.x-btn.x-btn-menu-active .x-btn-loginGreen-small-tr,
+.x-btn.x-btn-menu-active .x-btn-loginGreen-small-br,
+.x-btn.x-btn-menu-active .x-btn-loginGreen-small-tc,
+.x-btn.x-btn-menu-active .x-btn-loginGreen-small-bc,
+.x-btn.x-btn-pressed .x-btn-loginGreen-small-tl,
+.x-btn.x-btn-pressed .x-btn-loginGreen-small-bl,
+.x-btn.x-btn-pressed .x-btn-loginGreen-small-tr,
+.x-btn.x-btn-pressed .x-btn-loginGreen-small-br,
+.x-btn.x-btn-pressed .x-btn-loginGreen-small-tc,
+.x-btn.x-btn-pressed .x-btn-loginGreen-small-bc {
+    background-image: url(images/btn/btn-loginGreen-small-pressed-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1022 */
+.x-btn.x-btn-menu-active .x-btn-loginGreen-small-ml,
+.x-btn.x-btn-menu-active .x-btn-loginGreen-small-mr,
+.x-btn.x-btn-pressed .x-btn-loginGreen-small-ml,
+.x-btn.x-btn-pressed .x-btn-loginGreen-small-mr {
+    background-image: url(images/btn/btn-loginGreen-small-pressed-sides.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1026 */
+.x-btn.x-btn-menu-active .x-btn-loginGreen-small-mc,
+.x-btn.x-btn-pressed .x-btn-loginGreen-small-mc {
+    background-color: #2a6e9f;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1039 */
+.x-btn-focus.x-btn-menu-active .x-btn-loginGreen-small-tl,
+.x-btn-focus.x-btn-menu-active .x-btn-loginGreen-small-bl,
+.x-btn-focus.x-btn-menu-active .x-btn-loginGreen-small-tr,
+.x-btn-focus.x-btn-menu-active .x-btn-loginGreen-small-br,
+.x-btn-focus.x-btn-menu-active .x-btn-loginGreen-small-tc,
+.x-btn-focus.x-btn-menu-active .x-btn-loginGreen-small-bc,
+.x-btn-focus.x-btn-pressed .x-btn-loginGreen-small-tl,
+.x-btn-focus.x-btn-pressed .x-btn-loginGreen-small-bl,
+.x-btn-focus.x-btn-pressed .x-btn-loginGreen-small-tr,
+.x-btn-focus.x-btn-pressed .x-btn-loginGreen-small-br,
+.x-btn-focus.x-btn-pressed .x-btn-loginGreen-small-tc,
+.x-btn-focus.x-btn-pressed .x-btn-loginGreen-small-bc {
+    background-image: url(images/btn/btn-loginGreen-small-focus-pressed-corners.gif);
+}
 /* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1047 */
 .x-btn-focus.x-btn-menu-active .x-btn-loginGreen-small-ml,
 .x-btn-focus.x-btn-menu-active .x-btn-loginGreen-small-mr,
