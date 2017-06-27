@@ -68,11 +68,15 @@ public class internShipController {
     }
 
     @RequestMapping(value = "/saveOrUpdateInternShip")
-    public @ResponseBody void saveOrUpdateInternShip(HttpServletResponse response, HttpServletRequest request) throws IOException, ParseException, SQLException {
+    public @ResponseBody void saveOrUpdateInternShip(HttpServletResponse response, HttpServletRequest request, Long userId) throws IOException, ParseException, SQLException {
         JSONObject formData = studentService.reqGetJsonObject(request.getParameter("data"));
+        JSONObject requestData = studentService.reqGetJsonObject(request.getParameter("requestData"));
         JSONObject sendJSON = new JSONObject();
-        sendJSON = service.saveOrUpdateInternShip(formData);
-        //sendJSON.put("success", success);
+        if(formData!=null){
+            sendJSON = service.saveOrUpdateInternShip(formData, userId);
+        }else{
+            sendJSON = service.saveOrUpdateInternShipRequest(requestData,userId);
+        }
         response.getWriter().write(sendJSON.toString());
     }
 

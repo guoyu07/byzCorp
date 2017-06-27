@@ -269,6 +269,38 @@
             },
             "name": "MyField39",
             "designerId": "dc83bfe9-ad79-4777-88e2-4570a6f38d75"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "USERTITLEFIRSTANDLASTNAME"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField46",
+            "designerId": "46b96d68-edf1-4e8c-83c8-caf7ce24b6eb"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "INTERNSHIPACCEPTSTATUS"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField47",
+            "designerId": "c30d49ee-0054-4957-a97d-1abe8d2ff4c6"
         }
     ]
 }

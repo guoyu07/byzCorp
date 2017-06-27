@@ -62,6 +62,10 @@ public class lookUpService {
     public List<Map<String,Object>> getLudInternShipTypes (String query) throws SQLException {
         return dao.getLudInternShipTypes(query);
     }
+
+    public List<Map<String,Object>> getLudInternShipAcceptStatus (String query) throws SQLException {
+        return dao.getLudInternShipAcceptStatus(query);
+    }
     @Transactional(readOnly = false)
     public Boolean saveOrUpdateLookUpDetail(JSONObject formData, Long lookUpId){
 

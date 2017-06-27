@@ -52,10 +52,8 @@ public class internShipService {
     }
 
     @Transactional(readOnly = false)
-    public JSONObject saveOrUpdateInternShip(JSONObject formData) throws ParseException, SQLException {
-
+    public JSONObject saveOrUpdateInternShip(JSONObject formData,Long userId) throws ParseException, SQLException {
         JSONObject sendJSON = new JSONObject();
-        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");//when use hibernate then is active..
         String txtInternShipId = formData.getString("txtInternShipId-inputEl");
         String txtInternShipDay = formData.getString("txtInternShipDay-inputEl");
         Long cmbInternShipPlace = Long.parseLong(formData.getString("cmbInternShipPlace-inputEl"));
@@ -65,13 +63,13 @@ public class internShipService {
         String dateEndInternShip = formData.getString("dateEndInternShip-inputEl");
         Long cmbInternShipPeriod = Long.parseLong(formData.getString("cmbInternShipPeriod-inputEl"));
         Long cmbInternShipType = Long.parseLong(formData.getString("cmbInternShipType-inputEl"));
+        Long cmbInternShipAcceptStatus = Long.parseLong(formData.getString("cmbInternShipAcceptStatus-inputEl"));
         List<Map<String,Object>> getInternShipCount = getInternShipCount(cmbInternShipPeriod,cmbInternShipStudent, null);
         List<Map<String,Object>> params = lookUpService.getLookUpDetail(28L);
         List<Map<String,Object>> periodList = lookUpService.getLookUpDetail(cmbInternShipPeriod);
         String period = periodList.get(0).get("LOOKUPDETAILNAME").toString();
         Long paramValue = Long.parseLong(params.get(0).get("LOOKUPDETAILVALUE").toString());
         Boolean save = true;
-        //Locale trlocale= new Locale("tr-TR");
         List<Map<String,Object>> student = studentService.getStudent(cmbInternShipStudent);
         String studentIdandFirstandLastName = student.get(0).get("studentIdandFirstandLastName").toString();
         Long oldDay = null;
@@ -94,7 +92,62 @@ public class internShipService {
         }
         if(save) {
             if(newDay<=paramValue) {
-                sendJSON.put("success", dao.saveOrUpdateInternShip(txtInternShipId, txtInternShipDay, cmbInternShipPlace, txtInternShipDesc, cmbInternShipStudent, dateStartInternShip, dateEndInternShip, cmbInternShipPeriod, cmbInternShipType));
+                sendJSON.put("success", dao.saveOrUpdateInternShip(txtInternShipId, txtInternShipDay, cmbInternShipPlace, txtInternShipDesc, cmbInternShipStudent, dateStartInternShip, dateEndInternShip, cmbInternShipPeriod, cmbInternShipType,cmbInternShipAcceptStatus, userId));
+            }else{
+                sendJSON.put("data",new SQLException("HATA", "Staj maksimum gunu "+paramValue+" oldugundan "+newDay+" staj gunu ekleyemezsiniz.."));
+                sendJSON.put("success", false);
+            }
+        }
+        return sendJSON;
+    }
+
+    @Transactional(readOnly = false)
+    public JSONObject saveOrUpdateInternShipRequest(JSONObject requestData,Long userId) throws ParseException, SQLException {
+        JSONObject sendJSON = new JSONObject();
+        String txtInternShipId = requestData.getString("txtInternShipIdReq-inputEl");
+        //String txtInternShipDay = requestData.getString("txtInternShipDayReq-inputEl");
+        Long cmbInternShipPlace = Long.parseLong(requestData.getString("cmbInternShipPlaceReq-inputEl"));
+        String txtInternShipDesc = requestData.getString("txtInternShipDescReq-inputEl");
+        Long cmbInternShipStudent = userId;
+        String dateStartInternShip = requestData.getString("dateStartInternShipReq-inputEl");
+        String dateEndInternShip = requestData.getString("dateEndInternShipReq-inputEl");
+        Long cmbInternShipPeriod = Long.parseLong(requestData.getString("cmbInternShipPeriodReq-inputEl"));
+        Long cmbInternShipType = Long.parseLong(requestData.getString("cmbInternShipTypeReq-inputEl"));
+        List<Map<String,Object>> getInternShipCount = getInternShipCount(cmbInternShipPeriod,cmbInternShipStudent, null);
+        List<Map<String,Object>> params = lookUpService.getLookUpDetail(28L);
+        List<Map<String,Object>> periodList = lookUpService.getLookUpDetail(cmbInternShipPeriod);
+        String period = periodList.get(0).get("LOOKUPDETAILNAME").toString();
+        Long paramValue = Long.parseLong(params.get(0).get("LOOKUPDETAILVALUE").toString());
+        Long cmbInternShipAcceptStatus = 39L;
+        Boolean save = true;
+        List<Map<String,Object>> student = studentService.getStudent(cmbInternShipStudent);
+        String studentIdandFirstandLastName = student.get(0).get("studentIdandFirstandLastName").toString();
+        Long oldDay = null;
+        if(getInternShipCount.size()==0){
+            oldDay = 0L;
+        }else{
+            oldDay = Long.parseLong(getInternShipCount.get(0).get("TOTALINTERNSHIPDAY").toString());
+        }
+        Long newDay = paramValue;
+        Long saveDay = paramValue-oldDay;
+        if(getInternShipCount.size()>0 && txtInternShipId.equals("")){
+            String acceptStatus = getInternShipCount.get(0).get("INTERNSHIPACCEPTSTATUS").toString();
+            if(acceptStatus=="Onaylandı"){
+                sendJSON.put("data",new SQLException("HATA", " Seçtiğiniz dönemde daha önce oluşturulmuş bir kaydınız bulunmaktadır. Aynı döneme yeni kayıt ekleyemez, onaylanmış kayıtlar üzerinde güncelleme yapamazsınız."));
+                sendJSON.put("success", false);
+            }else{}
+            if(newDay>saveDay) {
+                sendJSON.put("data",new SQLException("HATA", studentIdandFirstandLastName+" ogrenicinin " +
+                        period+" icin " +oldDay+" gun staj kaydi bulunmaktadir. Staj maksimum gunu "+paramValue+" oldugundan "+newDay+" staj gunu ekleyemezsiniz.."));
+                sendJSON.put("success", false);
+                save = false;
+            }else{
+                save = true;
+            }
+        }
+        if(save) {
+            if(newDay<=paramValue) {
+                sendJSON.put("success", dao.saveOrUpdateInternShip(txtInternShipId, paramValue.toString(), cmbInternShipPlace, txtInternShipDesc, cmbInternShipStudent, dateStartInternShip, dateEndInternShip, cmbInternShipPeriod, cmbInternShipType,cmbInternShipAcceptStatus, userId));
             }else{
                 sendJSON.put("data",new SQLException("HATA", "Staj maksimum gunu "+paramValue+" oldugundan "+newDay+" staj gunu ekleyemezsiniz.."));
                 sendJSON.put("success", false);

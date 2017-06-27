@@ -39,13 +39,23 @@ Ext.define('byzCorp.view.LoginViewViewController', {
                                 //loginView.destroy();
                                 refs.loginform.destroy();
                                 var mainview = Ext.create('widget.mainview');
+                                var mainRefs = mainview.getReferences();
                                 var lblGet = mainview.getReferences().lblUserInfo;
-                                var lblGetUserName = mainview.getReferences().lblUserId;
-                                var lblNewValue = api[0].USERFIRSTNAME + ' '+ api[0].USERLASTNAME+ ' / '+api[0].USERTITLE;
-                                var lblUserIdNewValue = api[0].USERNAME;
+                                var lblGetUserId = mainview.getReferences().lblUserId;
+                                var lblGetUserName = mainview.getReferences().lblUserName;
+                                var lblGetNewValue = api[0].USERFIRSTNAME + ' '+ api[0].USERLASTNAME+ ' / '+api[0].USERTITLE;
+                                var lblUserIdNewValue = api[0].USERID;
+                                var lblUserNameNewValue = api[0].USERNAME;
 
-                                lblGet.setText(lblNewValue);
-                                lblGetUserName.setText(lblUserIdNewValue);
+                                lblGet.setText(lblGetNewValue);
+                                lblGetUserId.setText(lblUserIdNewValue);
+                                lblGetUserName.setText(lblUserNameNewValue);
+                                if(api[0].USERROLEID===2){
+                                    mainRefs.menuStudents.hide();
+                                    mainRefs.menuSettings.hide();
+                                    mainRefs.menuInternShips.hide();
+                                    mainRefs.internShipResponsePanel.hide();
+                                }
                             }else{
                                 Ext.Msg.alert('Uyarı', 'Hatalı şifre girdiniz.');
                             }

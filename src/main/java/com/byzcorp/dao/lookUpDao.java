@@ -212,6 +212,24 @@ public class lookUpDao {
         return sql.queryForList(q);
     }
 
+    public List<Map<String,Object>> getLudInternShipAcceptStatus(String query) throws SQLException {
+        if(query==""){
+            query=null;
+        }
+        String q = "select" +
+                " lud.lookUpDetailId," +
+                " lud.lookUpId," +
+                " lud.lookUpDetailName," +
+                " lud.lookUpDetailStatus," +
+                " lud.lookUpDetailValue" +
+                " from ktu.LOOKUPDETAIL lud" +
+                " where lud.LOOKUPID=10";//Staj Onay Durumları.
+        if(query!=null){
+            q +=" and lower(lud.lookUpDetailName) like lower('%"+query+"%')";
+        }
+        return sql.queryForList(q);
+    }
+
     public Boolean saveOrUpdateLookUpDetail(String txtLookUpDetailId,String txtLookUpDetailName,String txtLookUpDetailValue,Long cmbLookUpDetailStatus, Long lookUpId) {
         String query = "";
         try {

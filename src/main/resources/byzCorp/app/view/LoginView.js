@@ -64,8 +64,8 @@ Ext.define('byzCorp.view.LoginView', {
                         {
                             xtype: 'image',
                             flex: 1,
-                            dock: 'top',
                             reference: 'corpLogo',
+                            dock: 'top',
                             height: 270,
                             id: 'corpLogo',
                             itemId: 'corpLogo',

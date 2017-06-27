@@ -68,6 +68,12 @@ Ext.define('byzCorp.model.getInternShips', {
         },
         {
             name: 'INTERNSHIPDESC'
+        },
+        {
+            name: 'USERTITLEFIRSTANDLASTNAME'
+        },
+        {
+            name: 'INTERNSHIPACCEPTSTATUS'
         }
     ]
 });

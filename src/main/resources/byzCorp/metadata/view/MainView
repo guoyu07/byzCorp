@@ -163,6 +163,7 @@
                                         "href": null,
                                         "iconCls": "fa fa-home",
                                         "itemId": "anaSayfa",
+                                        "reference": "menuHomePage",
                                         "text": "Ana Sayfa",
                                         "tooltip": [
                                             "Özet bilgiler ile iş takibinizi kolaylaştırın.."
@@ -177,7 +178,8 @@
                                         "width": "auto",
                                         "iconCls": "string",
                                         "tooltip": "object",
-                                        "hidden": "boolean"
+                                        "hidden": "boolean",
+                                        "reference": "string"
                                     },
                                     "name": "MyMenuItem",
                                     "designerId": "2d21cd52-2bd4-4f26-99f8-ecb1b8453ece"
@@ -192,8 +194,42 @@
                                     "userConfig": {
                                         "focusable": true,
                                         "href": null,
+                                        "iconCls": "fa fa-paper-plane",
+                                        "itemId": "talepIslemleri",
+                                        "reference": "menuInternShipRequest",
+                                        "text": "Talep İşlemleri",
+                                        "tooltip": [
+                                            "Özet bilgiler ile iş takibinizi kolaylaştırın.."
+                                        ],
+                                        "width": null
+                                    },
+                                    "configAlternates": {
+                                        "focusable": "boolean",
+                                        "href": "string",
+                                        "itemId": "string",
+                                        "text": "string",
+                                        "width": "auto",
+                                        "iconCls": "string",
+                                        "tooltip": "object",
+                                        "hidden": "boolean",
+                                        "reference": "string"
+                                    },
+                                    "name": "MyMenuItem5",
+                                    "designerId": "e6c484a6-b47a-45a9-bc8b-3c43ef5e52c6"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "focusable": true,
+                                        "href": null,
                                         "iconCls": "fa fa-graduation-cap",
                                         "itemId": "ogrenciIslemleri",
+                                        "reference": "menuStudents",
                                         "text": "Öğrenci İşlemleri",
                                         "tooltip": [
                                             "Öğrenci kayıt/güncelle/sil işlemlerini tek bir ekrandan kolayca yapın.."
@@ -207,7 +243,8 @@
                                         "text": "string",
                                         "width": "auto",
                                         "iconCls": "string",
-                                        "tooltip": "object"
+                                        "tooltip": "object",
+                                        "reference": "string"
                                     },
                                     "name": "MyMenuItem3",
                                     "designerId": "6857b42d-cc7c-4092-9e27-568ff4a3b847"
@@ -224,6 +261,7 @@
                                         "href": null,
                                         "iconCls": "fa fa-file",
                                         "itemId": "stajIslemleri",
+                                        "reference": "menuInternShips",
                                         "text": "Staj İşlemleri",
                                         "tooltip": [
                                             "Öğrenci staj kayıtlarını oluşturun ve kolayca takip edin.."
@@ -237,7 +275,8 @@
                                         "text": "string",
                                         "width": "auto",
                                         "iconCls": "string",
-                                        "tooltip": "object"
+                                        "tooltip": "object",
+                                        "reference": "string"
                                     },
                                     "name": "MyMenuItem1",
                                     "designerId": "a9c5c2c5-e485-4719-a39d-1f3df3d72393",
@@ -293,6 +332,7 @@
                                         "href": null,
                                         "iconCls": "fa fa-cog",
                                         "itemId": "ayarlar",
+                                        "reference": "menuSettings",
                                         "text": "Yönetim İşlemleri",
                                         "width": null
                                     },
@@ -302,7 +342,8 @@
                                         "itemId": "string",
                                         "text": "string",
                                         "width": "auto",
-                                        "iconCls": "string"
+                                        "iconCls": "string",
+                                        "reference": "string"
                                     },
                                     "name": "MyMenuItem2",
                                     "designerId": "9f67ea74-e63c-4b04-b4c2-4130f7cbd1f8"
@@ -1419,7 +1460,7 @@
                                             "userConfig": {
                                                 "bodyPadding": 10,
                                                 "header": false,
-                                                "height": 282,
+                                                "height": 314,
                                                 "id": "saveInternShipForm",
                                                 "layout": "form",
                                                 "layout|region": "north",
@@ -1708,6 +1749,42 @@
                                                     "userConfig": {
                                                         "autoLoadOnValue": true,
                                                         "displayField": "LOOKUPDETAILNAME",
+                                                        "emptyText": "Onay Durumu",
+                                                        "fieldLabel": null,
+                                                        "formBind": true,
+                                                        "height": 150,
+                                                        "id": "cmbInternShipAcceptStatus",
+                                                        "queryParam": null,
+                                                        "reference": "cmbInternShipAcceptStatus",
+                                                        "store": "getLudInternShipAcceptStatus",
+                                                        "valueField": "LOOKUPDETAILID"
+                                                    },
+                                                    "configAlternates": {
+                                                        "emptyText": "string",
+                                                        "fieldLabel": "string",
+                                                        "id": "string",
+                                                        "autoLoadOnValue": "boolean",
+                                                        "displayField": "datafield",
+                                                        "formBind": "boolean",
+                                                        "reference": "string",
+                                                        "store": "store",
+                                                        "valueField": "datafield",
+                                                        "queryParam": "string",
+                                                        "height": "auto"
+                                                    },
+                                                    "name": "MyComboBox10",
+                                                    "designerId": "232320ec-5a7b-48dd-ac7d-01ed1e7f9658"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "autoLoadOnValue": true,
+                                                        "displayField": "LOOKUPDETAILNAME",
                                                         "emptyText": "Staj Yerleri",
                                                         "fieldLabel": null,
                                                         "formBind": true,
@@ -1830,10 +1907,23 @@
                                                                 "implHandler": [
                                                                     "debugger;",
                                                                     "var refs = this.getReferences();",
-                                                                    "Ext.Ajax.request({",
+                                                                    "var userId = refs.lblUserId.text;",
+                                                                    "if(refs.cmbInternShipStudent.getValue()===null){",
+                                                                    "    refs.cmbInternShipStudent.setFieldStyle('background:#ffbba8');",
+                                                                    "}else if(refs.cmbInternShipPlace.getValue()===null){",
+                                                                    "    refs.cmbInternShipPlace.setFieldStyle('background:#ffbba8');",
+                                                                    "}else if(refs.cmbInternShipType.getValue()===null){",
+                                                                    "    refs.cmbInternShipType.setFieldStyle('background:#ffbba8');",
+                                                                    "}else if(refs.cmbInternShipPeriod.getValue()===null){",
+                                                                    "    refs.cmbInternShipPeriod.setFieldStyle('background:#ffbba8');",
+                                                                    "}else if(refs.cmbInternShipAcceptStatus.getValue()===null){",
+                                                                    "    refs.cmbInternShipAcceptStatus.setFieldStyle('background:#ffbba8');",
+                                                                    "}else{",
+                                                                    "    Ext.Ajax.request({",
                                                                     "    url:'/byzCorp/internShip/saveOrUpdateInternShip',",
                                                                     "    params : {",
-                                                                    "        data : Ext.encode(refs.saveInternShipForm.getForm().getValues())",
+                                                                    "        data : Ext.encode(refs.saveInternShipForm.getForm().getValues()),",
+                                                                    "        userId : userId",
                                                                     "    },",
                                                                     "    success : function(res){debugger;",
                                                                     "       var api = Ext.decode(res.responseText);",
@@ -1854,7 +1944,8 @@
                                                                     "                  Ext.Msg.alert(api.data.localizedMessage, api.data.SQLState);",
                                                                     "            }",
                                                                     "       }",
-                                                                    "});"
+                                                                    "});",
+                                                                    "}"
                                                                 ],
                                                                 "name": "click",
                                                                 "scope": "me"
@@ -2575,6 +2666,90 @@
                                                     ]
                                                 },
                                                 {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "INTERNSHIPACCEPTSTATUS",
+                                                        "sortable": true,
+                                                        "text": "Onay Durumu",
+                                                        "width": 128
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "sortable": "boolean",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn40",
+                                                    "designerId": "633c412b-95da-4bdf-9b48-f29ec721d644",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.grid.filters.filter.String",
+                                                            "reference": {
+                                                                "name": "filter",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "internShipStatusFilter",
+                                                                "emptyText": "Arama kriteri giriniz"
+                                                            },
+                                                            "configAlternates": {
+                                                                "designer|displayName": "string",
+                                                                "emptyText": "string"
+                                                            },
+                                                            "name": "MyStringFilter",
+                                                            "designerId": "708846a3-9b3a-4721-86ad-78c91154a439"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "USERTITLEFIRSTANDLASTNAME",
+                                                        "sortable": true,
+                                                        "text": "Kaydeden Kullanıcı",
+                                                        "width": 211
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "sortable": "boolean",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn27",
+                                                    "designerId": "4646b868-68b1-4c7c-bbf9-cc03683efdff",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.grid.filters.filter.String",
+                                                            "reference": {
+                                                                "name": "filter",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "internShipStatusFilter",
+                                                                "emptyText": "Arama kriteri giriniz"
+                                                            },
+                                                            "configAlternates": {
+                                                                "designer|displayName": "string",
+                                                                "emptyText": "string"
+                                                            },
+                                                            "name": "MyStringFilter",
+                                                            "designerId": "661a0c12-2854-4706-a8cc-3db1b16fe7b1"
+                                                        }
+                                                    ]
+                                                },
+                                                {
                                                     "type": "Ext.view.Table",
                                                     "reference": {
                                                         "name": "viewConfig",
@@ -2652,11 +2827,15 @@
                                                                 "fn": "getRowClass",
                                                                 "implHandler": [
                                                                     "debugger;",
-                                                                    "if(record.data.INTERNSHIPSTATUS===\"Tamamlandı\") {",
+                                                                    "if(record.data.INTERNSHIPSTATUS===\"Tamamlandı\" && record.data.INTERNSHIPACCEPTSTATUS ===\"Onaylandı\") {",
                                                                     "\t\t\t\t\t\t\t\treturn 'firstRow';",
-                                                                    "\t\t\t\t\t\t\t} else {",
-                                                                    "\t\t\t\t\t\t\t\treturn 'lastRow';",
-                                                                    "\t\t\t\t\t\t\t}"
+                                                                    "\t\t\t\t\t\t\t} else if(record.data.INTERNSHIPSTATUS===\"Tamamlanmadı\" && record.data.INTERNSHIPACCEPTSTATUS ===\"Onaylandı\"){",
+                                                                    "\t\t\t\t\t\t\t\treturn 'blueRow';",
+                                                                    "\t\t\t\t\t\t\t}else if(record.data.INTERNSHIPSTATUS===\"Tamamlanmadı\" && record.data.INTERNSHIPACCEPTSTATUS ===\"Onaylanmadı\"){",
+                                                                    "\t\t\t\t\t\t\t\treturn 'yellowRow';",
+                                                                    "\t\t\t\t\t\t\t}else{",
+                                                                    "                                return 'lastRow';",
+                                                                    "                            }"
                                                                 ]
                                                             },
                                                             "configAlternates": {
@@ -5185,6 +5364,934 @@
                                     "designerId": "88b11fa6-1878-4798-ac22-0ac3d6164b65"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|uiInterfaceName": "default-framed",
+                                "frame": true,
+                                "header": false,
+                                "iconCls": "fa fa-paper-plane",
+                                "itemId": "talepIslemleriPanel",
+                                "layout": "accordion",
+                                "margin": "",
+                                "reference": "talepIslemleriPanel",
+                                "title": "Talep İşlemleri"
+                            },
+                            "configAlternates": {
+                                "designer|uiInterfaceName": "string",
+                                "frame": "boolean",
+                                "header": "boolean",
+                                "iconCls": "string",
+                                "itemId": "string",
+                                "layout": "string",
+                                "margin": "auto",
+                                "title": "string",
+                                "hidden": "boolean",
+                                "reference": "string"
+                            },
+                            "name": "MyPanel21",
+                            "designerId": "2a615c7c-3724-47e7-87c1-ce17e32f424f",
+                            "cn": [
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|uiInterfaceName": "default",
+                                        "iconCls": "fa fa-unlock",
+                                        "layout": "border",
+                                        "margin": null,
+                                        "reference": "internShipsRequestPanel",
+                                        "title": "Staj Talep"
+                                    },
+                                    "configAlternates": {
+                                        "designer|uiInterfaceName": "string",
+                                        "iconCls": "string",
+                                        "margin": "auto",
+                                        "title": "string",
+                                        "layout": "string",
+                                        "hidden": "boolean",
+                                        "reference": "string"
+                                    },
+                                    "name": "MyPanel7",
+                                    "designerId": "6ccc8801-56e0-449b-8e1b-21348ad0ed66",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.panel.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "header": false,
+                                                "layout": "border",
+                                                "layout|region": "west",
+                                                "title": null,
+                                                "width": 285
+                                            },
+                                            "configAlternates": {
+                                                "header": "boolean",
+                                                "layout": "string",
+                                                "layout|region": "string",
+                                                "title": "string",
+                                                "width": "auto"
+                                            },
+                                            "name": "MyPanel23",
+                                            "designerId": "602049b9-ae59-45c0-8170-50fca6ea03e6",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.Panel",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dock": null,
+                                                        "header": false,
+                                                        "height": 218,
+                                                        "id": "saveOrUpdateRequest",
+                                                        "layout": "form",
+                                                        "layout|region": "north",
+                                                        "margin": "5 5 0 0",
+                                                        "reference": "saveOrUpdateRequest",
+                                                        "title": null
+                                                    },
+                                                    "configAlternates": {
+                                                        "layout": "string",
+                                                        "layout|region": "string",
+                                                        "title": "string",
+                                                        "width": "auto",
+                                                        "dock": "string",
+                                                        "height": "auto",
+                                                        "header": "boolean",
+                                                        "id": "string",
+                                                        "margin": "auto",
+                                                        "reference": "string"
+                                                    },
+                                                    "name": "MyForm8",
+                                                    "designerId": "0176f94e-6afd-49e9-ad8a-372f5b702517",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.ComboBox",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "displayField": "LOOKUPDETAILNAME",
+                                                                "emptyText": "Staj Dönemi",
+                                                                "fieldLabel": null,
+                                                                "formBind": true,
+                                                                "height": 150,
+                                                                "id": "cmbInternShipPeriodReq",
+                                                                "reference": "cmbInternShipPeriodReq",
+                                                                "store": "getLudPeriods",
+                                                                "valueField": "LOOKUPDETAILID"
+                                                            },
+                                                            "configAlternates": {
+                                                                "emptyText": "string",
+                                                                "fieldLabel": "string",
+                                                                "id": "string",
+                                                                "autoLoadOnValue": "boolean",
+                                                                "displayField": "datafield",
+                                                                "reference": "string",
+                                                                "store": "store",
+                                                                "valueField": "datafield",
+                                                                "formBind": "boolean",
+                                                                "queryCaching": "boolean",
+                                                                "queryParam": "string",
+                                                                "height": "auto"
+                                                            },
+                                                            "name": "MyComboBox6",
+                                                            "designerId": "11e337e6-621d-4fce-a266-d757f4329ce4"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.field.Date",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "autoRender": true,
+                                                                "emptyText": "Staj Başlangıç Zamanı",
+                                                                "fieldLabel": null,
+                                                                "formBind": true,
+                                                                "format": "d/m/Y",
+                                                                "height": 150,
+                                                                "id": "dateStartInternShipReq",
+                                                                "reference": "dateStartInternShipReq"
+                                                            },
+                                                            "configAlternates": {
+                                                                "emptyText": "string",
+                                                                "fieldLabel": "string",
+                                                                "id": "string",
+                                                                "autoRender": "boolean",
+                                                                "formBind": "boolean",
+                                                                "format": "string",
+                                                                "reference": "string",
+                                                                "height": "auto"
+                                                            },
+                                                            "name": "MyDateField3",
+                                                            "designerId": "f12d62e1-b61f-4852-9bb2-d0ec38c800a4",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "viewcontrollereventbinding",
+                                                                    "reference": {
+                                                                        "name": "listeners",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fn": "onDateStartInternShipReqSelect",
+                                                                        "implHandler": [
+                                                                            "debugger;",
+                                                                            "var refs = this.getReferences();",
+                                                                            "Ext.Ajax.request({",
+                                                                            "            url:'/byzCorp/lookUp/getLookUpDetail',",
+                                                                            "            params : {",
+                                                                            "                lookUpDetailId : 28//lud.parametreler.Bir dönem için belirlenen staj süresi",
+                                                                            "            },",
+                                                                            "            success : function(res){debugger;",
+                                                                            "                var api = Ext.decode(res.responseText);",
+                                                                            "                if(api.length>0){",
+                                                                            "                    refs.dateEndInternShipReq.setValue(api[0].LOOKUPDETAILVALUE);",
+                                                                            "",
+                                                                            "                }",
+                                                                            "            }",
+                                                                            "        });"
+                                                                        ],
+                                                                        "name": "select",
+                                                                        "scope": "me"
+                                                                    },
+                                                                    "configAlternates": {
+                                                                        "fn": "string",
+                                                                        "implHandler": "code",
+                                                                        "name": "string",
+                                                                        "scope": "string"
+                                                                    },
+                                                                    "name": "onDateStartInternShipReqSelect",
+                                                                    "designerId": "9285e1e3-70e2-489c-a6dc-b6b56af0f839"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.field.Date",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "emptyText": "Staj Bitiş Zamanı",
+                                                                "fieldLabel": null,
+                                                                "formBind": true,
+                                                                "format": "d/m/Y",
+                                                                "id": "dateEndInternShipReq",
+                                                                "reference": "dateEndInternShipReq",
+                                                                "width": 150
+                                                            },
+                                                            "configAlternates": {
+                                                                "emptyText": "string",
+                                                                "fieldLabel": "string",
+                                                                "id": "string",
+                                                                "formBind": "boolean",
+                                                                "format": "string",
+                                                                "reference": "string",
+                                                                "height": "auto",
+                                                                "width": "auto"
+                                                            },
+                                                            "name": "MyDateField4",
+                                                            "designerId": "7722faad-1f61-45c5-b15b-09929b59f96a"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.field.ComboBox",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "autoLoadOnValue": true,
+                                                                "displayField": "LOOKUPDETAILNAME",
+                                                                "emptyText": "Staj Yerleri",
+                                                                "fieldLabel": null,
+                                                                "formBind": true,
+                                                                "height": 150,
+                                                                "id": "cmbInternShipPlaceReq",
+                                                                "queryParam": null,
+                                                                "reference": "cmbInternShipPlaceReq",
+                                                                "store": "getLudInternShipPlace",
+                                                                "valueField": "LOOKUPDETAILID"
+                                                            },
+                                                            "configAlternates": {
+                                                                "emptyText": "string",
+                                                                "fieldLabel": "string",
+                                                                "id": "string",
+                                                                "store": "store",
+                                                                "autoLoadOnValue": "boolean",
+                                                                "displayField": "datafield",
+                                                                "formBind": "boolean",
+                                                                "reference": "string",
+                                                                "valueField": "datafield",
+                                                                "queryParam": "string",
+                                                                "height": "auto"
+                                                            },
+                                                            "name": "MyComboBox13",
+                                                            "designerId": "f6795a6e-2809-4663-8c39-b146304f5677"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.field.ComboBox",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "autoLoadOnValue": true,
+                                                                "displayField": "LOOKUPDETAILNAME",
+                                                                "emptyText": "Staj Tipi",
+                                                                "fieldLabel": null,
+                                                                "formBind": true,
+                                                                "height": 150,
+                                                                "id": "cmbInternShipTypeReq",
+                                                                "queryParam": null,
+                                                                "reference": "cmbInternShipTypeReq",
+                                                                "store": "getLudInternShipTypes",
+                                                                "valueField": "LOOKUPDETAILID"
+                                                            },
+                                                            "configAlternates": {
+                                                                "emptyText": "string",
+                                                                "fieldLabel": "string",
+                                                                "id": "string",
+                                                                "autoLoadOnValue": "boolean",
+                                                                "displayField": "datafield",
+                                                                "formBind": "boolean",
+                                                                "reference": "string",
+                                                                "store": "store",
+                                                                "valueField": "datafield",
+                                                                "queryParam": "string",
+                                                                "height": "auto"
+                                                            },
+                                                            "name": "MyComboBox14",
+                                                            "designerId": "a1617182-07ab-4980-9ed9-4ec1725d894b"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.field.TextArea",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "emptyText": "Açıklama",
+                                                                "fieldLabel": null,
+                                                                "formBind": true,
+                                                                "height": 150,
+                                                                "hideEmptyLabel": false,
+                                                                "id": "txtInternShipDescReq",
+                                                                "reference": "txtInternShipDescReq"
+                                                            },
+                                                            "configAlternates": {
+                                                                "emptyText": "string",
+                                                                "fieldLabel": "string",
+                                                                "hideEmptyLabel": "boolean",
+                                                                "id": "string",
+                                                                "height": "auto",
+                                                                "reference": "string",
+                                                                "formBind": "boolean"
+                                                            },
+                                                            "name": "MyTextArea1",
+                                                            "designerId": "160c0ae8-9826-4e4a-a360-c69e0c6dedc4"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "autoRender": true,
+                                                                "fieldLabel": "Label",
+                                                                "formBind": true,
+                                                                "hidden": true,
+                                                                "id": "txtInternShipIdReq",
+                                                                "reference": "txtInternShipIdReq"
+                                                            },
+                                                            "configAlternates": {
+                                                                "autoRender": "boolean",
+                                                                "fieldLabel": "string",
+                                                                "formBind": "boolean",
+                                                                "hidden": "boolean",
+                                                                "id": "string",
+                                                                "reference": "string"
+                                                            },
+                                                            "name": "MyTextField19",
+                                                            "designerId": "5a07b1d9-9f80-4894-a0de-22affa885457"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.Panel",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "bodyPadding": 10,
+                                                        "container|pack": "center",
+                                                        "dock": null,
+                                                        "header": false,
+                                                        "id": "internShipReuestButtonForm",
+                                                        "layout": "hbox",
+                                                        "layout|region": "center",
+                                                        "margin": "0 5 0 0",
+                                                        "reference": "internShipRequestButtonForm",
+                                                        "title": "My Form"
+                                                    },
+                                                    "configAlternates": {
+                                                        "bodyPadding": "auto",
+                                                        "container|pack": "string",
+                                                        "header": "boolean",
+                                                        "layout": "string",
+                                                        "layout|region": "string",
+                                                        "margin": "auto",
+                                                        "title": "string",
+                                                        "id": "string",
+                                                        "reference": "string",
+                                                        "dock": "string"
+                                                    },
+                                                    "name": "MyForm7",
+                                                    "designerId": "4afc6991-e990-4962-b0bb-85c5c7dd7d60",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "iconCls": "fa fa-floppy-o",
+                                                                "id": "saveOrUpdateInternShipRequestForm",
+                                                                "layout|flex": 1,
+                                                                "margin": "5 5 5 5",
+                                                                "text": "Kaydet"
+                                                            },
+                                                            "configAlternates": {
+                                                                "iconCls": "string",
+                                                                "layout|flex": "number",
+                                                                "margin": "auto",
+                                                                "text": "string",
+                                                                "id": "string"
+                                                            },
+                                                            "name": "MyButton2",
+                                                            "designerId": "68d1b75b-61df-42a5-9da4-1131871b5521",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "viewcontrollereventbinding",
+                                                                    "reference": {
+                                                                        "name": "listeners",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fn": "onSaveOrUpdateInternShipRequestFormClick",
+                                                                        "implHandler": [
+                                                                            "debugger;",
+                                                                            "var refs = this.getReferences();",
+                                                                            "var userId = refs.lblUserId.text;",
+                                                                            "Ext.Ajax.request({",
+                                                                            "    url:'/byzCorp/internShip/saveOrUpdateInternShip',",
+                                                                            "    params : {",
+                                                                            "        requestData : Ext.encode(refs.saveOrUpdateRequest.getForm().getValues()),",
+                                                                            "        userId : userId",
+                                                                            "    },",
+                                                                            "    success : function(res){debugger;",
+                                                                            "       var api = Ext.decode(res.responseText);",
+                                                                            "       if(api.success){",
+                                                                            "           refs.internShipRequestGrid.getStore().load();",
+                                                                            "           refs.saveOrUpdateRequest.getForm().reset();",
+                                                                            "           var t = new Ext.ToolTip({",
+                                                                            "                anchor: 'top',",
+                                                                            "                anchorToTarget: false,",
+                                                                            "                targetXY: [refs.maincontainer.getWidth(), refs.maincontainer.getHeight()],",
+                                                                            "                title: 'Uyarı',",
+                                                                            "                html: '0000-Kayıt işlemi başarılı.',",
+                                                                            "                hideDelay: 200,",
+                                                                            "                closable: false",
+                                                                            "            });",
+                                                                            "            t.show();",
+                                                                            "            }else{",
+                                                                            "                  Ext.Msg.alert(api.data.localizedMessage, api.data.SQLState);",
+                                                                            "            }",
+                                                                            "       }",
+                                                                            "});"
+                                                                        ],
+                                                                        "name": "click",
+                                                                        "scope": "me"
+                                                                    },
+                                                                    "configAlternates": {
+                                                                        "fn": "string",
+                                                                        "implHandler": "code",
+                                                                        "name": "string",
+                                                                        "scope": "string"
+                                                                    },
+                                                                    "name": "onSaveOrUpdateInternShipRequestFormClick",
+                                                                    "designerId": "498cb3f6-defe-4e3d-baf5-ab76850b3b3e"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|uiInterfaceName": "yellow-small",
+                                                                "iconCls": "fa fa-eraser",
+                                                                "id": "internShipRequestFormReset",
+                                                                "layout|flex": 1,
+                                                                "margin": "5 5 5 5",
+                                                                "reference": "internShipRequestFormReset",
+                                                                "text": "Temizle",
+                                                                "ui": "yellow-small"
+                                                            },
+                                                            "configAlternates": {
+                                                                "iconCls": "string",
+                                                                "layout|flex": "number",
+                                                                "margin": "auto",
+                                                                "text": "string",
+                                                                "id": "string",
+                                                                "designer|uiInterfaceName": "string",
+                                                                "ui": "string",
+                                                                "reference": "string"
+                                                            },
+                                                            "name": "MyButton9",
+                                                            "designerId": "0805c42e-7363-443e-90f2-9a8aecb404d7",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "viewcontrollereventbinding",
+                                                                    "reference": {
+                                                                        "name": "listeners",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fn": "onFormInternShipFormResetClick1",
+                                                                        "implHandler": [
+                                                                            "debugger;",
+                                                                            "var refs = this.getReferences();",
+                                                                            "refs.saveInternShipForm.getForm().reset();",
+                                                                            "Ext.Ajax.request({",
+                                                                            "    url:'/byzCorp/lookUp/getLookUpDetail',",
+                                                                            "    params : {",
+                                                                            "        lookUpDetailId : 28//lud.parametreler.Bir dönem için belirlenen staj süresi",
+                                                                            "    },",
+                                                                            "    success : function(res){debugger;",
+                                                                            "                            var api = Ext.decode(res.responseText);",
+                                                                            "                            if(api.length>0){",
+                                                                            "                                refs.txtInternShipDay.setValue(api[0].LOOKUPDETAILVALUE);",
+                                                                            "",
+                                                                            "                            }",
+                                                                            "                           }",
+                                                                            "});"
+                                                                        ],
+                                                                        "name": "click",
+                                                                        "scope": "me"
+                                                                    },
+                                                                    "configAlternates": {
+                                                                        "fn": "string",
+                                                                        "implHandler": "code",
+                                                                        "name": "string",
+                                                                        "scope": "string"
+                                                                    },
+                                                                    "name": "onFormInternShipFormResetClick1",
+                                                                    "designerId": "b8fed042-16da-43fc-9f56-eab8361a6640"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|uiInterfaceName": "notRed-small",
+                                                                "iconCls": "fa fa-trash-o",
+                                                                "id": "deleteInternShip1",
+                                                                "layout|flex": 1,
+                                                                "margin": "5 5 5 5",
+                                                                "text": "Sil",
+                                                                "ui": "notRed-small"
+                                                            },
+                                                            "configAlternates": {
+                                                                "iconCls": "string",
+                                                                "layout|flex": "number",
+                                                                "margin": "auto",
+                                                                "text": "string",
+                                                                "designer|uiInterfaceName": "string",
+                                                                "id": "string",
+                                                                "ui": "string"
+                                                            },
+                                                            "name": "MyButton3",
+                                                            "designerId": "0a6e107c-17be-4b8e-89d7-0194e29b559f",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "viewcontrollereventbinding",
+                                                                    "reference": {
+                                                                        "name": "listeners",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fn": "onDeleteInternShipClick1",
+                                                                        "implHandler": [
+                                                                            "",
+                                                                            "debugger;",
+                                                                            "var refs = this.getReferences();",
+                                                                            "",
+                                                                            "var record = refs.internShipsGrid.getSelectionModel();",
+                                                                            "        if(!record.hasSelection()){",
+                                                                            "            Ext.Msg.alert('Uyarı', 'Lütfen önce listeden öğrenci seçiniz..');",
+                                                                            "        }else{",
+                                                                            "            Ext.Ajax.request({",
+                                                                            "                url:'/byzCorp/internShip/getInternShipDetailsCount',",
+                                                                            "                params : {",
+                                                                            "                    internShipId : record.getSelected().items[0].data.INTERNSHIPID",
+                                                                            "                },",
+                                                                            "                success : function(res){debugger;",
+                                                                            "                    var api = Ext.decode(res.responseText);",
+                                                                            "                    if(api[0].TOTALINTERNSHIPDETAILCOMPDAY>0){",
+                                                                            "",
+                                                                            "                        Ext.Msg.show({",
+                                                                            "                title : 'Dikkat',",
+                                                                            "                msg : 'Silmek istediğiniz kaydın detay kayıtları bulunmaktadır. Detay kayıtları ile birlikte kaydı silmek istedinize emin misiniz? ',",
+                                                                            "                width : 450,",
+                                                                            "                closable : false,",
+                                                                            "                buttons : Ext.Msg.YESNO,",
+                                                                            "                icon : Ext.Msg.QUESTION,",
+                                                                            "                buttonText :",
+                                                                            "                {",
+                                                                            "                    yes : 'Evet',",
+                                                                            "                    no : 'Hayır',",
+                                                                            "                    cancel : 'İptal'",
+                                                                            "                },",
+                                                                            "                multiline : false,",
+                                                                            "                fn : function(buttonValue, inputText, showConfig){debugger;",
+                                                                            "                    if(buttonValue==='yes'){",
+                                                                            "                        Ext.Ajax.request({",
+                                                                            "                url:'/byzCorp/internShip/deleteInternShip',",
+                                                                            "                params : {",
+                                                                            "                    internShipId : record.getSelected().items[0].data.INTERNSHIPID",
+                                                                            "                },",
+                                                                            "                success : function(res){debugger;",
+                                                                            "                    var api = Ext.decode(res.responseText);",
+                                                                            "                    if(api.success){",
+                                                                            "                        refs.internShipsGrid.getStore().load();",
+                                                                            "                        refs.internShipDetailGrid.getStore().load();",
+                                                                            "                        refs.saveInternShipForm.getForm().reset();",
+                                                                            "                        var t = new Ext.ToolTip({",
+                                                                            "    anchor: 'top',",
+                                                                            "    anchorToTarget: false,",
+                                                                            "    targetXY: [refs.maincontainer.getWidth(), refs.maincontainer.getHeight()],",
+                                                                            "    title: 'Uyarı',",
+                                                                            "    html: '0000-Silme işlemi başarılı.',",
+                                                                            "    hideDelay: 200,",
+                                                                            "    closable: false",
+                                                                            "});",
+                                                                            "t.show();",
+                                                                            "                    }else{",
+                                                                            "                        Ext.Msg.alert('Uyarı', 'Silme işlemi gerçekleşmedi.');",
+                                                                            "                    }",
+                                                                            "                }",
+                                                                            "            });",
+                                                                            "",
+                                                                            "                    }else if(buttonValue==='no'){debugger;",
+                                                                            "                        Ext.Msg.alert('Uyarı', 'Silme işleminiz iptal edildi.');",
+                                                                            "                    }else{",
+                                                                            "                        Ext.Msg.alert('Uyarı', 'İşleminiz iptal edildi.');",
+                                                                            "                    }",
+                                                                            "",
+                                                                            "                }",
+                                                                            "            });",
+                                                                            "",
+                                                                            "                    }else{",
+                                                                            "                        Ext.Ajax.request({",
+                                                                            "                url:'/byzCorp/internShip/deleteInternShip',",
+                                                                            "                params : {",
+                                                                            "                    internShipId : record.getSelected().items[0].data.INTERNSHIPID",
+                                                                            "                },",
+                                                                            "                success : function(res){debugger;",
+                                                                            "                    var api = Ext.decode(res.responseText);",
+                                                                            "                    if(api.success){",
+                                                                            "                        refs.internShipsGrid.getStore().load();",
+                                                                            "                        refs.saveInternShipForm.getForm().reset();",
+                                                                            "                        var t = new Ext.ToolTip({",
+                                                                            "    anchor: 'top',",
+                                                                            "    anchorToTarget: false,",
+                                                                            "    targetXY: [refs.maincontainer.getWidth(), refs.maincontainer.getHeight()],",
+                                                                            "    title: 'Uyarı',",
+                                                                            "    html: '0000-Silme işlemi başarılı.',",
+                                                                            "    hideDelay: 200,",
+                                                                            "    closable: false",
+                                                                            "});",
+                                                                            "t.show();",
+                                                                            "                    }else{",
+                                                                            "                        Ext.Msg.alert('Uyarı', 'Silme işlemi gerçekleşmedi.');",
+                                                                            "                    }",
+                                                                            "                }",
+                                                                            "            });",
+                                                                            "                    }",
+                                                                            "                }",
+                                                                            "            });",
+                                                                            "",
+                                                                            "        }"
+                                                                        ],
+                                                                        "name": "click",
+                                                                        "scope": "me"
+                                                                    },
+                                                                    "configAlternates": {
+                                                                        "fn": "string",
+                                                                        "implHandler": "code",
+                                                                        "name": "string",
+                                                                        "scope": "string"
+                                                                    },
+                                                                    "name": "onDeleteInternShipClick1",
+                                                                    "designerId": "7ba1de57-f0f4-4dc7-8b74-7cd3217ed024"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "header": false,
+                                                "id": "internShipRequestGrid",
+                                                "layout|margins": null,
+                                                "layout|region": "center",
+                                                "margin": "5 0 0 0",
+                                                "reference": "internShipRequestGrid",
+                                                "title": "My Grid Panel"
+                                            },
+                                            "configAlternates": {
+                                                "header": "boolean",
+                                                "id": "string",
+                                                "layout|margins": "string",
+                                                "layout|region": "string",
+                                                "margin": "auto",
+                                                "reference": "string",
+                                                "title": "string"
+                                            },
+                                            "name": "MyGridPanel7",
+                                            "designerId": "16bf0e47-93ba-4533-b2fd-0e77d3566ab1",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "string",
+                                                        "text": "Dönemi",
+                                                        "width": 166
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn34",
+                                                    "designerId": "9939a5cb-c78d-4a27-bae1-fdf7db52672c"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "number",
+                                                        "text": "Başlangıç Zamanı",
+                                                        "width": 138
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn35",
+                                                    "designerId": "49320c1f-83e0-411a-8aad-0c3dc405bab9"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "date",
+                                                        "text": "Bitiş Zamanı",
+                                                        "width": 115
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn36",
+                                                    "designerId": "62acf660-242c-4ad6-af36-2496a961ddee"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "date",
+                                                        "text": "Staj Tipi",
+                                                        "width": 121
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn38",
+                                                    "designerId": "c8db180c-a35f-4d08-a0e9-adcf6ab191a1"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "bool",
+                                                        "text": "Staj Yeri",
+                                                        "width": 219
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn37",
+                                                    "designerId": "9a308325-941a-4df1-a4fd-0343bb8be857"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "bool",
+                                                        "text": "Açıklama",
+                                                        "width": 219
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn39",
+                                                    "designerId": "7d8755f3-d55b-4245-aa9a-5dd5d19d88a2"
+                                                },
+                                                {
+                                                    "type": "Ext.view.Table",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "name": "MyTable6",
+                                                    "designerId": "8f0909be-78aa-4320-b034-557758488803"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconCls": "fa fa-lock",
+                                        "layout": "border",
+                                        "reference": "internShipResponsePanel",
+                                        "title": "Staj Talepleri Karşılama"
+                                    },
+                                    "configAlternates": {
+                                        "title": "string",
+                                        "iconCls": "string",
+                                        "layout": "string",
+                                        "hidden": "boolean",
+                                        "reference": "string"
+                                    },
+                                    "name": "MyPanel8",
+                                    "designerId": "65640125-c80c-45fe-ba23-ced0d15c2224"
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "hidden": true,
+                                        "iconCls": "fa fa-history",
+                                        "layout": "border",
+                                        "title": "İşlem Hareketleri"
+                                    },
+                                    "configAlternates": {
+                                        "title": "string",
+                                        "iconCls": "string",
+                                        "layout": "string",
+                                        "hidden": "boolean"
+                                    },
+                                    "name": "MyPanel9",
+                                    "designerId": "3b000c86-f80e-40f0-b1a8-83bc559e3e69"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -5297,9 +6404,9 @@
                                                     "                        var lblGet = lockview.getReferences().lblUserLockInfo;",
                                                     "                        var lblUserIdGet = lockview.getReferences().lblUserIdLock;",
                                                     "                        var lblNewValue = refs.lblUserInfo.text;",
-                                                    "                        var lblUserIdNewValue = refs.lblUserId.text;",
+                                                    "                        var lblUserNameNewValue = refs.lblUserName.text;",
                                                     "                        lblGet.setText(lblNewValue);",
-                                                    "                        lblUserIdGet.setText(lblUserIdNewValue);",
+                                                    "                        lblUserIdGet.setText(lblUserNameNewValue);",
                                                     "                        lockview.show();",
                                                     "                        refs.maincontainer.destroy();",
                                                     "                    }else{",
@@ -5393,6 +6500,36 @@
                                         "autoShow": true,
                                         "defaultListenerScope": true,
                                         "hidden": true,
+                                        "id": "lblUserName",
+                                        "margin": "5 5 5 5",
+                                        "reference": "lblUserName",
+                                        "text": null
+                                    },
+                                    "configAlternates": {
+                                        "margin": "auto",
+                                        "text": "string",
+                                        "autoRender": "boolean",
+                                        "autoShow": "boolean",
+                                        "defaultListenerScope": "boolean",
+                                        "id": "string",
+                                        "reference": "string",
+                                        "hidden": "boolean"
+                                    },
+                                    "name": "MyLabel1",
+                                    "designerId": "48b258ff-0541-47da-a805-d62515c09c01"
+                                },
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "autoRender": true,
+                                        "autoShow": true,
+                                        "defaultListenerScope": true,
+                                        "hidden": true,
                                         "id": "lblUserId",
                                         "margin": "5 5 5 5",
                                         "reference": "lblUserId",
@@ -5408,8 +6545,8 @@
                                         "reference": "string",
                                         "hidden": "boolean"
                                     },
-                                    "name": "MyLabel1",
-                                    "designerId": "48b258ff-0541-47da-a805-d62515c09c01"
+                                    "name": "MyLabel4",
+                                    "designerId": "737c9ff0-a656-4d38-8dbc-56e85712b157"
                                 }
                             ]
                         },

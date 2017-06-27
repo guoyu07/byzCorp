@@ -18,6 +18,7 @@ public class userDao {
 
     public List<Map<String, Object>> getUser(String userName, String password) throws SQLException {
         String query = "select" +
+                " u.userId," +
                 " u.userFirstName," +
                 " u.userLastName," +
                 " u.userName," +

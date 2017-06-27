@@ -155,6 +155,17 @@ public class lookUpController {
         }
         return result;
     }
+
+    @RequestMapping(value = "/getLudInternShipAcceptStatus")
+    public List<Map<String, Object>> getLudInternShipAcceptStatus(String query) {
+        List<Map<String, Object>> result = null;
+        try {
+            result = service.getLudInternShipAcceptStatus(query);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
     @RequestMapping(value = "/saveOrUpdateLookUpDetail")
     public @ResponseBody void saveOrUpdateLookUpDetail(HttpServletResponse response, HttpServletRequest request, Long lookUpId) throws IOException {
         JSONObject formData = userService.reqGetJsonObject(request.getParameter("data"));

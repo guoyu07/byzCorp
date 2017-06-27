@@ -64,8 +64,8 @@ Ext.define('byzCorp.view.LockView', {
                         {
                             xtype: 'image',
                             flex: 1,
-                            dock: 'top',
                             reference: 'corpLogo',
+                            dock: 'top',
                             height: 270,
                             id: 'corpLogo1',
                             itemId: 'corpLogo1',

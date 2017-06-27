@@ -6,3 +6,11 @@
     {
         background-color:#FF8080;
     }
+.blueRow .x-grid-cell
+    {
+        background-color:#c8def4;
+    }
+.yellowRow .x-grid-cell
+    {
+        background-color:#fffdad;
+    }

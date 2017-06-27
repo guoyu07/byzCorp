@@ -113,31 +113,45 @@ Ext.define('byzCorp.view.MainViewViewController', {
     onSaveOrUpdateInternShipFormClick: function(button, e, eOpts) {
         debugger;
         var refs = this.getReferences();
-        Ext.Ajax.request({
-            url:'/byzCorp/internShip/saveOrUpdateInternShip',
-            params : {
-                data : Ext.encode(refs.saveInternShipForm.getForm().getValues())
-            },
-            success : function(res){debugger;
-                var api = Ext.decode(res.responseText);
-                if(api.success){
-                    refs.internShipsGrid.getStore().load();
-                    refs.saveInternShipForm.getForm().reset();
-                    var t = new Ext.ToolTip({
-                        anchor: 'top',
-                        anchorToTarget: false,
-                        targetXY: [refs.maincontainer.getWidth(), refs.maincontainer.getHeight()],
-                        title: 'Uyarı',
-                        html: '0000-Kayıt işlemi başarılı.',
-                        hideDelay: 200,
-                        closable: false
-                    });
-                    t.show();
-                }else{
-                    Ext.Msg.alert(api.data.localizedMessage, api.data.SQLState);
+        var userId = refs.lblUserId.text;
+        if(refs.cmbInternShipStudent.getValue()===null){
+            refs.cmbInternShipStudent.setFieldStyle('background:#ffbba8');
+        }else if(refs.cmbInternShipPlace.getValue()===null){
+            refs.cmbInternShipPlace.setFieldStyle('background:#ffbba8');
+        }else if(refs.cmbInternShipType.getValue()===null){
+            refs.cmbInternShipType.setFieldStyle('background:#ffbba8');
+        }else if(refs.cmbInternShipPeriod.getValue()===null){
+            refs.cmbInternShipPeriod.setFieldStyle('background:#ffbba8');
+        }else if(refs.cmbInternShipAcceptStatus.getValue()===null){
+            refs.cmbInternShipAcceptStatus.setFieldStyle('background:#ffbba8');
+        }else{
+            Ext.Ajax.request({
+                url:'/byzCorp/internShip/saveOrUpdateInternShip',
+                params : {
+                    data : Ext.encode(refs.saveInternShipForm.getForm().getValues()),
+                    userId : userId
+                },
+                success : function(res){debugger;
+                    var api = Ext.decode(res.responseText);
+                    if(api.success){
+                        refs.internShipsGrid.getStore().load();
+                        refs.saveInternShipForm.getForm().reset();
+                        var t = new Ext.ToolTip({
+                            anchor: 'top',
+                            anchorToTarget: false,
+                            targetXY: [refs.maincontainer.getWidth(), refs.maincontainer.getHeight()],
+                            title: 'Uyarı',
+                            html: '0000-Kayıt işlemi başarılı.',
+                            hideDelay: 200,
+                            closable: false
+                        });
+                        t.show();
+                    }else{
+                        Ext.Msg.alert(api.data.localizedMessage, api.data.SQLState);
+                    }
                 }
-            }
-        });
+            });
+        }
     },
 
     onFormInternShipFormResetClick: function(button, e, eOpts) {
@@ -492,6 +506,178 @@ Ext.define('byzCorp.view.MainViewViewController', {
         refs.kullaniciKayitForm.getForm().reset();
     },
 
+    onDateStartInternShipReqSelect: function(field, value, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        Ext.Ajax.request({
+            url:'/byzCorp/lookUp/getLookUpDetail',
+            params : {
+                lookUpDetailId : 28//lud.parametreler.Bir dönem için belirlenen staj süresi
+            },
+            success : function(res){debugger;
+                var api = Ext.decode(res.responseText);
+                if(api.length>0){
+                    refs.dateEndInternShipReq.setValue(api[0].LOOKUPDETAILVALUE);
+
+                }
+            }
+        });
+    },
+
+    onSaveOrUpdateInternShipRequestFormClick: function(button, e, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        var userId = refs.lblUserId.text;
+        Ext.Ajax.request({
+            url:'/byzCorp/internShip/saveOrUpdateInternShip',
+            params : {
+                requestData : Ext.encode(refs.saveOrUpdateRequest.getForm().getValues()),
+                userId : userId
+            },
+            success : function(res){debugger;
+                var api = Ext.decode(res.responseText);
+                if(api.success){
+                    refs.internShipRequestGrid.getStore().load();
+                    refs.saveOrUpdateRequest.getForm().reset();
+                    var t = new Ext.ToolTip({
+                        anchor: 'top',
+                        anchorToTarget: false,
+                        targetXY: [refs.maincontainer.getWidth(), refs.maincontainer.getHeight()],
+                        title: 'Uyarı',
+                        html: '0000-Kayıt işlemi başarılı.',
+                        hideDelay: 200,
+                        closable: false
+                    });
+                    t.show();
+                }else{
+                    Ext.Msg.alert(api.data.localizedMessage, api.data.SQLState);
+                }
+            }
+        });
+    },
+
+    onFormInternShipFormResetClick1: function(button, e, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        refs.saveInternShipForm.getForm().reset();
+        Ext.Ajax.request({
+            url:'/byzCorp/lookUp/getLookUpDetail',
+            params : {
+                lookUpDetailId : 28//lud.parametreler.Bir dönem için belirlenen staj süresi
+            },
+            success : function(res){debugger;
+                var api = Ext.decode(res.responseText);
+                if(api.length>0){
+                    refs.txtInternShipDay.setValue(api[0].LOOKUPDETAILVALUE);
+
+                }
+            }
+        });
+    },
+
+    onDeleteInternShipClick1: function(button, e, eOpts) {
+
+        debugger;
+        var refs = this.getReferences();
+
+        var record = refs.internShipsGrid.getSelectionModel();
+        if(!record.hasSelection()){
+            Ext.Msg.alert('Uyarı', 'Lütfen önce listeden öğrenci seçiniz..');
+        }else{
+            Ext.Ajax.request({
+                url:'/byzCorp/internShip/getInternShipDetailsCount',
+                params : {
+                    internShipId : record.getSelected().items[0].data.INTERNSHIPID
+                },
+                success : function(res){debugger;
+                    var api = Ext.decode(res.responseText);
+                    if(api[0].TOTALINTERNSHIPDETAILCOMPDAY>0){
+
+                        Ext.Msg.show({
+                            title : 'Dikkat',
+                            msg : 'Silmek istediğiniz kaydın detay kayıtları bulunmaktadır. Detay kayıtları ile birlikte kaydı silmek istedinize emin misiniz? ',
+                            width : 450,
+                            closable : false,
+                            buttons : Ext.Msg.YESNO,
+                            icon : Ext.Msg.QUESTION,
+                            buttonText :
+                            {
+                                yes : 'Evet',
+                                no : 'Hayır',
+                                cancel : 'İptal'
+                            },
+                            multiline : false,
+                            fn : function(buttonValue, inputText, showConfig){debugger;
+                                if(buttonValue==='yes'){
+                                    Ext.Ajax.request({
+                                        url:'/byzCorp/internShip/deleteInternShip',
+                                        params : {
+                                            internShipId : record.getSelected().items[0].data.INTERNSHIPID
+                                        },
+                                        success : function(res){debugger;
+                                            var api = Ext.decode(res.responseText);
+                                            if(api.success){
+                                                refs.internShipsGrid.getStore().load();
+                                                refs.internShipDetailGrid.getStore().load();
+                                                refs.saveInternShipForm.getForm().reset();
+                                                var t = new Ext.ToolTip({
+                                                    anchor: 'top',
+                                                    anchorToTarget: false,
+                                                    targetXY: [refs.maincontainer.getWidth(), refs.maincontainer.getHeight()],
+                                                    title: 'Uyarı',
+                                                    html: '0000-Silme işlemi başarılı.',
+                                                    hideDelay: 200,
+                                                    closable: false
+                                                });
+                                                t.show();
+                                            }else{
+                                                Ext.Msg.alert('Uyarı', 'Silme işlemi gerçekleşmedi.');
+                                            }
+                                        }
+                                    });
+
+                                }else if(buttonValue==='no'){debugger;
+                                    Ext.Msg.alert('Uyarı', 'Silme işleminiz iptal edildi.');
+                                }else{
+                                    Ext.Msg.alert('Uyarı', 'İşleminiz iptal edildi.');
+                                }
+
+                            }
+                        });
+
+                    }else{
+                        Ext.Ajax.request({
+                            url:'/byzCorp/internShip/deleteInternShip',
+                            params : {
+                                internShipId : record.getSelected().items[0].data.INTERNSHIPID
+                            },
+                            success : function(res){debugger;
+                                var api = Ext.decode(res.responseText);
+                                if(api.success){
+                                    refs.internShipsGrid.getStore().load();
+                                    refs.saveInternShipForm.getForm().reset();
+                                    var t = new Ext.ToolTip({
+                                        anchor: 'top',
+                                        anchorToTarget: false,
+                                        targetXY: [refs.maincontainer.getWidth(), refs.maincontainer.getHeight()],
+                                        title: 'Uyarı',
+                                        html: '0000-Silme işlemi başarılı.',
+                                        hideDelay: 200,
+                                        closable: false
+                                    });
+                                    t.show();
+                                }else{
+                                    Ext.Msg.alert('Uyarı', 'Silme işlemi gerçekleşmedi.');
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+
+        }
+    },
+
     onLogOutClick: function(button, e, eOpts) {
         debugger;
         var refs = this.getReferences();
@@ -520,9 +706,9 @@ Ext.define('byzCorp.view.MainViewViewController', {
                     var lblGet = lockview.getReferences().lblUserLockInfo;
                     var lblUserIdGet = lockview.getReferences().lblUserIdLock;
                     var lblNewValue = refs.lblUserInfo.text;
-                    var lblUserIdNewValue = refs.lblUserId.text;
+                    var lblUserNameNewValue = refs.lblUserName.text;
                     lblGet.setText(lblNewValue);
-                    lblUserIdGet.setText(lblUserIdNewValue);
+                    lblUserIdGet.setText(lblUserNameNewValue);
                     lockview.show();
                     refs.maincontainer.destroy();
                 }else{

@@ -25,6 +25,7 @@ public class internShipDao {
                 " to_char(s.INTERNSHIPENDDATE,'dd/mm/yyyy') as INTERNSHIPENDDATE," +
                 " s.INTERNSHIPID," +
                 " (select us.STUDENTFIRSTNAME ||' '|| us.STUDENTLASTNAME from ktu.student us where us.studentid = s.internshipstudentid) as STUDENTFIRSTANDLASTNAME," +
+                " (select lu.lookUpDetailName ||'-'|| u.USERFIRSTNAME ||' '|| u.USERLASTNAME from ktu.users u, ktu.LOOKUPDETAIL lu where lu.LOOKUPDETAILID = u.USERTITLEID and u.USERID = s.INTERNSHIPUPDATEUSERID) as USERTITLEFIRSTANDLASTNAME," +
                 " (select us.STUDENTNO from ktu.student us where us.studentid = s.internshipstudentid) as STUDENTNO," +
                 " s.INTERNSHIPSTUDENTID," +
                 " s.INTERNSHIPTYPEID," +
@@ -37,7 +38,7 @@ public class internShipDao {
                 " s.INTERNSHIPDESC," +
                 " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 5 and lud.lookUpDetailId = s.INTERNSHIPTYPEID) as INTERNSHIPTYPE," +
                 " case when s.INTERNSHIPDAY-(select sum(ind.INTERNSHIPDETAILCOMPDAY) from ktu.INTERNSHIPDETAIL ind where ind.INTERNSHIPID = s.INTERNSHIPID)<=0 then 'Tamamlandı' else 'Tamamlanmadı' end as INTERNSHIPSTATUS," +
-                //" (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 6 and lud.lookUpDetailId = s.INTERNSHIPSTATUSID) as INTERNSHIPSTATUS," +
+                " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 10 and lud.lookUpDetailId = s.INTERNSHIPACCEPTID) as INTERNSHIPACCEPTSTATUS," +
                 " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.INTERNSHIPPERIODID) as INTERNSHIPPERIOD" +
                 " from ktu.INTERNSHIP s";
         if (txtValue != null) {
@@ -45,6 +46,7 @@ public class internShipDao {
                     " or (select lower(us.STUDENTNO) from ktu.student us where us.studentid = s.internshipstudentid) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 5 and lud.lookUpDetailId = s.INTERNSHIPTYPEID) like lower('%" + txtValue + "%')" +
                     " or lower(case when s.INTERNSHIPDAY-(select sum(ind.INTERNSHIPDETAILCOMPDAY) from ktu.INTERNSHIPDETAIL ind where ind.INTERNSHIPID = s.INTERNSHIPID)<=0 then 'Tamamlandı' else 'Tamamlanmadı' end) like lower('%" + txtValue + "%')" +
+                    " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 10 and lud.lookUpDetailId = s.INTERNSHIPACCEPTID) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.INTERNSHIPPERIODID) like lower('%" + txtValue + "%')";
         }
         return sql.queryForList(query);
@@ -75,6 +77,7 @@ public class internShipDao {
                 " s.INTERNSHIPSTUDENTID," +
                 " s.INTERNSHIPSTATUSID," +
                 " s.INTERNSHIPPERIODID," +
+                " (select l.lookUpDetailName from ktu.lookUpDetail l where l.lookUpDetailId = s.INTERNSHIPACCEPTID) as INTERNSHIPACCEPTSTATUS," +
                 " nvl(sum(s.INTERNSHIPDAY),0) totalInternShipDay" +
                 " from ktu.INTERNSHIP s where 1=1";
         if (cmbInternShipPeriod != null) {
@@ -87,7 +90,7 @@ public class internShipDao {
         if (internShipId != null) {
             query += "and s.INTERNSHIPID = "+ internShipId;
         }
-        query +=" group by s.INTERNSHIPSTUDENTID,s.INTERNSHIPSTATUSID,s.INTERNSHIPPERIODID";
+        query +=" group by s.INTERNSHIPSTUDENTID,s.INTERNSHIPSTATUSID,s.INTERNSHIPPERIODID,s.INTERNSHIPACCEPTID";
         return sql.queryForList(query);
     }
 
@@ -104,7 +107,7 @@ public class internShipDao {
         return sql.queryForList(query);
     }
 
-    public Boolean saveOrUpdateInternShip(String txtInternShipId,String txtInternShipDay,Long cmbInternShipPlace,String txtInternShipDesc, Long cmbInternShipStudent, String dateStartInternShip, String dateEndInternShip, Long cmbInternShipPeriod, Long cmbInternShipType) {
+    public Boolean saveOrUpdateInternShip(String txtInternShipId,String txtInternShipDay,Long cmbInternShipPlace,String txtInternShipDesc, Long cmbInternShipStudent, String dateStartInternShip, String dateEndInternShip, Long cmbInternShipPeriod, Long cmbInternShipType,Long cmbInternShipAcceptStatus, Long userId) {
 
         String query = "";
         try {
@@ -118,6 +121,8 @@ public class internShipDao {
                         " INTERNSHIPTYPEID," +
                         " INTERNSHIPDAY," +
                         " INTERNSHIPPLACEID," +
+                        " INTERNSHIPUPDATEUSERID," +
+                        " INTERNSHIPACCEPTID," +
                         " INTERNSHIPDESC) values (" +
                         "ktu.internShipSeq.nextval,'"
                         + cmbInternShipStudent + "',"
@@ -126,7 +131,9 @@ public class internShipDao {
                         + cmbInternShipPeriod + ","
                         + cmbInternShipType + ","
                         + txtInternShipDay + ","
-                        + cmbInternShipPlace + ",'"
+                        + cmbInternShipPlace + ","
+                        + userId + ","
+                        + cmbInternShipAcceptStatus + ",'"
                         + txtInternShipDesc + "')";
                 System.out.println(" row inserted.");
             } else {
@@ -137,7 +144,9 @@ public class internShipDao {
                         " i.INTERNSHIPPERIODID=" + cmbInternShipPeriod + "," +
                         " i.INTERNSHIPTYPEID=" + cmbInternShipType + "," +
                         " i.INTERNSHIPDAY=" + txtInternShipDay + "," +
+                        " i.INTERNSHIPUPDATEUSERID=" + userId + "," +
                         " i.INTERNSHIPPLACEID=" + cmbInternShipPlace + "," +
+                        " i.INTERNSHIPACCEPTID=" + cmbInternShipAcceptStatus + "," +
                         " i.INTERNSHIPDESC='" + txtInternShipDesc +"'"+
                         " where i.INTERNSHIPID=" + txtInternShipId;
                 System.out.println(" row updated.");
