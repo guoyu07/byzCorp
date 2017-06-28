@@ -16,7 +16,7 @@ public class internShipDao {
     @Autowired
     private JdbcTemplate sql;
 
-    public List<Map<String, Object>> getInternShips(String txtValue) throws SQLException {
+    public List<Map<String, Object>> getInternShips(String txtValue, Long userId) throws SQLException {
         if(txtValue==""){
             txtValue=null;
         }
@@ -40,14 +40,17 @@ public class internShipDao {
                 " case when s.INTERNSHIPDAY-(select sum(ind.INTERNSHIPDETAILCOMPDAY) from ktu.INTERNSHIPDETAIL ind where ind.INTERNSHIPID = s.INTERNSHIPID)<=0 then 'Tamamlandı' else 'Tamamlanmadı' end as INTERNSHIPSTATUS," +
                 " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 10 and lud.lookUpDetailId = s.INTERNSHIPACCEPTID) as INTERNSHIPACCEPTSTATUS," +
                 " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.INTERNSHIPPERIODID) as INTERNSHIPPERIOD" +
-                " from ktu.INTERNSHIP s";
+                " from ktu.INTERNSHIP s where 1=1";
         if (txtValue != null) {
-            query += " where (select lower(us.STUDENTFIRSTNAME) ||' '|| us.STUDENTLASTNAME from ktu.student us where us.studentid = s.internshipstudentid) like lower('%" + txtValue + "%')" +
+            query += " and (select lower(us.STUDENTFIRSTNAME) ||' '|| us.STUDENTLASTNAME from ktu.student us where us.studentid = s.internshipstudentid) like lower('%" + txtValue + "%')" +
                     " or (select lower(us.STUDENTNO) from ktu.student us where us.studentid = s.internshipstudentid) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 5 and lud.lookUpDetailId = s.INTERNSHIPTYPEID) like lower('%" + txtValue + "%')" +
                     " or lower(case when s.INTERNSHIPDAY-(select sum(ind.INTERNSHIPDETAILCOMPDAY) from ktu.INTERNSHIPDETAIL ind where ind.INTERNSHIPID = s.INTERNSHIPID)<=0 then 'Tamamlandı' else 'Tamamlanmadı' end) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 10 and lud.lookUpDetailId = s.INTERNSHIPACCEPTID) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.INTERNSHIPPERIODID) like lower('%" + txtValue + "%')";
+        }
+        if(userId!=null){
+            query += " and INTERNSHIPUPDATEUSERID = "+userId;
         }
         return sql.queryForList(query);
     }

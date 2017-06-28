@@ -56,6 +56,9 @@ Ext.define('byzCorp.view.LoginViewViewController', {
                                     mainRefs.menuInternShips.hide();
                                     mainRefs.internShipResponsePanel.hide();
                                 }
+                                if(api[0].USERROLEID===1){
+                                    mainRefs.menuInternShipRequest.hide();
+                                }
                             }else{
                                 Ext.Msg.alert('Uyarı', 'Hatalı şifre girdiniz.');
                             }

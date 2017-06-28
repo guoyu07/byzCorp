@@ -38,7 +38,18 @@ public class internShipController {
     public List<Map<String,Object>> getInternShips(String txtValue){
         List<Map<String,Object>> result = null;
         try {
-            result = service.getInternShips(txtValue);
+            result = service.getInternShips(txtValue, null);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    @RequestMapping(value = "/getInternShipsStudent")
+    public List<Map<String,Object>> getInternShipsStudent(String txtValue, Long userId){
+        List<Map<String,Object>> result = null;
+        try {
+            result = service.getInternShips(txtValue, userId);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -99,7 +110,7 @@ public class internShipController {
         JasperDesign jasperDesign = JRXmlLoader.load(inputStream);
         JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
         Map<String,Object> parameterMap = new HashMap();
-        List<Map<String,Object>> internShips = service.getInternShips(txtValue);
+        List<Map<String,Object>> internShips = service.getInternShips(txtValue,null);
         JRDataSource jrDataSource = new JRBeanCollectionDataSource(internShips);
         parameterMap.put("datasource", jrDataSource);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,parameterMap,jrDataSource);

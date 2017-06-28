@@ -36,7 +36,8 @@
             "getLudStatus",
             "getLudInternShipPlace",
             "getInternShipsDetails",
-            "getLudInternShipAcceptStatus"
+            "getLudInternShipAcceptStatus",
+            "getInternShipsStudent"
         ],
         "views": [
             "MainView",

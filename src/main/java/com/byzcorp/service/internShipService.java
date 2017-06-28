@@ -35,8 +35,8 @@ public class internShipService {
         return null;
     }
 
-    public List<Map<String,Object>> getInternShips (String txtValue) throws SQLException {
-        return dao.getInternShips(txtValue);
+    public List<Map<String,Object>> getInternShips (String txtValue, Long userId) throws SQLException {
+        return dao.getInternShips(txtValue, userId);
     }
 
     public List<Map<String,Object>> getInternShipsDetails (Long internShipId, String query) throws SQLException {

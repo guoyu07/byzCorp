@@ -46,7 +46,8 @@ Ext.application({
         'getLudStatus',
         'getLudInternShipPlace',
         'getInternShipsDetails',
-        'getLudInternShipAcceptStatus'
+        'getLudInternShipAcceptStatus',
+        'getInternShipsStudent'
     ],
     views: [
         'MainView',

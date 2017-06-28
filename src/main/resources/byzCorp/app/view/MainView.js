@@ -108,7 +108,13 @@ Ext.define('byzCorp.view.MainView', {
                                                 iconCls: 'fa fa-paper-plane',
                                                 text: 'Talep İşlemleri',
                                                 tooltip: 'Özet bilgiler ile iş takibinizi kolaylaştırın..',
-                                                focusable: true
+                                                focusable: true,
+                                                listeners: {
+                                                    click: {
+                                                        fn: 'onTalepIslemleriClick',
+                                                        scope: 'controller'
+                                                    }
+                                                }
                                             },
                                             {
                                                 xtype: 'menuitem',
@@ -1618,7 +1624,7 @@ Ext.define('byzCorp.view.MainView', {
                                                         layout: 'border',
                                                         header: false,
                                                         items: [
-                                                            {
+                                                            me.processSaveOrUpdateRequest({
                                                                 xtype: 'form',
                                                                 region: 'north',
                                                                 reference: 'saveOrUpdateRequest',
@@ -1707,7 +1713,7 @@ Ext.define('byzCorp.view.MainView', {
                                                                         fieldLabel: 'Label'
                                                                     }
                                                                 ]
-                                                            },
+                                                            }),
                                                             {
                                                                 xtype: 'form',
                                                                 region: 'center',
@@ -1774,47 +1780,144 @@ Ext.define('byzCorp.view.MainView', {
                                                     {
                                                         xtype: 'gridpanel',
                                                         region: 'center',
-                                                        reference: 'internShipRequestGrid',
-                                                        id: 'internShipRequestGrid',
+                                                        reference: 'internShipsStudentGrid',
+                                                        id: 'internShipsStudentGrid',
                                                         margin: '5 0 0 0',
                                                         header: false,
-                                                        title: 'My Grid Panel',
+                                                        title: 'Staj Bilgileri',
+                                                        autoLoad: true,
+                                                        forceFit: false,
+                                                        store: 'getInternShipsStudent',
                                                         columns: [
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                width: 166,
-                                                                dataIndex: 'string',
+                                                                maxWidth: 100,
+                                                                width: 100,
+                                                                sortable: true,
+                                                                dataIndex: 'STUDENTNO',
+                                                                text: 'Öğrenci No'
+                                                            },
+                                                            {
+                                                                xtype: 'gridcolumn',
+                                                                dataIndex: 'STUDENTFIRSTANDLASTNAME',
+                                                                width: 182,
+                                                                sortable: true,
+                                                                text: 'Adı Soyadı'
+                                                            },
+                                                            {
+                                                                xtype: 'gridcolumn',
+                                                                dataIndex: 'INTERNSHIPPERIOD',
+                                                                width: 145,
+                                                                sortable: true,
                                                                 text: 'Dönemi'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
                                                                 width: 138,
-                                                                dataIndex: 'number',
+                                                                sortable: true,
+                                                                dataIndex: 'INTERNSHIPSTARTDATE',
                                                                 text: 'Başlangıç Zamanı'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                width: 115,
-                                                                dataIndex: 'date',
+                                                                width: 105,
+                                                                sortable: true,
+                                                                dataIndex: 'INTERNSHIPENDDATE',
                                                                 text: 'Bitiş Zamanı'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                width: 121,
-                                                                dataIndex: 'date',
-                                                                text: 'Staj Tipi'
+                                                                dataIndex: 'INTERNSHIPDAY',
+                                                                width: 97,
+                                                                sortable: true,
+                                                                align: 'center',
+                                                                text: 'Staj Süresi'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                width: 219,
-                                                                dataIndex: 'bool',
+                                                                dataIndex: 'INTERNSHIPDONEDAY',
+                                                                width: 113,
+                                                                sortable: true,
+                                                                align: 'center',
+                                                                text: 'Tamamlanan'
+                                                            },
+                                                            {
+                                                                xtype: 'gridcolumn',
+                                                                dataIndex: 'INTERNSHIPPLACE',
+                                                                width: 217,
+                                                                sortable: true,
+                                                                groupable: true,
                                                                 text: 'Staj Yeri'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                width: 219,
-                                                                dataIndex: 'bool',
+                                                                dataIndex: 'INTERNSHIPDESC',
+                                                                width: 183,
+                                                                sortable: true,
                                                                 text: 'Açıklama'
+                                                            },
+                                                            {
+                                                                xtype: 'gridcolumn',
+                                                                dataIndex: 'INTERNSHIPTYPE',
+                                                                width: 104,
+                                                                sortable: true,
+                                                                text: 'Tipi'
+                                                            },
+                                                            {
+                                                                xtype: 'gridcolumn',
+                                                                dataIndex: 'INTERNSHIPSTATUS',
+                                                                width: 128,
+                                                                sortable: true,
+                                                                text: 'Statü'
+                                                            },
+                                                            {
+                                                                xtype: 'gridcolumn',
+                                                                dataIndex: 'INTERNSHIPACCEPTSTATUS',
+                                                                width: 128,
+                                                                sortable: true,
+                                                                text: 'Onay Durumu'
+                                                            },
+                                                            {
+                                                                xtype: 'gridcolumn',
+                                                                dataIndex: 'USERTITLEFIRSTANDLASTNAME',
+                                                                width: 211,
+                                                                sortable: true,
+                                                                text: 'Kaydeden Kullanıcı'
+                                                            }
+                                                        ],
+                                                        viewConfig: {
+                                                            getRowClass: function(record, rowIndex, rowParams, store) {
+                                                                debugger;
+                                                                /*var refs = this.getReferences();
+                                                                refs.internShipsStudentGrid.getStore().addListener('beforeload', function(store, options){debugger;
+                                                                options._params.userId =  refs.lblUserId.text;
+                                                                });*/
+                                                                if(record.data.INTERNSHIPSTATUS==="Tamamlandı" && record.data.INTERNSHIPACCEPTSTATUS ==="Onaylandı") {
+                                                                    return 'firstRow';
+                                                                } else if(record.data.INTERNSHIPSTATUS==="Tamamlanmadı" && record.data.INTERNSHIPACCEPTSTATUS ==="Onaylandı"){
+                                                                    return 'blueRow';
+                                                                }else if(record.data.INTERNSHIPSTATUS==="Tamamlanmadı" && record.data.INTERNSHIPACCEPTSTATUS ==="Onaylanmadı"){
+                                                                    return 'yellowRow';
+                                                                }else{
+                                                                    return 'lastRow';
+                                                                }
+                                                            },
+                                                            id: 'internShipGrid1',
+                                                            listeners: {
+                                                                rowclick: {
+                                                                    fn: 'onInternShipGridRowClick1',
+                                                                    scope: 'controller'
+                                                                }
+                                                            }
+                                                        },
+                                                        features: [
+                                                            {
+                                                                ftype: 'grouping',
+                                                                showSummaryRow: false,
+                                                                groupByText: 'Bu sütunu grupla',
+                                                                hideGroupedHeader: true,
+                                                                showGroupsText: 'Grubu bırak',
+                                                                startCollapsed: true
                                                             }
                                                         ]
                                                     }
@@ -1823,6 +1926,7 @@ Ext.define('byzCorp.view.MainView', {
                                             {
                                                 xtype: 'panel',
                                                 reference: 'internShipResponsePanel',
+                                                hidden: true,
                                                 layout: 'border',
                                                 iconCls: 'fa fa-lock',
                                                 title: 'Staj Talepleri Karşılama'
@@ -1989,6 +2093,11 @@ Ext.define('byzCorp.view.MainView', {
     },
 
     processInternShipGridFilter: function(config) {
+        debugger;
+        return config;
+    },
+
+    processSaveOrUpdateRequest: function(config) {
         debugger;
         return config;
     },
