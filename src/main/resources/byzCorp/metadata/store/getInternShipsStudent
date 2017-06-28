@@ -1,0 +1,83 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "getInternShipsStudent",
+        "model": "getInternShips",
+        "storeId": "getInternShipsStudent"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "getInternShips1",
+    "designerId": "6c02d49d-a159-4f25-abb6-6a5bf3c027bd",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "getInternShipsStudent",
+                "url": "/byzCorp/internShip/getInternShipsStudent"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "url": "string"
+            },
+            "name": "MyAjaxProxy1",
+            "designerId": "4e4ccee0-8239-4e94-b8cc-848e0b2d0e93",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "getInternShipsStudent"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "c1191595-e43c-4d8c-88b3-601c4eec934a"
+                },
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "userId"
+                        ],
+                        "fn": "beforeLoad",
+                        "implHandler": [
+                            "debugger;",
+                            "var refs = this.getReferences();"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "beforeLoad",
+                    "designerId": "56fdd2ee-4f8a-4e12-9e7c-376f241a0093"
+                }
+            ]
+        }
+    ]
+}
