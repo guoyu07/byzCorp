@@ -35,10 +35,10 @@ public class internShipController {
     private internShipService service;
 
     @RequestMapping(value = "/getInternShips")
-    public List<Map<String,Object>> getInternShips(String txtValue){
+    public List<Map<String,Object>> getInternShips(String txtValue, Long cmbPeriod){
         List<Map<String,Object>> result = null;
         try {
-            result = service.getInternShips(txtValue, null);
+            result = service.getInternShips(txtValue, null, cmbPeriod);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -49,7 +49,7 @@ public class internShipController {
     public List<Map<String,Object>> getInternShipsStudent(String txtValue, Long userId){
         List<Map<String,Object>> result = null;
         try {
-            result = service.getInternShips(txtValue, userId);
+            result = service.getInternShips(txtValue, userId,null);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -103,6 +103,10 @@ public class internShipController {
     @RequestMapping(value= "internShipPDF")
     public @ResponseBody void internShipPdf(HttpServletRequest request,HttpServletResponse response) throws JRException, SQLException, IOException {
         String txtValue = request.getParameter("txtValue");
+        Long cmbPeriod = null;
+        if(!request.getParameter("cmbPeriod").equals("null")){
+            cmbPeriod = Long.parseLong(request.getParameter("cmbPeriod"));
+        }
         if(txtValue==""){
             txtValue = null;
         }
@@ -110,12 +114,53 @@ public class internShipController {
         JasperDesign jasperDesign = JRXmlLoader.load(inputStream);
         JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
         Map<String,Object> parameterMap = new HashMap();
-        List<Map<String,Object>> internShips = service.getInternShips(txtValue,null);
+        List<Map<String,Object>> internShips = service.getInternShips(txtValue,null,cmbPeriod);
         JRDataSource jrDataSource = new JRBeanCollectionDataSource(internShips);
         parameterMap.put("datasource", jrDataSource);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,parameterMap,jrDataSource);
         response.setContentType("application/x-pdf");
         response.setHeader("Content-Disposition", "inline ; filename = internShipList.pdf");
+        final OutputStream outputStream = response.getOutputStream();
+        JasperExportManager.exportReportToPdfStream(jasperPrint,outputStream);
+    }
+
+    @RequestMapping(value= "internShipStartPDF")
+    public @ResponseBody void internShipStartPdf(HttpServletRequest request,HttpServletResponse response) throws JRException, SQLException, IOException {
+        String txtValue = request.getParameter("txtValue");
+        if(txtValue==""){
+            txtValue = null;
+        }
+        Long cmbPeriod = null;
+        if(!request.getParameter("cmbPeriod").equals("null")){
+            cmbPeriod = Long.parseLong(request.getParameter("cmbPeriod"));
+        }
+        InputStream inputStream = this.getClass().getResourceAsStream("/reports/internShipStartForm.jrxml");
+        JasperDesign jasperDesign = JRXmlLoader.load(inputStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+        Map<String,Object> parameterMap = new HashMap();
+        List<Map<String,Object>> internShips = service.getInternShips(txtValue,null, cmbPeriod);
+        JRDataSource jrDataSource = new JRBeanCollectionDataSource(internShips);
+        parameterMap.put("datasource", jrDataSource);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,parameterMap,jrDataSource);
+        response.setContentType("application/x-pdf");
+        response.setHeader("Content-Disposition", "inline ; filename = internShipStartList.pdf");
+        final OutputStream outputStream = response.getOutputStream();
+        JasperExportManager.exportReportToPdfStream(jasperPrint,outputStream);
+    }
+
+    @RequestMapping(value= "internShipDeliveryPDF")
+    public @ResponseBody void internShipDeliveryPDF(HttpServletRequest request,HttpServletResponse response) throws JRException, SQLException, IOException {
+        String txtValue = "("+request.getParameter("txtValue").substring(1)+")";
+        InputStream inputStream = this.getClass().getResourceAsStream("/reports/internShipDeliveryList.jrxml");
+        JasperDesign jasperDesign = JRXmlLoader.load(inputStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+        Map<String,Object> parameterMap = new HashMap();
+        List<Map<String,Object>> internShips = service.internShipDeliveryPDF(txtValue);
+        JRDataSource jrDataSource = new JRBeanCollectionDataSource(internShips);
+        parameterMap.put("datasource", jrDataSource);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,parameterMap,jrDataSource);
+        response.setContentType("application/x-pdf");
+        response.setHeader("Content-Disposition", "inline ; filename = internShipDeliveryList.pdf");
         final OutputStream outputStream = response.getOutputStream();
         JasperExportManager.exportReportToPdfStream(jasperPrint,outputStream);
     }

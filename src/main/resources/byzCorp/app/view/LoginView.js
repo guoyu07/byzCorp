@@ -52,7 +52,7 @@ Ext.define('byzCorp.view.LoginView', {
             items: [
                 {
                     xtype: 'form',
-                    height: 410,
+                    height: 448,
                     id: 'loginLayout',
                     margin: '20 40 20 40',
                     width: 325,
@@ -126,15 +126,15 @@ Ext.define('byzCorp.view.LoginView', {
                         },
                         {
                             xtype: 'button',
-                            hidden: true,
-                            id: 'forgoutPassword',
+                            reference: 'changePassword',
+                            id: 'changePassword',
                             margin: '5 5 10 5',
                             ui: 'notRed-small',
                             iconAlign: 'right',
-                            iconCls: 'fa fa-question',
-                            text: 'Şifremi Unuttum',
+                            iconCls: 'fa fa-repeat',
+                            text: 'Şifre Değiştir',
                             listeners: {
-                                click: 'onSignInClick21'
+                                click: 'onChangePasswordClick'
                             }
                         }
                     ]

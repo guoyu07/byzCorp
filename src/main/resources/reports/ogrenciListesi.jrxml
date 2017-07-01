@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="kullaniciListesi" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4d19a5dd-a314-45ac-b9d9-f495bb775016">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ogrenciListesi" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4d19a5dd-a314-45ac-b9d9-f495bb775016">
 	<property name="ireport.zoom" value="1.2100000000000002"/>
-	<property name="ireport.x" value="13"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<field name="STUDENTNO" class="java.lang.String"/>
-	<field name="STUDENTFIRSTNAME" class="java.lang.String"/>
-	<field name="STUDENTLASTNAME" class="java.lang.String"/>
+	<field name="STUDENTFIRSTANDLASTNAME" class="java.lang.String"/>
 	<field name="STUDENTDEPARTMENT" class="java.lang.String"/>
 	<field name="STUDENTCLASS" class="java.lang.String"/>
 	<field name="STUDENTPERIOD" class="java.lang.String"/>
@@ -165,7 +164,7 @@
 				<text><![CDATA[Öğrenci No]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="77" y="0" width="100" height="29" backcolor="#9999FF" uuid="40d3bccd-c5bd-453c-b526-ffc48320300d"/>
+				<reportElement mode="Opaque" x="77" y="0" width="207" height="29" backcolor="#9999FF" uuid="40d3bccd-c5bd-453c-b526-ffc48320300d"/>
 				<box>
 					<pen lineWidth="0.25"/>
 					<topPen lineWidth="0.25"/>
@@ -177,22 +176,7 @@
 					<font size="9" isBold="true" pdfEncoding="Cp1254"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<text><![CDATA[Adı]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="177" y="0" width="107" height="29" backcolor="#9999FF" uuid="ab5661b1-d408-4707-b7a0-9e749c1ea2d2"/>
-				<box>
-					<pen lineWidth="0.25"/>
-					<topPen lineWidth="0.25"/>
-					<leftPen lineWidth="0.25"/>
-					<bottomPen lineWidth="0.25"/>
-					<rightPen lineWidth="0.25"/>
-				</box>
-				<textElement>
-					<font size="9" isBold="true" pdfEncoding="Cp1254"/>
-					<paragraph leftIndent="5"/>
-				</textElement>
-				<text><![CDATA[Soyadı]]></text>
+				<text><![CDATA[Adı Soyadı]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="284" y="0" width="100" height="29" backcolor="#9999FF" uuid="fc5e5c59-6d76-49ca-bce3-c893c030fcfb"/>
@@ -289,7 +273,7 @@
 				<textFieldExpression><![CDATA[$F{STUDENTNO}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="77" y="0" width="100" height="20" uuid="a8603359-2993-44db-a9a0-4b985cb6534f"/>
+				<reportElement x="77" y="0" width="207" height="20" uuid="a8603359-2993-44db-a9a0-4b985cb6534f"/>
 				<box>
 					<pen lineWidth="0.25"/>
 					<topPen lineWidth="0.25"/>
@@ -301,22 +285,7 @@
 					<font size="9" pdfEncoding="Cp1254"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{STUDENTFIRSTNAME}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="177" y="0" width="107" height="20" uuid="717cdc7a-50d2-4b46-8fc5-0dd46fda7c97"/>
-				<box>
-					<pen lineWidth="0.25"/>
-					<topPen lineWidth="0.25"/>
-					<leftPen lineWidth="0.25"/>
-					<bottomPen lineWidth="0.25"/>
-					<rightPen lineWidth="0.25"/>
-				</box>
-				<textElement>
-					<font size="9" pdfEncoding="Cp1254"/>
-					<paragraph leftIndent="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{STUDENTLASTNAME}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{STUDENTFIRSTANDLASTNAME}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="284" y="0" width="100" height="20" uuid="f0811d50-cf83-441b-af3d-ac2f5d815b25"/>

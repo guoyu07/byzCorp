@@ -279,7 +279,7 @@ Ext.define('byzCorp.view.MainView', {
                                                                             xtype: 'menuitem',
                                                                             id: 'menuStudentListPdf',
                                                                             iconCls: 'fa fa-file-pdf-o',
-                                                                            text: 'Pdf',
+                                                                            text: 'Öğrenci Listesi',
                                                                             listeners: {
                                                                                 click: {
                                                                                     fn: 'onStudentListPdfClick',
@@ -827,7 +827,6 @@ Ext.define('byzCorp.view.MainView', {
                                                         ],
                                                         viewConfig: {
                                                             getRowClass: function(record, rowIndex, rowParams, store) {
-                                                                debugger;
                                                                 if(record.data.INTERNSHIPSTATUS==="Tamamlandı" && record.data.INTERNSHIPACCEPTSTATUS ==="Onaylandı") {
                                                                     return 'firstRow';
                                                                 } else if(record.data.INTERNSHIPSTATUS==="Tamamlanmadı" && record.data.INTERNSHIPACCEPTSTATUS ==="Onaylandı"){
@@ -865,10 +864,34 @@ Ext.define('byzCorp.view.MainView', {
                                                                                     xtype: 'menuitem',
                                                                                     id: 'internShipPdf',
                                                                                     iconCls: 'fa fa-file-pdf-o',
-                                                                                    text: 'Pdf',
+                                                                                    text: 'Staj Listesi',
                                                                                     listeners: {
                                                                                         click: {
                                                                                             fn: 'onInternShipListPdfClick1',
+                                                                                            scope: 'controller'
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    xtype: 'menuitem',
+                                                                                    id: 'internShipStartPdf',
+                                                                                    iconCls: 'fa fa-file-pdf-o',
+                                                                                    text: 'Staj Başlangıç Takip Formu',
+                                                                                    listeners: {
+                                                                                        click: {
+                                                                                            fn: 'onInternShipListPdfClick11',
+                                                                                            scope: 'controller'
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    xtype: 'menuitem',
+                                                                                    id: 'internShipDelPdf',
+                                                                                    iconCls: 'fa fa-file-pdf-o',
+                                                                                    text: 'Staj Teslim Formu',
+                                                                                    listeners: {
+                                                                                        click: {
+                                                                                            fn: 'onInternShipListPdfClick111',
                                                                                             scope: 'controller'
                                                                                         }
                                                                                     }
@@ -954,7 +977,13 @@ Ext.define('byzCorp.view.MainView', {
                                                                     }
                                                                 ],
                                                                 viewConfig: {
-                                                                    id: 'internShipDetailGrids'
+                                                                    id: 'internShipDetailGrids',
+                                                                    listeners: {
+                                                                        rowclick: {
+                                                                            fn: 'onInternShipDetailGridsRowClick',
+                                                                            scope: 'controller'
+                                                                        }
+                                                                    }
                                                                 }
                                                             },
                                                             {
@@ -1799,16 +1828,16 @@ Ext.define('byzCorp.view.MainView', {
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                dataIndex: 'STUDENTFIRSTANDLASTNAME',
                                                                 width: 182,
                                                                 sortable: true,
+                                                                dataIndex: 'STUDENTFIRSTANDLASTNAME',
                                                                 text: 'Adı Soyadı'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                dataIndex: 'INTERNSHIPPERIOD',
                                                                 width: 145,
                                                                 sortable: true,
+                                                                dataIndex: 'INTERNSHIPPERIOD',
                                                                 text: 'Dönemi'
                                                             },
                                                             {
@@ -1827,61 +1856,61 @@ Ext.define('byzCorp.view.MainView', {
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                dataIndex: 'INTERNSHIPDAY',
                                                                 width: 97,
                                                                 sortable: true,
                                                                 align: 'center',
+                                                                dataIndex: 'INTERNSHIPDAY',
                                                                 text: 'Staj Süresi'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                dataIndex: 'INTERNSHIPDONEDAY',
                                                                 width: 113,
                                                                 sortable: true,
                                                                 align: 'center',
+                                                                dataIndex: 'INTERNSHIPDONEDAY',
                                                                 text: 'Tamamlanan'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                dataIndex: 'INTERNSHIPPLACE',
                                                                 width: 217,
                                                                 sortable: true,
+                                                                dataIndex: 'INTERNSHIPPLACE',
                                                                 groupable: true,
                                                                 text: 'Staj Yeri'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                dataIndex: 'INTERNSHIPDESC',
                                                                 width: 183,
                                                                 sortable: true,
+                                                                dataIndex: 'INTERNSHIPDESC',
                                                                 text: 'Açıklama'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                dataIndex: 'INTERNSHIPTYPE',
                                                                 width: 104,
                                                                 sortable: true,
+                                                                dataIndex: 'INTERNSHIPTYPE',
                                                                 text: 'Tipi'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                dataIndex: 'INTERNSHIPSTATUS',
                                                                 width: 128,
                                                                 sortable: true,
+                                                                dataIndex: 'INTERNSHIPSTATUS',
                                                                 text: 'Statü'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                dataIndex: 'INTERNSHIPACCEPTSTATUS',
                                                                 width: 128,
                                                                 sortable: true,
+                                                                dataIndex: 'INTERNSHIPACCEPTSTATUS',
                                                                 text: 'Onay Durumu'
                                                             },
                                                             {
                                                                 xtype: 'gridcolumn',
-                                                                dataIndex: 'USERTITLEFIRSTANDLASTNAME',
                                                                 width: 211,
                                                                 sortable: true,
+                                                                dataIndex: 'USERTITLEFIRSTANDLASTNAME',
                                                                 text: 'Kaydeden Kullanıcı'
                                                             }
                                                         ],
@@ -2025,6 +2054,25 @@ Ext.define('byzCorp.view.MainView', {
                                             align: 'stretch'
                                         },
                                         items: [
+                                            {
+                                                xtype: 'combobox',
+                                                reference: 'cmbPeriod',
+                                                id: 'cmbPeriod',
+                                                margin: '5 5 5 0',
+                                                width: 200,
+                                                emptyText: 'Aktif Dönem',
+                                                enableKeyEvents: true,
+                                                autoLoadOnValue: true,
+                                                displayField: 'LOOKUPDETAILNAME',
+                                                store: 'getLudPeriods',
+                                                valueField: 'LOOKUPDETAILID',
+                                                listeners: {
+                                                    select: {
+                                                        fn: 'onCmbPeriodSelect',
+                                                        scope: 'controller'
+                                                    }
+                                                }
+                                            },
                                             {
                                                 xtype: 'button',
                                                 flex: 1,

@@ -56,4 +56,9 @@ public class userService {
 
         return dao.saveOrUpdateUser(txtUserId,txtUserFirstName,txtUserLastName,txtUserName,txtUserEmail,cmbUserRole,cmbUserTitle,cmbUserStatus);
     }
+
+    @Transactional(readOnly = false)
+    public Boolean updatePassword(Long userId, String password){
+        return dao.updatePassword(userId,password);
+    }
 }

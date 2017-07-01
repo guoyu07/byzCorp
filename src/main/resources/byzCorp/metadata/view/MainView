@@ -227,12 +227,15 @@
                                             "userConfig": {
                                                 "fn": "onTalepIslemleriClick",
                                                 "implHandler": [
+                                                    "debugger;",
                                                     "var refs = this.getReferences();",
-                                                    "refs.internShipsStudentGrid.getStore().load({",
-                                                    "    params:{",
-                                                    "        userId : refs.lblUserId.text",
-                                                    "    }",
-                                                    "});"
+                                                    "/*refs.internShipsStudentGrid.getStore().addListener('beforeload', function(store, options){debugger;",
+                                                    "            options._params.userId =  refs.lblUserId.text;",
+                                                    "        });",
+                                                    "",
+                                                    "refs.internShipsStudentGrid.getStore().load();*/",
+                                                    "refs.internShipsStudentGrid.getStore().getProxy().setExtraParam(\"userId\", refs.lblUserId.text);",
+                                                    "refs.internShipsStudentGrid.getStore().load();"
                                                 ],
                                                 "name": "click",
                                                 "scope": "me"
@@ -816,7 +819,7 @@
                                                                     "userConfig": {
                                                                         "iconCls": "fa fa-file-pdf-o",
                                                                         "id": "menuStudentListPdf",
-                                                                        "text": "Pdf"
+                                                                        "text": "Öğrenci Listesi"
                                                                     },
                                                                     "configAlternates": {
                                                                         "iconCls": "string",
@@ -2810,7 +2813,6 @@
                                                             "userConfig": {
                                                                 "fn": "onInternShipGridRowClick",
                                                                 "implHandler": [
-                                                                    "debugger;",
                                                                     "var refs = this.getReferences();",
                                                                     "var data = record.data;",
                                                                     "refs.txtInternShipId.setValue(data.INTERNSHIPID);",
@@ -2822,7 +2824,7 @@
                                                                     "refs.txtInternShipDay.setValue(data.INTERNSHIPDAY);",
                                                                     "refs.cmbInternShipPlace.setValue(data.INTERNSHIPPLACEID);",
                                                                     "refs.txtInternShipDesc.setValue(data.INTERNSHIPDESC);",
-                                                                    "refs.cmbInternShipAcceptStatus.setValue(data.INTERNSHIPACCEPTSTATUS);",
+                                                                    "refs.cmbInternShipAcceptStatus.setValue(data.INTERNSHIPACCEPTID);",
                                                                     "var internShipDetailFormPanel = refs.internShipDetailFormPanel;",
                                                                     "internShipDetailFormPanel.setCollapsed(false);",
                                                                     "",
@@ -2860,7 +2862,6 @@
                                                                 ],
                                                                 "fn": "getRowClass",
                                                                 "implHandler": [
-                                                                    "debugger;",
                                                                     "if(record.data.INTERNSHIPSTATUS===\"Tamamlandı\" && record.data.INTERNSHIPACCEPTSTATUS ===\"Onaylandı\") {",
                                                                     "\t\t\t\t\t\t\t\treturn 'firstRow';",
                                                                     "\t\t\t\t\t\t\t} else if(record.data.INTERNSHIPSTATUS===\"Tamamlanmadı\" && record.data.INTERNSHIPACCEPTSTATUS ===\"Onaylandı\"){",
@@ -2956,7 +2957,7 @@
                                                                             "userConfig": {
                                                                                 "iconCls": "fa fa-file-pdf-o",
                                                                                 "id": "internShipPdf",
-                                                                                "text": "Pdf"
+                                                                                "text": "Staj Listesi"
                                                                             },
                                                                             "configAlternates": {
                                                                                 "iconCls": "string",
@@ -2977,7 +2978,8 @@
                                                                                         "fn": "onInternShipListPdfClick1",
                                                                                         "implHandler": [
                                                                                             "var refs = this.getReferences();",
-                                                                                            "document.location = '/byzCorp/internShip/internShipPDF?txtValue='+refs.txtSearch.getValue();"
+                                                                                            "debugger;",
+                                                                                            "document.location = '/byzCorp/internShip/internShipPDF?txtValue='+refs.txtSearch.getValue()+'&cmbPeriod='+refs.cmbPeriod.getValue();"
                                                                                         ],
                                                                                         "name": "click",
                                                                                         "scope": "me"
@@ -2990,6 +2992,109 @@
                                                                                     },
                                                                                     "name": "onInternShipListPdfClick1",
                                                                                     "designerId": "c13381c1-2400-47e3-9be7-dd74b606c146"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.menu.Item",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "iconCls": "fa fa-file-pdf-o",
+                                                                                "id": "internShipStartPdf",
+                                                                                "text": "Staj Başlangıç Takip Formu"
+                                                                            },
+                                                                            "configAlternates": {
+                                                                                "iconCls": "string",
+                                                                                "id": "string",
+                                                                                "text": "string"
+                                                                            },
+                                                                            "name": "MyMenuItem7",
+                                                                            "designerId": "3c71b45e-2361-4a38-837a-785f0c06b74f",
+                                                                            "cn": [
+                                                                                {
+                                                                                    "type": "viewcontrollereventbinding",
+                                                                                    "reference": {
+                                                                                        "name": "listeners",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "fn": "onInternShipListPdfClick11",
+                                                                                        "implHandler": [
+                                                                                            "var refs = this.getReferences();",
+                                                                                            "debugger;",
+                                                                                            "document.location = '/byzCorp/internShip/internShipStartPDF?txtValue='+refs.txtSearch.getValue()+'&cmbPeriod='+refs.cmbPeriod.getValue();"
+                                                                                        ],
+                                                                                        "name": "click",
+                                                                                        "scope": "me"
+                                                                                    },
+                                                                                    "configAlternates": {
+                                                                                        "fn": "string",
+                                                                                        "implHandler": "code",
+                                                                                        "name": "string",
+                                                                                        "scope": "string"
+                                                                                    },
+                                                                                    "name": "onInternShipListPdfClick11",
+                                                                                    "designerId": "0d6dcbb9-dda1-4651-b9c3-b27bae82bc0f"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.menu.Item",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "iconCls": "fa fa-file-pdf-o",
+                                                                                "id": "internShipDelPdf",
+                                                                                "text": "Staj Teslim Formu"
+                                                                            },
+                                                                            "configAlternates": {
+                                                                                "iconCls": "string",
+                                                                                "id": "string",
+                                                                                "text": "string"
+                                                                            },
+                                                                            "name": "MyMenuItem6",
+                                                                            "designerId": "d0d45192-e7de-475c-8b06-b1eb252d7240",
+                                                                            "cn": [
+                                                                                {
+                                                                                    "type": "viewcontrollereventbinding",
+                                                                                    "reference": {
+                                                                                        "name": "listeners",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "fn": "onInternShipListPdfClick111",
+                                                                                        "implHandler": [
+                                                                                            "var refs = this.getReferences();",
+                                                                                            "debugger;",
+                                                                                            "var gridList = refs.internShipsGrid.getSelectionModel().store.data;",
+                                                                                            "var internShipList = [];",
+                                                                                            "if(gridList.items.length>0){",
+                                                                                            "    for(var i=0; i<gridList.items.length; i++){",
+                                                                                            "        internShipList +=\",\"+gridList.items[i].data.INTERNSHIPID;",
+                                                                                            "    }",
+                                                                                            "}",
+                                                                                            "document.location = '/byzCorp/internShip/internShipDeliveryPDF?txtValue='+internShipList;"
+                                                                                        ],
+                                                                                        "name": "click",
+                                                                                        "scope": "me"
+                                                                                    },
+                                                                                    "configAlternates": {
+                                                                                        "fn": "string",
+                                                                                        "implHandler": "code",
+                                                                                        "name": "string",
+                                                                                        "scope": "string"
+                                                                                    },
+                                                                                    "name": "onInternShipListPdfClick111",
+                                                                                    "designerId": "9ff5dd9f-7451-4634-882b-415425a7a2af"
                                                                                 }
                                                                             ]
                                                                         }
@@ -3265,7 +3370,39 @@
                                                                 "id": "string"
                                                             },
                                                             "name": "MyTable5",
-                                                            "designerId": "da6a9701-0421-491b-ac31-7fe33f137164"
+                                                            "designerId": "da6a9701-0421-491b-ac31-7fe33f137164",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "viewcontrollereventbinding",
+                                                                    "reference": {
+                                                                        "name": "listeners",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fn": "onInternShipDetailGridsRowClick",
+                                                                        "implHandler": [
+                                                                            "var refs = this.getReferences();",
+                                                                            "var data = record.data;",
+                                                                            "refs.txtInternShipDetailId.setValue(data.INTERNSHIPDETAILID);",
+                                                                            "refs.dateDeliveryInternShip.setRawValue(data.INTERNSHIPDETAILCOMPDATE);",
+                                                                            "refs.txtInternShipDetailCompDate.setValue(data.INTERNSHIPDETAILCOMPDAY);",
+                                                                            "refs.cmbInternShipDetailPlace.setValue(data.INTERNSHIPDETAILPLACEID);",
+                                                                            "refs.txtInternShipDetailDesc.setValue(data.INTERNSHIPDETAILDESC);"
+                                                                        ],
+                                                                        "name": "rowclick",
+                                                                        "scope": "me"
+                                                                    },
+                                                                    "configAlternates": {
+                                                                        "fn": "string",
+                                                                        "implHandler": "code",
+                                                                        "name": "string",
+                                                                        "scope": "string"
+                                                                    },
+                                                                    "name": "onInternShipDetailGridsRowClick",
+                                                                    "designerId": "ca693ef9-0311-4b45-b5db-f7425b85e019"
+                                                                }
+                                                            ]
                                                         }
                                                     ]
                                                 },
@@ -3546,7 +3683,10 @@
                                                                                     "    success : function(res){debugger;",
                                                                                     "       var api = Ext.decode(res.responseText);",
                                                                                     "       if(api.success){",
-                                                                                    "           refs.internShipDetailGrid.getStore().load();",
+                                                                                    "           refs.internShipDetailGrid.getStore().reload();",
+                                                                                    "           /*refs.internShipDetailGrid.getStore().reload({",
+                                                                                    "               internShipId :refs.internShipsGrid.getSelection()[0].data.INTERNSHIPID",
+                                                                                    "           });*/",
                                                                                     "           refs.internShipsGrid.getStore().load();",
                                                                                     "           refs.saveOrUpdateInternShipDetailForm.getForm().reset();",
                                                                                     "           var t = new Ext.ToolTip({",
@@ -3564,7 +3704,7 @@
                                                                                     "            }",
                                                                                     "       }",
                                                                                     "});",
-                                                                                    "   ",
+                                                                                    "",
                                                                                     "}else{",
                                                                                     "    Ext.Msg.alert('Uyarı', 'Öncelikle staj bilgileri listesinden bir kayıt seçmelisiniz.');",
                                                                                     "}"
@@ -3695,7 +3835,7 @@
                                                                                     "                success : function(res){debugger;",
                                                                                     "                    var api = Ext.decode(res.responseText);",
                                                                                     "                    if(api.success){",
-                                                                                    "                        refs.internShipDetailGrid.getStore().load();",
+                                                                                    "                        refs.internShipDetailGrid.getStore().reload();",
                                                                                     "                        refs.internShipsGrid.getStore().load();",
                                                                                     "                        refs.saveOrUpdateInternShipDetailForm.getForm().reset();",
                                                                                     "                        var t = new Ext.ToolTip({",
@@ -5467,6 +5607,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "designer|displayName": "requestForm",
                                                 "header": false,
                                                 "layout": "border",
                                                 "layout|region": "west",
@@ -5478,7 +5619,8 @@
                                                 "layout": "string",
                                                 "layout|region": "string",
                                                 "title": "string",
-                                                "width": "auto"
+                                                "width": "auto",
+                                                "designer|displayName": "string"
                                             },
                                             "name": "MyPanel23",
                                             "designerId": "602049b9-ae59-45c0-8170-50fca6ea03e6",
@@ -5593,6 +5735,10 @@
                                                                         "implHandler": [
                                                                             "debugger;",
                                                                             "var refs = this.getReferences();",
+                                                                            "var addDate = refs.txtInternShipDay.getValue();",
+                                                                            "refs.dateEndInternShip.setValue(Ext.Date.add(value, Ext.Date.DAY, addDate));",
+                                                                            "debugger;",
+                                                                            "var refs = this.getReferences();",
                                                                             "Ext.Ajax.request({",
                                                                             "            url:'/byzCorp/lookUp/getLookUpDetail',",
                                                                             "            params : {",
@@ -5601,7 +5747,7 @@
                                                                             "            success : function(res){debugger;",
                                                                             "                var api = Ext.decode(res.responseText);",
                                                                             "                if(api.length>0){",
-                                                                            "                    refs.dateEndInternShipReq.setValue(api[0].LOOKUPDETAILVALUE);",
+                                                                            "                    refs.dateEndInternShipReq.setValue(Ext.Date.add(value, Ext.Date.DAY, api[0].LOOKUPDETAILVALUE));",
                                                                             "",
                                                                             "                }",
                                                                             "            }",
@@ -6923,6 +7069,91 @@
                             "designerId": "0c7feda9-fcd3-42d2-bc41-bd3d192e6aaa",
                             "cn": [
                                 {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "autoLoadOnValue": true,
+                                        "baseCls": null,
+                                        "disabledCls": null,
+                                        "displayField": "LOOKUPDETAILNAME",
+                                        "emptyCls": null,
+                                        "emptyText": "Aktif Dönem",
+                                        "enableKeyEvents": true,
+                                        "fieldCls": null,
+                                        "fieldLabel": null,
+                                        "id": "cmbPeriod",
+                                        "labelCls": null,
+                                        "margin": "5 5 5 0",
+                                        "overCls": null,
+                                        "reference": "cmbPeriod",
+                                        "store": "getLudPeriods",
+                                        "valueField": "LOOKUPDETAILID",
+                                        "width": 200
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|margins": "string",
+                                        "margin": "auto",
+                                        "baseCls": "string",
+                                        "disabledCls": "string",
+                                        "emptyCls": "string",
+                                        "emptyText": "string",
+                                        "fieldCls": "string",
+                                        "inputType": "string",
+                                        "labelCls": "string",
+                                        "overCls": "string",
+                                        "width": "auto",
+                                        "id": "string",
+                                        "enableKeyEvents": "boolean",
+                                        "reference": "string",
+                                        "autoLoadOnValue": "boolean",
+                                        "displayField": "datafield",
+                                        "store": "store",
+                                        "valueField": "datafield"
+                                    },
+                                    "name": "MyComboBox12",
+                                    "designerId": "141b17bf-14cb-4c02-9d55-e34e16b80f20",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onCmbPeriodSelect",
+                                                "implHandler": [
+                                                    "debugger;",
+                                                    "var refs = this.getReferences();",
+                                                    "var txtValue = refs.txtSearch.value;",
+                                                    "var cmbPeriod = combo.getValue();",
+                                                    "refs.internShipsGrid.getStore().load({",
+                                                    "    params:{",
+                                                    "        txtValue : txtValue,",
+                                                    "        cmbPeriod : cmbPeriod",
+                                                    "    }",
+                                                    "});"
+                                                ],
+                                                "name": "select",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onCmbPeriodSelect",
+                                            "designerId": "1c7f5a72-e8d2-41ed-ac12-95331d821a9e"
+                                        }
+                                    ]
+                                },
+                                {
                                     "type": "Ext.button.Button",
                                     "reference": {
                                         "name": "items",
@@ -7010,6 +7241,7 @@
                                                     "debugger;",
                                                     "var refs = this.getReferences();",
                                                     "var txtValue = textfield.value;",
+                                                    "var cmbPeriod = refs.cmbPeriod.getValue();",
                                                     "refs.internShipsStudentGrid.getStore().load({",
                                                     "    params:{",
                                                     "        userId : refs.lblUserId.text",
@@ -7033,7 +7265,8 @@
                                                     "});",
                                                     "refs.internShipsGrid.getStore().load({",
                                                     "    params:{",
-                                                    "        txtValue : txtValue",
+                                                    "        txtValue : txtValue,",
+                                                    "        cmbPeriod : cmbPeriod",
                                                     "    }",
                                                     "});"
                                                 ],

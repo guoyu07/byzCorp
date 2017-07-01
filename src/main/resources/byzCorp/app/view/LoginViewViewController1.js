@@ -39,13 +39,22 @@ Ext.define('byzCorp.view.LoginViewViewController1', {
                                 refs.lockform.destroy();
                                 //destroyLockview.destroy();
                                 var mainview = Ext.create('widget.mainview');
+                                var mainRefs =mainview.getReferences();
                                 var lblGet = mainview.getReferences().lblUserInfo;
                                 var lblGetUserId = mainview.getReferences().lblUserId;
                                 var lblNewValue = api[0].USERFIRSTNAME + ' '+ api[0].USERLASTNAME+ ' / '+api[0].USERTITLE;
                                 var lblUserIdNewValue = api[0].USERID;
-
                                 lblGet.setText(lblNewValue);
                                 lblGetUserId.setText(lblUserIdNewValue);
+                                if(api[0].USERROLEID===2){
+                                    mainRefs.menuStudents.hide();
+                                    mainRefs.menuSettings.hide();
+                                    mainRefs.menuInternShips.hide();
+                                    mainRefs.internShipResponsePanel.hide();
+                                }
+                                if(api[0].USERROLEID===1){
+                                    mainRefs.menuInternShipRequest.hide();
+                                }
                             }else{
                                 Ext.Msg.alert('Uyarı', 'Hatalı şifre girdiniz.');
                             }

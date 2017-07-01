@@ -16,21 +16,25 @@ public class internShipDao {
     @Autowired
     private JdbcTemplate sql;
 
-    public List<Map<String, Object>> getInternShips(String txtValue, Long userId) throws SQLException {
+    public List<Map<String, Object>> getInternShips(String txtValue, Long userId, Long cmbPeriod) throws SQLException {
         if(txtValue==""){
             txtValue=null;
         }
         String query = "select" +
                 " to_char(s.INTERNSHIPSTARTDATE,'dd/mm/yyyy') as INTERNSHIPSTARTDATE," +
                 " to_char(s.INTERNSHIPENDDATE,'dd/mm/yyyy') as INTERNSHIPENDDATE," +
+                " to_char(s.INTERNSHIPUPDATEDATE,'dd/mm/yyyy') as INTERNSHIPUPDATEDATE," +
                 " s.INTERNSHIPID," +
                 " (select us.STUDENTFIRSTNAME ||' '|| us.STUDENTLASTNAME from ktu.student us where us.studentid = s.internshipstudentid) as STUDENTFIRSTANDLASTNAME," +
                 " (select lu.lookUpDetailName ||'-'|| u.USERFIRSTNAME ||' '|| u.USERLASTNAME from ktu.users u, ktu.LOOKUPDETAIL lu where lu.LOOKUPDETAILID = u.USERTITLEID and u.USERID = s.INTERNSHIPUPDATEUSERID) as USERTITLEFIRSTANDLASTNAME," +
                 " (select us.STUDENTNO from ktu.student us where us.studentid = s.internshipstudentid) as STUDENTNO," +
+                " (select l.lookUpDetailName from ktu.student us, ktu.LOOKUPDETAIL l where l.lookUpId = 3 and us.STUDENTID = s.INTERNSHIPSTUDENTID and us.STUDENTCLASSID = l.LOOKUPDETAILID) as STUDENTCLASSNAME," +
+                " (select l.lookUpDetailName from ktu.student us, ktu.LOOKUPDETAIL l where l.lookUpId = 2 and us.STUDENTID = s.INTERNSHIPSTUDENTID  and us.STUDENTDEPARTMENTID = l.LOOKUPDETAILID) as STUDENTDEPARTMENTNAME," +
                 " s.INTERNSHIPSTUDENTID," +
                 " s.INTERNSHIPTYPEID," +
                 " s.INTERNSHIPSTATUSID," +
                 " s.INTERNSHIPPERIODID," +
+                " s.INTERNSHIPACCEPTID," +
                 " s.INTERNSHIPDAY," +
                 " (select sum(ind.INTERNSHIPDETAILCOMPDAY) from ktu.INTERNSHIPDETAIL ind where ind.INTERNSHIPID = s.INTERNSHIPID) as INTERNSHIPDONEDAY," +
                 " s.INTERNSHIPPLACEID," +
@@ -42,15 +46,31 @@ public class internShipDao {
                 " (select lud.lookUpDetailName from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.INTERNSHIPPERIODID) as INTERNSHIPPERIOD" +
                 " from ktu.INTERNSHIP s where 1=1";
         if (txtValue != null) {
-            query += " and (select lower(us.STUDENTFIRSTNAME) ||' '|| us.STUDENTLASTNAME from ktu.student us where us.studentid = s.internshipstudentid) like lower('%" + txtValue + "%')" +
+            query += " and ((select lower(us.STUDENTFIRSTNAME) ||' '|| us.STUDENTLASTNAME from ktu.student us where us.studentid = s.internshipstudentid) like lower('%" + txtValue + "%')" +
                     " or (select lower(us.STUDENTNO) from ktu.student us where us.studentid = s.internshipstudentid) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 5 and lud.lookUpDetailId = s.INTERNSHIPTYPEID) like lower('%" + txtValue + "%')" +
                     " or lower(case when s.INTERNSHIPDAY-(select sum(ind.INTERNSHIPDETAILCOMPDAY) from ktu.INTERNSHIPDETAIL ind where ind.INTERNSHIPID = s.INTERNSHIPID)<=0 then 'Tamamlandı' else 'Tamamlanmadı' end) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 10 and lud.lookUpDetailId = s.INTERNSHIPACCEPTID) like lower('%" + txtValue + "%')" +
-                    " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.INTERNSHIPPERIODID) like lower('%" + txtValue + "%')";
+                    " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.INTERNSHIPPERIODID) like lower('%" + txtValue + "%'))";
         }
         if(userId!=null){
-            query += " and INTERNSHIPUPDATEUSERID = "+userId;
+            query += " and s.INTERNSHIPUPDATEUSERID = "+userId;
+        }
+        if(cmbPeriod!=null){
+            query += " and s.INTERNSHIPPERIODID = "+cmbPeriod;
+        }
+        return sql.queryForList(query);
+    }
+
+    public List<Map<String, Object>> internShipDeliveryPDF(String txtValue) throws SQLException {
+        String query = "select" +
+                " to_char(s.INTERNSHIPDETAILCOMPDATE,'dd/mm/yyyy') as INTERNSHIPDETAILCOMPDATE," +
+                " s.INTERNSHIPDETAILID," +
+                " (select us.STUDENTFIRSTNAME ||' '|| us.STUDENTLASTNAME from ktu.student us, ktu.INTERNSHIP ins where ins.INTERNSHIPID=s.INTERNSHIPID and us.studentid =ins.INTERNSHIPSTUDENTID) as STUDENTFIRSTANDLASTNAME," +
+                " (select us.STUDENTNO from ktu.student us, ktu.INTERNSHIP ins where ins.INTERNSHIPID=s.INTERNSHIPID and us.studentid =ins.INTERNSHIPSTUDENTID) as STUDENTNO" +
+                " from ktu.INTERNSHIPDETAIL s where 1=1";
+        if (txtValue != null && !txtValue.equals("")) {
+            query += " and s.INTERNSHIPID in" + txtValue;
         }
         return sql.queryForList(query);
     }

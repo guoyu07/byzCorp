@@ -51,31 +51,6 @@
                     },
                     "name": "MyJsonReader1",
                     "designerId": "c1191595-e43c-4d8c-88b3-601c4eec934a"
-                },
-                {
-                    "type": "basicfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "userId"
-                        ],
-                        "fn": "beforeLoad",
-                        "implHandler": [
-                            "debugger;",
-                            "var refs = this.getReferences();"
-                        ]
-                    },
-                    "configAlternates": {
-                        "designer|params": "typedarray",
-                        "fn": "string",
-                        "implHandler": "code"
-                    },
-                    "name": "beforeLoad",
-                    "designerId": "56fdd2ee-4f8a-4e12-9e7c-376f241a0093"
                 }
             ]
         }

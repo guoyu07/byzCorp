@@ -30,10 +30,6 @@ Ext.define('byzCorp.store.getInternShipsStudent', {
             model: 'byzCorp.model.getInternShips',
             proxy: {
                 type: 'ajax',
-                beforeLoad: function(userId) {
-                    debugger;
-                    var refs = this.getReferences();
-                },
                 url: '/byzCorp/internShip/getInternShipsStudent',
                 reader: {
                     type: 'json'

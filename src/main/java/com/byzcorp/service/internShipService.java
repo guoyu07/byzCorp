@@ -35,8 +35,12 @@ public class internShipService {
         return null;
     }
 
-    public List<Map<String,Object>> getInternShips (String txtValue, Long userId) throws SQLException {
-        return dao.getInternShips(txtValue, userId);
+    public List<Map<String,Object>> getInternShips (String txtValue, Long userId, Long cmbPeriod) throws SQLException {
+        return dao.getInternShips(txtValue, userId, cmbPeriod);
+    }
+
+    public List<Map<String,Object>> internShipDeliveryPDF (String txtValue) throws SQLException {
+        return dao.internShipDeliveryPDF(txtValue);
     }
 
     public List<Map<String,Object>> getInternShipsDetails (Long internShipId, String query) throws SQLException {
@@ -180,7 +184,7 @@ public class internShipService {
         }else{
             save = true;
         }
-        if((internShipDay-totalDetailDay)<txtInternShipDetailCompDate){
+        if((internShipDay-totalDetailDay)<txtInternShipDetailCompDate && txtInternShipDetailId.equals("")){
             sendJSON.put("data",new SQLException("HATA", studentNo+"-"+studentFirstandLastName+" ogrenicinin " +
                     internShipPeriod+" icin " +totalDetailDay+" gun staj detay kaydi bulunmaktadir. Planlanan gunden daha fazla staj gunu ekleyemezsiniz.."));
             save = false;

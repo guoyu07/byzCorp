@@ -94,6 +94,7 @@ public class userDao {
                         " userEmail," +
                         " userRoleId," +
                         " userTitleId," +
+                        " userPassword," +
                         " userStatus) values (" +
                         "ktu.usersSeq.nextval,'"
                         + txtUserFirstName + "','"
@@ -101,7 +102,8 @@ public class userDao {
                         + txtUserName + "','"
                         + txtUserEmail + "',"
                         + cmbUserRole + ","
-                        + cmbUserTitle + ","
+                        + cmbUserTitle + ",'"
+                        + txtUserName + "',"
                         + cmbUserStatus + ")";
 
             } else {
@@ -120,6 +122,21 @@ public class userDao {
         }
         sql.update(query);
         System.out.println(" row inserted.");
+        return true;
+    }
+
+    public Boolean updatePassword(Long userId, String password) {
+        String query = "";
+        try {
+                query = "update ktu.USERS u set " +
+                        " u.userPassword ='" + password + "'" +
+                        " where u.userId=" + userId;
+
+        } catch (Exception e) {
+            return false;
+        }
+        sql.update(query);
+        System.out.println(" row updated.");
         return true;
     }
 }

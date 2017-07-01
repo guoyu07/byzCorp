@@ -18,12 +18,15 @@ Ext.define('byzCorp.view.MainViewViewController', {
     alias: 'controller.mainview',
 
     onTalepIslemleriClick: function(item, e, eOpts) {
+        debugger;
         var refs = this.getReferences();
-        refs.internShipsStudentGrid.getStore().load({
-            params:{
-                userId : refs.lblUserId.text
-            }
+        /*refs.internShipsStudentGrid.getStore().addListener('beforeload', function(store, options){debugger;
+        options._params.userId =  refs.lblUserId.text;
         });
+
+        refs.internShipsStudentGrid.getStore().load();*/
+        refs.internShipsStudentGrid.getStore().getProxy().setExtraParam("userId", refs.lblUserId.text);
+        refs.internShipsStudentGrid.getStore().load();
     },
 
     onStajIslemleriClick: function(item, e, eOpts) {
@@ -288,7 +291,6 @@ Ext.define('byzCorp.view.MainViewViewController', {
     },
 
     onInternShipGridRowClick: function(tableview, record, tr, rowIndex, e, eOpts) {
-        debugger;
         var refs = this.getReferences();
         var data = record.data;
         refs.txtInternShipId.setValue(data.INTERNSHIPID);
@@ -300,7 +302,7 @@ Ext.define('byzCorp.view.MainViewViewController', {
         refs.txtInternShipDay.setValue(data.INTERNSHIPDAY);
         refs.cmbInternShipPlace.setValue(data.INTERNSHIPPLACEID);
         refs.txtInternShipDesc.setValue(data.INTERNSHIPDESC);
-        refs.cmbInternShipAcceptStatus.setValue(data.INTERNSHIPACCEPTSTATUS);
+        refs.cmbInternShipAcceptStatus.setValue(data.INTERNSHIPACCEPTID);
         var internShipDetailFormPanel = refs.internShipDetailFormPanel;
         internShipDetailFormPanel.setCollapsed(false);
 
@@ -313,7 +315,37 @@ Ext.define('byzCorp.view.MainViewViewController', {
 
     onInternShipListPdfClick1: function(item, e, eOpts) {
         var refs = this.getReferences();
-        document.location = '/byzCorp/internShip/internShipPDF?txtValue='+refs.txtSearch.getValue();
+        debugger;
+        document.location = '/byzCorp/internShip/internShipPDF?txtValue='+refs.txtSearch.getValue()+'&cmbPeriod='+refs.cmbPeriod.getValue();
+    },
+
+    onInternShipListPdfClick11: function(item, e, eOpts) {
+        var refs = this.getReferences();
+        debugger;
+        document.location = '/byzCorp/internShip/internShipStartPDF?txtValue='+refs.txtSearch.getValue()+'&cmbPeriod='+refs.cmbPeriod.getValue();
+    },
+
+    onInternShipListPdfClick111: function(item, e, eOpts) {
+        var refs = this.getReferences();
+        debugger;
+        var gridList = refs.internShipsGrid.getSelectionModel().store.data;
+        var internShipList = [];
+        if(gridList.items.length>0){
+            for(var i=0; i<gridList.items.length; i++){
+                internShipList +=","+gridList.items[i].data.INTERNSHIPID;
+            }
+        }
+        document.location = '/byzCorp/internShip/internShipDeliveryPDF?txtValue='+internShipList;
+    },
+
+    onInternShipDetailGridsRowClick: function(tableview, record, tr, rowIndex, e, eOpts) {
+        var refs = this.getReferences();
+        var data = record.data;
+        refs.txtInternShipDetailId.setValue(data.INTERNSHIPDETAILID);
+        refs.dateDeliveryInternShip.setRawValue(data.INTERNSHIPDETAILCOMPDATE);
+        refs.txtInternShipDetailCompDate.setValue(data.INTERNSHIPDETAILCOMPDAY);
+        refs.cmbInternShipDetailPlace.setValue(data.INTERNSHIPDETAILPLACEID);
+        refs.txtInternShipDetailDesc.setValue(data.INTERNSHIPDETAILDESC);
     },
 
     onSaveOrUpdateInternShipDetailClick: function(button, e, eOpts) {
@@ -329,7 +361,10 @@ Ext.define('byzCorp.view.MainViewViewController', {
                 success : function(res){debugger;
                     var api = Ext.decode(res.responseText);
                     if(api.success){
-                        refs.internShipDetailGrid.getStore().load();
+                        refs.internShipDetailGrid.getStore().reload();
+                        /*refs.internShipDetailGrid.getStore().reload({
+                        internShipId :refs.internShipsGrid.getSelection()[0].data.INTERNSHIPID
+                        });*/
                         refs.internShipsGrid.getStore().load();
                         refs.saveOrUpdateInternShipDetailForm.getForm().reset();
                         var t = new Ext.ToolTip({
@@ -374,7 +409,7 @@ Ext.define('byzCorp.view.MainViewViewController', {
                 success : function(res){debugger;
                     var api = Ext.decode(res.responseText);
                     if(api.success){
-                        refs.internShipDetailGrid.getStore().load();
+                        refs.internShipDetailGrid.getStore().reload();
                         refs.internShipsGrid.getStore().load();
                         refs.saveOrUpdateInternShipDetailForm.getForm().reset();
                         var t = new Ext.ToolTip({
@@ -521,6 +556,10 @@ Ext.define('byzCorp.view.MainViewViewController', {
     onDateStartInternShipReqSelect: function(field, value, eOpts) {
         debugger;
         var refs = this.getReferences();
+        var addDate = refs.txtInternShipDay.getValue();
+        refs.dateEndInternShip.setValue(Ext.Date.add(value, Ext.Date.DAY, addDate));
+        debugger;
+        var refs = this.getReferences();
         Ext.Ajax.request({
             url:'/byzCorp/lookUp/getLookUpDetail',
             params : {
@@ -529,7 +568,7 @@ Ext.define('byzCorp.view.MainViewViewController', {
             success : function(res){debugger;
                 var api = Ext.decode(res.responseText);
                 if(api.length>0){
-                    refs.dateEndInternShipReq.setValue(api[0].LOOKUPDETAILVALUE);
+                    refs.dateEndInternShipReq.setValue(Ext.Date.add(value, Ext.Date.DAY, api[0].LOOKUPDETAILVALUE));
 
                 }
             }
@@ -735,10 +774,24 @@ Ext.define('byzCorp.view.MainViewViewController', {
         });
     },
 
+    onCmbPeriodSelect: function(combo, record, eOpts) {
+        debugger;
+        var refs = this.getReferences();
+        var txtValue = refs.txtSearch.value;
+        var cmbPeriod = combo.getValue();
+        refs.internShipsGrid.getStore().load({
+            params:{
+                txtValue : txtValue,
+                cmbPeriod : cmbPeriod
+            }
+        });
+    },
+
     onTxtSearchKeyup: function(textfield, e, eOpts) {
         debugger;
         var refs = this.getReferences();
         var txtValue = textfield.value;
+        var cmbPeriod = refs.cmbPeriod.getValue();
         refs.internShipsStudentGrid.getStore().load({
             params:{
                 userId : refs.lblUserId.text
@@ -762,7 +815,8 @@ Ext.define('byzCorp.view.MainViewViewController', {
         });
         refs.internShipsGrid.getStore().load({
             params:{
-                txtValue : txtValue
+                txtValue : txtValue,
+                cmbPeriod : cmbPeriod
             }
         });
     }

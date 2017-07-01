@@ -84,6 +84,14 @@ public class userController {
         response.getWriter().write(sendJSON.toString());
     }
 
+    @RequestMapping(value = "/updatePassword")
+    public @ResponseBody void updatePassword(HttpServletResponse response,Long userId, String password) throws IOException {
+        JSONObject sendJSON = new JSONObject();
+        Boolean success = service.updatePassword(userId,password);
+        sendJSON.put("success", success);
+        response.getWriter().write(sendJSON.toString());
+    }
+
     @RequestMapping(value= "userPDF")
     public @ResponseBody void userPdf(HttpServletRequest request,HttpServletResponse response) throws JRException, SQLException, IOException {
         String txtValue = request.getParameter("txtValue");

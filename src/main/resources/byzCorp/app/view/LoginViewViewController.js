@@ -93,19 +93,71 @@ Ext.define('byzCorp.view.LoginViewViewController', {
         refs.loginform.destroy();
     },
 
-    onSignInClick21: function(button, e, eOpts) {
-        /*debugger;
-        var refs = this.getReferences();
-        form = button.up('loginform');
-        var mainview = Ext.create('widget.mainview');
-        mainview.show();
-        form.hide();*/
-
+    onChangePasswordClick: function(button, e, eOpts) {
         debugger;
         var refs = this.getReferences();
-        var mainview = Ext.create('widget.mainview');
-        mainview.show();
-        refs.loginform.destroy();
+        var destroyloginView = this.view;
+        Ext.Ajax.request({
+            url:'/byzCorp/user/getUser',
+            params : {
+                userName : refs.txtLoginUserName.getValue(),
+                password : refs.txtLoginPassword.getValue()
+            },
+            success : function(res){debugger;
+                var api = Ext.decode(res.responseText);
+                if(api.length>1){
+                    if(api[1].success){
+                        var userName = refs.txtLoginUserName.getValue();
+                        var password = refs.txtLoginPassword.getValue();
+
+                        if(api[0].USERNAME === userName){debugger;
+                            if(api[0].USERPASSWORD === password){
+                                var userId = api[0].USERID;
+                                Ext.MessageBox.prompt('Şifre', 'Yeni şifrenizi giriniz:', function(btn, text){
+                                    if (btn == 'ok'){
+                                        Ext.Ajax.request({
+                                            url:'/byzCorp/user/updatePassword',
+                                            params : {
+                                                password : text,
+                                                userId : userId
+                                            },
+                                            success : function(res){debugger;
+                                                var api = Ext.decode(res.responseText);
+                                                if(api.success){
+
+                                                    var t = new Ext.ToolTip({
+                                                        anchor: 'top',
+                                                        anchorToTarget: false,
+                                                        //targetXY: [refs.maincontainer.getWidth(), refs.maincontainer.getHeight()],
+                                                        title: 'Uyarı',
+                                                        html: '0000-Kayıt işlemi başarılı.',
+                                                        hideDelay: 200,
+                                                        closable: false
+                                                    });
+                                                    t.show();
+                                                }else{
+                                                    Ext.Msg.alert('Uyarı', 'Kayıt işlemi gerçekleşmedi.');
+                                                }
+                                            }
+                                        });
+                                    }
+                                });
+                            }else{
+                                Ext.Msg.alert('Uyarı', 'Hatalı şifre girdiniz.');
+                            }
+                        }else{
+                            Ext.Msg.alert('Uyarı', 'Hatalı kullanıcı adı girdiniz.');
+                        }
+
+                    }else{
+                        Ext.Msg.alert('Uyarı', 'Veri tabanında kayıt bulunamadı.');
+                    }
+                }else{
+                    Ext.Msg.alert('Uyarı', 'Hatalı kullanıcı adı veya şifre.');
+                }
+            }
+        });
+
     },
 
     onSignInClick1: function(button, e, eOpts) {
