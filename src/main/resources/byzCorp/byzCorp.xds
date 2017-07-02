@@ -3,7 +3,7 @@
     "settings": {
         "cmd": {
             "license": "commercial",
-            "cmdVersion": "6.2.2.36",
+            "cmdVersion": "6.5.0.180",
             "frameworkVersion": "6.2.1.167"
         },
         "canvasControls": {
@@ -32,8 +32,8 @@
             "buildPlatform": false
         }
     },
-    "xdsVersion": "4.1.2",
-    "xdsBuild": 188,
+    "xdsVersion": "4.2.1",
+    "xdsBuild": 224,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext62",
