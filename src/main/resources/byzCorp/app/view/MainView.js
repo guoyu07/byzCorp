@@ -34,6 +34,11 @@ Ext.define('byzCorp.view.MainView', {
         'Ext.grid.filters.filter.String',
         'Ext.grid.feature.Grouping',
         'Ext.grid.filters.Filters',
+        'Ext.chart.CartesianChart',
+        'Ext.chart.axis.Category',
+        'Ext.chart.axis.Numeric',
+        'Ext.chart.series.Bar',
+        'Ext.chart.interactions.PanZoom',
         'Ext.form.Label'
     ],
 
@@ -94,7 +99,6 @@ Ext.define('byzCorp.view.MainView', {
                                             {
                                                 xtype: 'menuitem',
                                                 reference: 'menuHomePage',
-                                                hidden: true,
                                                 itemId: 'anaSayfa',
                                                 iconCls: 'fa fa-home',
                                                 text: 'Ana Sayfa',
@@ -555,7 +559,7 @@ Ext.define('byzCorp.view.MainView', {
                                                                 emptyText: 'Staj Dönemi',
                                                                 autoLoadOnValue: true,
                                                                 displayField: 'LOOKUPDETAILNAME',
-                                                                queryCaching: false,
+                                                                minChars: 0,
                                                                 store: 'getLudPeriods',
                                                                 valueField: 'LOOKUPDETAILID'
                                                             },
@@ -683,7 +687,9 @@ Ext.define('byzCorp.view.MainView', {
                                                         id: 'internShipsGrid',
                                                         margin: '5 0 0 0',
                                                         title: 'Staj Bilgileri',
+                                                        titleCollapse: false,
                                                         autoLoad: true,
+                                                        columnLines: true,
                                                         forceFit: false,
                                                         store: 'getInternShips',
                                                         columns: [
@@ -1032,7 +1038,7 @@ Ext.define('byzCorp.view.MainView', {
                                                                         xtype: 'combobox',
                                                                         formBind: true,
                                                                         reference: 'cmbInternShipDetailPlace',
-                                                                        height: 150,
+                                                                        autoRender: true,
                                                                         id: 'cmbInternShipDetailPlace',
                                                                         emptyText: 'Staj Yerleri',
                                                                         autoLoadOnValue: true,
@@ -1607,10 +1613,114 @@ Ext.define('byzCorp.view.MainView', {
                                         items: [
                                             {
                                                 xtype: 'panel',
-                                                hidden: true,
                                                 layout: 'border',
                                                 iconCls: 'fa fa-unlock',
-                                                title: 'Stajı Devam Eden Öğrenciler'
+                                                title: 'Staj Durum Grafikleri',
+                                                items: [
+                                                    {
+                                                        xtype: 'cartesian',
+                                                        region: 'center',
+                                                        split: true,
+                                                        scrollable: true,
+                                                        manageHeight: false,
+                                                        title: 'Öğrencilere Göre Staj Tamamlanma Durumları',
+                                                        insetPadding: 20,
+                                                        store: 'getInternShips',
+                                                        axes: [
+                                                            {
+                                                                type: 'category',
+                                                                fields: [
+                                                                    'STUDENTNO'
+                                                                ],
+                                                                needHighPrecision: true,
+                                                                reconcileRange: true,
+                                                                titleMargin: 2,
+                                                                position: 'bottom'
+                                                            },
+                                                            {
+                                                                type: 'numeric',
+                                                                fields: [
+                                                                    'INTERNSHIPDAY',
+                                                                    'INTERNSHIPDONEDAY'
+                                                                ],
+                                                                position: 'left'
+                                                            }
+                                                        ],
+                                                        series: [
+                                                            {
+                                                                type: 'bar',
+                                                                xField: 'STUDENTNO',
+                                                                yField: [
+                                                                    'INTERNSHIPDAY',
+                                                                    'INTERNSHIPDONEDAY'
+                                                                ],
+                                                                fullStackTotal: true
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        xtype: 'cartesian',
+                                                        floatable: false,
+                                                        region: 'north',
+                                                        split: true,
+                                                        height: 278,
+                                                        scrollable: true,
+                                                        simpleDrag: true,
+                                                        colors: [
+                                                            '#115fa6',
+                                                            '#94ae0a',
+                                                            '#a61120',
+                                                            '#ff8809',
+                                                            '#ffd13e',
+                                                            '#a61187',
+                                                            '#24ad9a',
+                                                            '#7c7474',
+                                                            '#a66111'
+                                                        ],
+                                                        store: 'getInternShips',
+                                                        axes: [
+                                                            {
+                                                                type: 'category',
+                                                                fields: [
+                                                                    'INTERNSHIPPLACE'
+                                                                ],
+                                                                position: 'bottom'
+                                                            },
+                                                            {
+                                                                type: 'numeric',
+                                                                fields: [
+                                                                    'INTERNSHIPDAY',
+                                                                    'INTERNSHIPDONEDAY',
+                                                                    'INTERNSHIPSTATUS',
+                                                                    'INTERNSHIPACCEPTSTATUS'
+                                                                ],
+                                                                grid: {
+                                                                    odd: {
+                                                                        fill: '#e8e8e8'
+                                                                    }
+                                                                },
+                                                                position: 'left'
+                                                            }
+                                                        ],
+                                                        series: [
+                                                            {
+                                                                type: 'bar',
+                                                                xField: 'INTERNSHIPPLACE',
+                                                                yField: [
+                                                                    'INTERNSHIPDAY',
+                                                                    'INTERNSHIPDONEDAY',
+                                                                    'INTERNSHIPSTATUS',
+                                                                    'INTERNSHIPACCEPTSTATUS'
+                                                                ]
+                                                            }
+                                                        ],
+                                                        interactions: [
+                                                            {
+                                                                type: 'panzoom'
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
                                             },
                                             {
                                                 xtype: 'panel',

@@ -49,6 +49,7 @@ public class internShipDao {
             query += " and ((select lower(us.STUDENTFIRSTNAME) ||' '|| us.STUDENTLASTNAME from ktu.student us where us.studentid = s.internshipstudentid) like lower('%" + txtValue + "%')" +
                     " or (select lower(us.STUDENTNO) from ktu.student us where us.studentid = s.internshipstudentid) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 5 and lud.lookUpDetailId = s.INTERNSHIPTYPEID) like lower('%" + txtValue + "%')" +
+                    " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 9 and lud.lookUpDetailId = s.INTERNSHIPPLACEID) like lower('%" + txtValue + "%')" +
                     " or lower(case when s.INTERNSHIPDAY-(select sum(ind.INTERNSHIPDETAILCOMPDAY) from ktu.INTERNSHIPDETAIL ind where ind.INTERNSHIPID = s.INTERNSHIPID)<=0 then 'Tamamlandı' else 'Tamamlanmadı' end) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 10 and lud.lookUpDetailId = s.INTERNSHIPACCEPTID) like lower('%" + txtValue + "%')" +
                     " or (select lower(lud.lookUpDetailName) from ktu.LOOKUPDETAIL lud where lud.lookUpId = 4 and lud.lookUpDetailId = s.INTERNSHIPPERIODID) like lower('%" + txtValue + "%'))";

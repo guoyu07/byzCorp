@@ -1,3 +1,1062 @@
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1026 */
+.x-btn.x-btn-menu-active .x-btn-notRed-small-mc,
+.x-btn.x-btn-pressed .x-btn-notRed-small-mc {
+    background-color: #2a6e9f;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1039 */
+.x-btn-focus.x-btn-menu-active .x-btn-notRed-small-tl,
+.x-btn-focus.x-btn-menu-active .x-btn-notRed-small-bl,
+.x-btn-focus.x-btn-menu-active .x-btn-notRed-small-tr,
+.x-btn-focus.x-btn-menu-active .x-btn-notRed-small-br,
+.x-btn-focus.x-btn-menu-active .x-btn-notRed-small-tc,
+.x-btn-focus.x-btn-menu-active .x-btn-notRed-small-bc,
+.x-btn-focus.x-btn-pressed .x-btn-notRed-small-tl,
+.x-btn-focus.x-btn-pressed .x-btn-notRed-small-bl,
+.x-btn-focus.x-btn-pressed .x-btn-notRed-small-tr,
+.x-btn-focus.x-btn-pressed .x-btn-notRed-small-br,
+.x-btn-focus.x-btn-pressed .x-btn-notRed-small-tc,
+.x-btn-focus.x-btn-pressed .x-btn-notRed-small-bc {
+    background-image: url(images/btn/btn-notRed-small-focus-pressed-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1047 */
+.x-btn-focus.x-btn-menu-active .x-btn-notRed-small-ml,
+.x-btn-focus.x-btn-menu-active .x-btn-notRed-small-mr,
+.x-btn-focus.x-btn-pressed .x-btn-notRed-small-ml,
+.x-btn-focus.x-btn-pressed .x-btn-notRed-small-mr {
+    background-image: url(images/btn/btn-notRed-small-focus-pressed-sides.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1051 */
+.x-btn-focus.x-btn-menu-active .x-btn-notRed-small-mc,
+.x-btn-focus.x-btn-pressed .x-btn-notRed-small-mc {
+    background-color: #2a6e9f;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1064 */
+.x-btn.x-btn-disabled .x-btn-notRed-small-tl,
+.x-btn.x-btn-disabled .x-btn-notRed-small-bl,
+.x-btn.x-btn-disabled .x-btn-notRed-small-tr,
+.x-btn.x-btn-disabled .x-btn-notRed-small-br,
+.x-btn.x-btn-disabled .x-btn-notRed-small-tc,
+.x-btn.x-btn-disabled .x-btn-notRed-small-bc {
+    background-image: url(images/btn/btn-notRed-small-disabled-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1072 */
+.x-btn.x-btn-disabled .x-btn-notRed-small-ml,
+.x-btn.x-btn-disabled .x-btn-notRed-small-mr {
+    background-image: url(images/btn/btn-notRed-small-disabled-sides.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1076 */
+.x-btn.x-btn-disabled .x-btn-notRed-small-mc {
+    background-color: #3892d4;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1086 */
+.x-nbr .x-btn-notRed-small {
+    background-image: none;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1092 */
+.x-btn-disabled.x-btn-notRed-small {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    opacity: 0.5;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1111 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-first {
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1113 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-first .x-btn-notRed-small-mc {
+    padding-right: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1117 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-middle {
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1119 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-middle .x-btn-notRed-small-mc {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1125 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-last .x-btn-notRed-small-mc {
+    padding-left: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1132 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-first {
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1134 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-first .x-btn-notRed-small-mc {
+    padding-bottom: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1138 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-middle {
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1140 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-middle .x-btn-notRed-small-mc {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1146 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-last .x-btn-notRed-small-mc {
+    padding-top: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1152 */
+.x-nbr .x-segmented-button-item.x-btn-notRed-small:after {
+    content: ' ';
+    border-style: solid;
+    border-width: 0;
+    position: absolute;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1170 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small:after {
+    top: 1px;
+    right: 0;
+    bottom: 1px;
+    left: 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1176 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-first:after {
+    left: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1179 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-last:after {
+    right: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1185 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small:after {
+    top: 0;
+    right: 1px;
+    bottom: 0;
+    left: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1191 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-first:after {
+    top: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1194 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-last:after {
+    bottom: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1201 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-notRed-small:after {
+    border-width: 1px;
+    border-color: #d7e9f6;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1215 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-notRed-small:after {
+    border-width: 1px;
+    border-color: #d6e7f3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1230 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-notRed-small:after,
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-notRed-small:after {
+    border-width: 1px;
+    border-color: #d4e2ec;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-focus.x-btn-notRed-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-notRed-small-focus-corners.gif), sides:url(images/btn/btn-notRed-small-focus-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-over.x-btn-notRed-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-notRed-small-over-corners.gif), sides:url(images/btn/btn-notRed-small-over-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-notRed-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-notRed-small-focus-over-corners.gif), sides:url(images/btn/btn-notRed-small-focus-over-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-pressed.x-btn-notRed-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-notRed-small-pressed-corners.gif), sides:url(images/btn/btn-notRed-small-pressed-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-notRed-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-notRed-small-focus-pressed-corners.gif), sides:url(images/btn/btn-notRed-small-focus-pressed-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-disabled.x-btn-notRed-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-notRed-small-disabled-corners.gif), sides:url(images/btn/btn-notRed-small-disabled-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
+.x-btn-yellow-small {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    padding: 3px 3px 3px 3px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #c2cc35;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
+.x-btn-yellow-small-mc {
+    background-color: #c2cc35;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
+.x-nbr .x-btn-yellow-small {
+    padding: 0 !important;
+    border-width: 0 !important;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
+.x-btn-yellow-small-frameInfo {
+    font-family: th-3-3-3-3-1-1-1-1-3-3-3-3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
+.x-btn-yellow-small-tl {
+    background-position: 0 -6px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
+.x-btn-yellow-small-tr {
+    background-position: right -9px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
+.x-btn-yellow-small-bl {
+    background-position: 0 -12px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
+.x-btn-yellow-small-br {
+    background-position: right -15px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
+.x-btn-yellow-small-ml {
+    background-position: 0 top;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
+.x-btn-yellow-small-mr {
+    background-position: right top;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
+.x-btn-yellow-small-tc {
+    background-position: 0 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
+.x-btn-yellow-small-bc {
+    background-position: 0 -3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
+.x-btn-yellow-small-tr,
+.x-btn-yellow-small-br,
+.x-btn-yellow-small-mr {
+    padding-right: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
+.x-btn-yellow-small-tl,
+.x-btn-yellow-small-bl,
+.x-btn-yellow-small-ml {
+    padding-left: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
+.x-btn-yellow-small-tc {
+    height: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
+.x-btn-yellow-small-bc {
+    height: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:407 */
+.x-btn-yellow-small-tl,
+.x-btn-yellow-small-bl,
+.x-btn-yellow-small-tr,
+.x-btn-yellow-small-br,
+.x-btn-yellow-small-tc,
+.x-btn-yellow-small-bc,
+.x-btn-yellow-small-ml,
+.x-btn-yellow-small-mr {
+    background-image: url(images/btn/btn-yellow-small-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:453 */
+.x-btn-yellow-small-ml,
+.x-btn-yellow-small-mr {
+    background-image: url(images/btn/btn-yellow-small-sides.gif);
+    background-repeat: repeat-y;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
+.x-btn-yellow-small-mc {
+    padding: 1px 1px 1px 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-yellow-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, frame:3px 3px 3px 3px, corners:url(images/btn/btn-yellow-small-corners.gif), sides:url(images/btn/btn-yellow-small-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
+.x-btn-yellow-small {
+    border-color: #c2cc35;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:452 */
+.x-btn-button-yellow-small {
+    min-height: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:457 */
+.x-ie9m .x-btn-button-yellow-small {
+    min-height: auto;
+    height: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:464 */
+.x-btn-inner-yellow-small {
+    font: 300 12px/16px helvetica, arial, verdana, sans-serif;
+    color: #fff;
+    padding: 0 5px;
+    max-width: 100%;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:484 */
+.x-ie9 .x-btn-icon-right > .x-btn-inner-yellow-small,
+.x-ie9 .x-btn-icon-left > .x-btn-inner-yellow-small {
+    max-width: calc(100% - 16px);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:492 */
+.x-safari8m .x-btn-icon-right > .x-btn-inner-yellow-small,
+.x-safari8m .x-btn-icon-left > .x-btn-inner-yellow-small {
+    max-width: calc(100% - 15px);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:498 */
+.x-ie10p .x-btn-inner-yellow-small {
+    max-width: none;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:503 */
+.x-btn-icon-el-yellow-small {
+    font-size: 16px;
+    height: 16px;
+    color: #fff;
+    line-height: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:509 */
+.x-btn-icon-left > .x-btn-icon-el-yellow-small,
+.x-btn-icon-right > .x-btn-icon-el-yellow-small {
+    width: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:514 */
+.x-btn-icon-top > .x-btn-icon-el-yellow-small,
+.x-btn-icon-bottom > .x-btn-icon-el-yellow-small {
+    min-width: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:519 */
+.x-btn-icon-el-yellow-small.x-btn-glyph {
+    opacity: 0.5;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:536 */
+.x-ie8 .x-btn-icon-el-yellow-small.x-btn-glyph {
+    color: #e1e69a;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:543 */
+.x-btn-text.x-btn-icon-left > .x-btn-icon-el-yellow-small {
+    margin-right: 0px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:554 */
+.x-btn-text.x-btn-icon-right > .x-btn-icon-el-yellow-small {
+    margin-left: 0px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:565 */
+.x-btn-text.x-btn-icon-top > .x-btn-icon-el-yellow-small {
+    margin-bottom: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:569 */
+.x-btn-text.x-btn-icon-bottom > .x-btn-icon-el-yellow-small {
+    margin-top: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:575 */
+.x-btn-arrow-right > .x-btn-icon.x-btn-no-text.x-btn-button-yellow-small {
+    padding-right: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:578 */
+.x-btn-arrow-right > .x-btn-text.x-btn-icon-right > .x-btn-icon-el-yellow-small {
+    margin-right: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:585 */
+.x-btn-arrow-bottom > .x-btn-button-yellow-small,
+.x-btn-split-bottom > .x-btn-button-yellow-small {
+    padding-bottom: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:591 */
+.x-btn-wrap-yellow-small.x-btn-arrow-right:after {
+    width: 16px;
+    background-image: url(images/button/yellow-small-arrow.png);
+    padding-right: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:618 */
+.x-btn-wrap-yellow-small.x-btn-arrow-bottom:after {
+    height: 13px;
+    background-image: url(images/button/yellow-small-arrow.png);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:658 */
+.x-btn-wrap-yellow-small.x-btn-split-right:after {
+    width: 20px;
+    background-image: url(images/button/yellow-small-s-arrow.png);
+    padding-right: 20px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:697 */
+.x-btn-wrap-yellow-small.x-btn-split-bottom:after {
+    height: 15px;
+    background-image: url(images/button/yellow-small-s-arrow-b.png);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:730 */
+.x-btn-split-right > .x-btn-icon.x-btn-no-text.x-btn-button-yellow-small {
+    padding-right: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:733 */
+.x-btn-split-right > .x-btn-text.x-btn-icon-right > .x-btn-icon-el-yellow-small {
+    margin-right: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:738 */
+.x-btn-focus.x-btn-yellow-small {
+    border-color: #157fcc;
+    background-image: none;
+    background-color: #3892d4;
+    -webkit-box-shadow: #d7e9f6 0 1px 0px 0 inset, #d7e9f6 0 -1px 0px 0 inset, #d7e9f6 -1px 0 0px 0 inset, #d7e9f6 1px 0 0px 0 inset;
+    -moz-box-shadow: #d7e9f6 0 1px 0px 0 inset, #d7e9f6 0 -1px 0px 0 inset, #d7e9f6 -1px 0 0px 0 inset, #d7e9f6 1px 0 0px 0 inset;
+    box-shadow: #d7e9f6 0 1px 0px 0 inset, #d7e9f6 0 -1px 0px 0 inset, #d7e9f6 -1px 0 0px 0 inset, #d7e9f6 1px 0 0px 0 inset;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:773 */
+.x-btn-yellow-small .x-btn-arrow-el {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 23px;
+    pointer-events: none;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:789 */
+.x-btn-yellow-small.x-arrow-focus .x-btn-arrow-el {
+    border: 1px solid #d7e9f6;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:796 */
+.x-btn-over.x-btn-yellow-small {
+    border-color: #1375bc;
+    background-image: none;
+    background-color: #3487c3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:823 */
+.x-btn-focus.x-btn-over.x-btn-yellow-small {
+    -webkit-box-shadow: #d6e7f3 0 1px 0px 0 inset, #d6e7f3 0 -1px 0px 0 inset, #d6e7f3 -1px 0 0px 0 inset, #d6e7f3 1px 0 0px 0 inset;
+    -moz-box-shadow: #d6e7f3 0 1px 0px 0 inset, #d6e7f3 0 -1px 0px 0 inset, #d6e7f3 -1px 0 0px 0 inset, #d6e7f3 1px 0 0px 0 inset;
+    box-shadow: #d6e7f3 0 1px 0px 0 inset, #d6e7f3 0 -1px 0px 0 inset, #d6e7f3 -1px 0 0px 0 inset, #d6e7f3 1px 0 0px 0 inset;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:851 */
+.x-btn.x-btn-menu-active.x-btn-yellow-small,
+.x-btn.x-btn-pressed.x-btn-yellow-small {
+    border-color: #105f99;
+    background-image: none;
+    background-color: #2a6e9f;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:879 */
+.x-btn-focus.x-btn-menu-active.x-btn-yellow-small,
+.x-btn-focus.x-btn-pressed.x-btn-yellow-small {
+    -webkit-box-shadow: #d4e2ec 0 1px 0px 0 inset, #d4e2ec 0 -1px 0px 0 inset, #d4e2ec -1px 0 0px 0 inset, #d4e2ec 1px 0 0px 0 inset;
+    -moz-box-shadow: #d4e2ec 0 1px 0px 0 inset, #d4e2ec 0 -1px 0px 0 inset, #d4e2ec -1px 0 0px 0 inset, #d4e2ec 1px 0 0px 0 inset;
+    box-shadow: #d4e2ec 0 1px 0px 0 inset, #d4e2ec 0 -1px 0px 0 inset, #d4e2ec -1px 0 0px 0 inset, #d4e2ec 1px 0 0px 0 inset;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:908 */
+.x-btn.x-btn-disabled.x-btn-yellow-small {
+    border-color: #157fcc;
+    background-image: none;
+    background-color: #3892d4;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:940 */
+.x-btn-focus .x-btn-yellow-small-tl,
+.x-btn-focus .x-btn-yellow-small-bl,
+.x-btn-focus .x-btn-yellow-small-tr,
+.x-btn-focus .x-btn-yellow-small-br,
+.x-btn-focus .x-btn-yellow-small-tc,
+.x-btn-focus .x-btn-yellow-small-bc {
+    background-image: url(images/btn/btn-yellow-small-focus-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:948 */
+.x-btn-focus .x-btn-yellow-small-ml,
+.x-btn-focus .x-btn-yellow-small-mr {
+    background-image: url(images/btn/btn-yellow-small-focus-sides.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:952 */
+.x-btn-focus .x-btn-yellow-small-mc {
+    background-color: #3892d4;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:964 */
+.x-btn-over .x-btn-yellow-small-tl,
+.x-btn-over .x-btn-yellow-small-bl,
+.x-btn-over .x-btn-yellow-small-tr,
+.x-btn-over .x-btn-yellow-small-br,
+.x-btn-over .x-btn-yellow-small-tc,
+.x-btn-over .x-btn-yellow-small-bc {
+    background-image: url(images/btn/btn-yellow-small-over-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:972 */
+.x-btn-over .x-btn-yellow-small-ml,
+.x-btn-over .x-btn-yellow-small-mr {
+    background-image: url(images/btn/btn-yellow-small-over-sides.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:976 */
+.x-btn-over .x-btn-yellow-small-mc {
+    background-color: #3487c3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:988 */
+.x-btn-focus.x-btn-over .x-btn-yellow-small-tl,
+.x-btn-focus.x-btn-over .x-btn-yellow-small-bl,
+.x-btn-focus.x-btn-over .x-btn-yellow-small-tr,
+.x-btn-focus.x-btn-over .x-btn-yellow-small-br,
+.x-btn-focus.x-btn-over .x-btn-yellow-small-tc,
+.x-btn-focus.x-btn-over .x-btn-yellow-small-bc {
+    background-image: url(images/btn/btn-yellow-small-focus-over-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:996 */
+.x-btn-focus.x-btn-over .x-btn-yellow-small-ml,
+.x-btn-focus.x-btn-over .x-btn-yellow-small-mr {
+    background-image: url(images/btn/btn-yellow-small-focus-over-sides.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1000 */
+.x-btn-focus.x-btn-over .x-btn-yellow-small-mc {
+    background-color: #3487c3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1014 */
+.x-btn.x-btn-menu-active .x-btn-yellow-small-tl,
+.x-btn.x-btn-menu-active .x-btn-yellow-small-bl,
+.x-btn.x-btn-menu-active .x-btn-yellow-small-tr,
+.x-btn.x-btn-menu-active .x-btn-yellow-small-br,
+.x-btn.x-btn-menu-active .x-btn-yellow-small-tc,
+.x-btn.x-btn-menu-active .x-btn-yellow-small-bc,
+.x-btn.x-btn-pressed .x-btn-yellow-small-tl,
+.x-btn.x-btn-pressed .x-btn-yellow-small-bl,
+.x-btn.x-btn-pressed .x-btn-yellow-small-tr,
+.x-btn.x-btn-pressed .x-btn-yellow-small-br,
+.x-btn.x-btn-pressed .x-btn-yellow-small-tc,
+.x-btn.x-btn-pressed .x-btn-yellow-small-bc {
+    background-image: url(images/btn/btn-yellow-small-pressed-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1022 */
+.x-btn.x-btn-menu-active .x-btn-yellow-small-ml,
+.x-btn.x-btn-menu-active .x-btn-yellow-small-mr,
+.x-btn.x-btn-pressed .x-btn-yellow-small-ml,
+.x-btn.x-btn-pressed .x-btn-yellow-small-mr {
+    background-image: url(images/btn/btn-yellow-small-pressed-sides.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1026 */
+.x-btn.x-btn-menu-active .x-btn-yellow-small-mc,
+.x-btn.x-btn-pressed .x-btn-yellow-small-mc {
+    background-color: #2a6e9f;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1039 */
+.x-btn-focus.x-btn-menu-active .x-btn-yellow-small-tl,
+.x-btn-focus.x-btn-menu-active .x-btn-yellow-small-bl,
+.x-btn-focus.x-btn-menu-active .x-btn-yellow-small-tr,
+.x-btn-focus.x-btn-menu-active .x-btn-yellow-small-br,
+.x-btn-focus.x-btn-menu-active .x-btn-yellow-small-tc,
+.x-btn-focus.x-btn-menu-active .x-btn-yellow-small-bc,
+.x-btn-focus.x-btn-pressed .x-btn-yellow-small-tl,
+.x-btn-focus.x-btn-pressed .x-btn-yellow-small-bl,
+.x-btn-focus.x-btn-pressed .x-btn-yellow-small-tr,
+.x-btn-focus.x-btn-pressed .x-btn-yellow-small-br,
+.x-btn-focus.x-btn-pressed .x-btn-yellow-small-tc,
+.x-btn-focus.x-btn-pressed .x-btn-yellow-small-bc {
+    background-image: url(images/btn/btn-yellow-small-focus-pressed-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1047 */
+.x-btn-focus.x-btn-menu-active .x-btn-yellow-small-ml,
+.x-btn-focus.x-btn-menu-active .x-btn-yellow-small-mr,
+.x-btn-focus.x-btn-pressed .x-btn-yellow-small-ml,
+.x-btn-focus.x-btn-pressed .x-btn-yellow-small-mr {
+    background-image: url(images/btn/btn-yellow-small-focus-pressed-sides.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1051 */
+.x-btn-focus.x-btn-menu-active .x-btn-yellow-small-mc,
+.x-btn-focus.x-btn-pressed .x-btn-yellow-small-mc {
+    background-color: #2a6e9f;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1064 */
+.x-btn.x-btn-disabled .x-btn-yellow-small-tl,
+.x-btn.x-btn-disabled .x-btn-yellow-small-bl,
+.x-btn.x-btn-disabled .x-btn-yellow-small-tr,
+.x-btn.x-btn-disabled .x-btn-yellow-small-br,
+.x-btn.x-btn-disabled .x-btn-yellow-small-tc,
+.x-btn.x-btn-disabled .x-btn-yellow-small-bc {
+    background-image: url(images/btn/btn-yellow-small-disabled-corners.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1072 */
+.x-btn.x-btn-disabled .x-btn-yellow-small-ml,
+.x-btn.x-btn-disabled .x-btn-yellow-small-mr {
+    background-image: url(images/btn/btn-yellow-small-disabled-sides.gif);
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1076 */
+.x-btn.x-btn-disabled .x-btn-yellow-small-mc {
+    background-color: #3892d4;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1086 */
+.x-nbr .x-btn-yellow-small {
+    background-image: none;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1092 */
+.x-btn-disabled.x-btn-yellow-small {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    opacity: 0.5;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1111 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-first {
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1113 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-first .x-btn-yellow-small-mc {
+    padding-right: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1117 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-middle {
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1119 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-middle .x-btn-yellow-small-mc {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1125 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-last .x-btn-yellow-small-mc {
+    padding-left: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1132 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-first {
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1134 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-first .x-btn-yellow-small-mc {
+    padding-bottom: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1138 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-middle {
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1140 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-middle .x-btn-yellow-small-mc {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1146 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-last .x-btn-yellow-small-mc {
+    padding-top: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1152 */
+.x-nbr .x-segmented-button-item.x-btn-yellow-small:after {
+    content: ' ';
+    border-style: solid;
+    border-width: 0;
+    position: absolute;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1170 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small:after {
+    top: 1px;
+    right: 0;
+    bottom: 1px;
+    left: 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1176 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-first:after {
+    left: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1179 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-last:after {
+    right: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1185 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small:after {
+    top: 0;
+    right: 1px;
+    bottom: 0;
+    left: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1191 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-first:after {
+    top: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1194 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-last:after {
+    bottom: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1201 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-yellow-small:after {
+    border-width: 1px;
+    border-color: #d7e9f6;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1215 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-yellow-small:after {
+    border-width: 1px;
+    border-color: #d6e7f3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1230 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-yellow-small:after,
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-yellow-small:after {
+    border-width: 1px;
+    border-color: #d4e2ec;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-focus.x-btn-yellow-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-yellow-small-focus-corners.gif), sides:url(images/btn/btn-yellow-small-focus-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-over.x-btn-yellow-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-yellow-small-over-corners.gif), sides:url(images/btn/btn-yellow-small-over-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-yellow-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-yellow-small-focus-over-corners.gif), sides:url(images/btn/btn-yellow-small-focus-over-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-pressed.x-btn-yellow-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-yellow-small-pressed-corners.gif), sides:url(images/btn/btn-yellow-small-pressed-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-yellow-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-yellow-small-focus-pressed-corners.gif), sides:url(images/btn/btn-yellow-small-focus-pressed-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-disabled.x-btn-yellow-small:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-yellow-small-disabled-corners.gif), sides:url(images/btn/btn-yellow-small-disabled-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:276 */
+.x-panel-gridColor {
+    border-color: #f5f5f5;
+    padding: 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:279 */
+.x-panel-gridColor.x-masked {
+    border-color: #fcfcfc;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:287 */
+.x-panel-header-gridColor {
+    font-size: 15px;
+    border: 1px solid #f5f5f5;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:312 */
+.x-panel-header-gridColor .x-tool-tool-el {
+    background-color: #f5f5f5;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:318 */
+.x-panel-header-gridColor-horizontal {
+    padding: 9px 9px 10px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:330 */
+.x-panel-header-gridColor-horizontal.x-header-noborder {
+    padding: 10px 10px 10px 10px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:342 */
+.x-panel-header-gridColor-vertical {
+    padding: 9px 9px 9px 10px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:354 */
+.x-panel-header-gridColor-vertical.x-header-noborder {
+    padding: 10px 10px 10px 10px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:392 */
+.x-panel-header-title-gridColor {
+    color: #157fcc;
+    font-size: 15px;
+    font-weight: 300;
+    font-family: helvetica, arial, verdana, sans-serif;
+    line-height: 16px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:405 */
+.x-panel-header-title-gridColor > .x-title-text-gridColor {
+    text-transform: none;
+    padding: 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:452 */
+.x-panel-header-title-gridColor > .x-title-icon-wrap-gridColor.x-title-icon-top {
+    height: 22px;
+    padding-bottom: 6px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:457 */
+.x-panel-header-title-gridColor > .x-title-icon-wrap-gridColor.x-title-icon-right {
+    width: 22px;
+    padding-left: 6px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:469 */
+.x-panel-header-title-gridColor > .x-title-icon-wrap-gridColor.x-title-icon-bottom {
+    height: 22px;
+    padding-top: 6px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:474 */
+.x-panel-header-title-gridColor > .x-title-icon-wrap-gridColor.x-title-icon-left {
+    width: 22px;
+    padding-right: 6px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:486 */
+.x-panel-header-title-gridColor > .x-title-icon-wrap-gridColor > .x-title-icon-gridColor {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    color: #157fcc;
+    background-position: center center;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:493 */
+.x-panel-header-title-gridColor > .x-title-icon-wrap-gridColor > .x-title-icon-gridColor.x-title-glyph {
+    opacity: 0.5;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:506 */
+.x-ie8 .x-panel-header-title-gridColor > .x-title-icon-wrap-gridColor > .x-title-icon-gridColor.x-title-glyph {
+    color: #85bae1;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:517 */
+.x-panel-body-gridColor {
+    background: #f30b0b;
+    border-color: #cfcfcf;
+    color: #000;
+    font-size: 13px;
+    font-weight: 300;
+    font-family: helvetica, arial, verdana, sans-serif;
+    border-width: 1px;
+    border-style: solid;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:681 */
+.x-panel-header-gridColor {
+    background-image: none;
+    background-color: #f5f5f5;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:685 */
+.x-panel-header-gridColor-vertical {
+    background-image: none;
+    background-color: #f5f5f5;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:743 */
+.x-panel .x-panel-header-gridColor-collapsed-border-top {
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:747 */
+.x-panel .x-panel-header-gridColor-collapsed-border-right {
+    border-left-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:751 */
+.x-panel .x-panel-header-gridColor-collapsed-border-bottom {
+    border-top-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:755 */
+.x-panel .x-panel-header-gridColor-collapsed-border-left {
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-panel-header-gridColor-top:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, stretch:bottom" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-panel-header-gridColor-bottom:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:top, stretch:top" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-panel-header-gridColor-left:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:right, stretch:right" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-panel-header-gridColor-right:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:left, stretch:left" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:791 */
+.x-panel-header-gridColor-horizontal .x-tool-after-title {
+    margin: 0 0 0 6px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:801 */
+.x-panel-header-gridColor-horizontal .x-tool-before-title {
+    margin: 0 6px 0 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:813 */
+.x-panel-header-gridColor-vertical .x-tool-after-title {
+    margin: 6px 0 0 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:823 */
+.x-panel-header-gridColor-vertical .x-tool-before-title {
+    margin: 0 0 6px 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:835 */
+.x-panel-header-gridColor .x-tool-focus {
+    outline: 1px solid #157fcc;
+    outline-offset: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/css-outline.scss:64 */
+.x-ie .x-panel-header-gridColor .x-tool-focus,
+.x-ie10p .x-panel-header-gridColor .x-tool-focus,
+.x-edge .x-panel-header-gridColor .x-tool-focus {
+    outline: none;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/css-outline.scss:40 */
+.x-ie .x-panel-header-gridColor .x-tool-focus:after,
+.x-ie10p .x-panel-header-gridColor .x-tool-focus:after,
+.x-edge .x-panel-header-gridColor .x-tool-focus:after {
+    position: absolute;
+    content: ' ';
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    border: 1px solid #157fcc;
+    pointer-events: none;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:864 */
+.x-panel-gridColor-resizable .x-panel-handle {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity: 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:2 */
+.x-panel-gridColor-outer-border-l {
+    border-left-color: #f5f5f5 !important;
+    border-left-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:6 */
+.x-panel-gridColor-outer-border-b {
+    border-bottom-color: #f5f5f5 !important;
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:10 */
+.x-panel-gridColor-outer-border-bl {
+    border-bottom-color: #f5f5f5 !important;
+    border-bottom-width: 1px !important;
+    border-left-color: #f5f5f5 !important;
+    border-left-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:16 */
+.x-panel-gridColor-outer-border-r {
+    border-right-color: #f5f5f5 !important;
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:20 */
+.x-panel-gridColor-outer-border-rl {
+    border-right-color: #f5f5f5 !important;
+    border-right-width: 1px !important;
+    border-left-color: #f5f5f5 !important;
+    border-left-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:26 */
+.x-panel-gridColor-outer-border-rb {
+    border-right-color: #f5f5f5 !important;
+    border-right-width: 1px !important;
+    border-bottom-color: #f5f5f5 !important;
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:32 */
+.x-panel-gridColor-outer-border-rbl {
+    border-right-color: #f5f5f5 !important;
+    border-right-width: 1px !important;
+    border-bottom-color: #f5f5f5 !important;
+    border-bottom-width: 1px !important;
+    border-left-color: #f5f5f5 !important;
+    border-left-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:40 */
+.x-panel-gridColor-outer-border-t {
+    border-top-color: #f5f5f5 !important;
+    border-top-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:44 */
+.x-panel-gridColor-outer-border-tl {
+    border-top-color: #f5f5f5 !important;
+    border-top-width: 1px !important;
+    border-left-color: #f5f5f5 !important;
+    border-left-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:50 */
+.x-panel-gridColor-outer-border-tb {
+    border-top-color: #f5f5f5 !important;
+    border-top-width: 1px !important;
+    border-bottom-color: #f5f5f5 !important;
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:56 */
+.x-panel-gridColor-outer-border-tbl {
+    border-top-color: #f5f5f5 !important;
+    border-top-width: 1px !important;
+    border-bottom-color: #f5f5f5 !important;
+    border-bottom-width: 1px !important;
+    border-left-color: #f5f5f5 !important;
+    border-left-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:64 */
+.x-panel-gridColor-outer-border-tr {
+    border-top-color: #f5f5f5 !important;
+    border-top-width: 1px !important;
+    border-right-color: #f5f5f5 !important;
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:70 */
+.x-panel-gridColor-outer-border-trl {
+    border-top-color: #f5f5f5 !important;
+    border-top-width: 1px !important;
+    border-right-color: #f5f5f5 !important;
+    border-right-width: 1px !important;
+    border-left-color: #f5f5f5 !important;
+    border-left-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:78 */
+.x-panel-gridColor-outer-border-trb {
+    border-top-color: #f5f5f5 !important;
+    border-top-width: 1px !important;
+    border-right-color: #f5f5f5 !important;
+    border-right-width: 1px !important;
+    border-bottom-color: #f5f5f5 !important;
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/border-management.scss:86 */
+.x-panel-gridColor-outer-border-trbl {
+    border-color: #f5f5f5 !important;
+    border-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
+.x-btn-loginGreen-small {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    padding: 3px 3px 3px 3px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #38d465;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
+.x-btn-loginGreen-small-mc {
+    background-color: #38d465;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
+.x-nbr .x-btn-loginGreen-small {
+    padding: 0 !important;
+    border-width: 0 !important;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
 /* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
 .x-btn-loginGreen-small-frameInfo {
     font-family: th-3-3-3-3-1-1-1-1-3-3-3-3;
@@ -387,6 +1446,101 @@
 .x-btn-disabled.x-btn-loginGreen-small {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     opacity: 0.5;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1111 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-loginGreen-small.x-segmented-button-first {
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1113 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-loginGreen-small.x-segmented-button-first .x-btn-loginGreen-small-mc {
+    padding-right: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1117 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-loginGreen-small.x-segmented-button-middle {
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1119 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-loginGreen-small.x-segmented-button-middle .x-btn-loginGreen-small-mc {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1125 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-loginGreen-small.x-segmented-button-last .x-btn-loginGreen-small-mc {
+    padding-left: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1132 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-loginGreen-small.x-segmented-button-first {
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1134 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-loginGreen-small.x-segmented-button-first .x-btn-loginGreen-small-mc {
+    padding-bottom: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1138 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-loginGreen-small.x-segmented-button-middle {
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1140 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-loginGreen-small.x-segmented-button-middle .x-btn-loginGreen-small-mc {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1146 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-loginGreen-small.x-segmented-button-last .x-btn-loginGreen-small-mc {
+    padding-top: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1152 */
+.x-nbr .x-segmented-button-item.x-btn-loginGreen-small:after {
+    content: ' ';
+    border-style: solid;
+    border-width: 0;
+    position: absolute;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1170 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-loginGreen-small:after {
+    top: 1px;
+    right: 0;
+    bottom: 1px;
+    left: 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1176 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-loginGreen-small.x-segmented-button-first:after {
+    left: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1179 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-loginGreen-small.x-segmented-button-last:after {
+    right: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1185 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-loginGreen-small:after {
+    top: 0;
+    right: 1px;
+    bottom: 0;
+    left: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1191 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-loginGreen-small.x-segmented-button-first:after {
+    top: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1194 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-loginGreen-small.x-segmented-button-last:after {
+    bottom: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1201 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-loginGreen-small:after {
+    border-width: 1px;
+    border-color: #d7e9f6;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1215 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-loginGreen-small:after {
+    border-width: 1px;
+    border-color: #d6e7f3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1230 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-loginGreen-small:after,
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-loginGreen-small:after {
+    border-width: 1px;
+    border-color: #d4e2ec;
 }
 /* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
 .x-cmd-slicer.x-btn-focus.x-btn-loginGreen-small:before {
@@ -842,6 +1996,101 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     opacity: 0.5;
 }
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1111 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-first {
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1113 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-first .x-btn-notRed-small-mc {
+    padding-right: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1117 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-middle {
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1119 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-middle .x-btn-notRed-small-mc {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1125 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-last .x-btn-notRed-small-mc {
+    padding-left: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1132 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-first {
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1134 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-first .x-btn-notRed-small-mc {
+    padding-bottom: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1138 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-middle {
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1140 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-middle .x-btn-notRed-small-mc {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1146 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-last .x-btn-notRed-small-mc {
+    padding-top: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1152 */
+.x-nbr .x-segmented-button-item.x-btn-notRed-small:after {
+    content: ' ';
+    border-style: solid;
+    border-width: 0;
+    position: absolute;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1170 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small:after {
+    top: 1px;
+    right: 0;
+    bottom: 1px;
+    left: 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1176 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-first:after {
+    left: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1179 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-notRed-small.x-segmented-button-last:after {
+    right: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1185 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small:after {
+    top: 0;
+    right: 1px;
+    bottom: 0;
+    left: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1191 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-first:after {
+    top: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1194 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-notRed-small.x-segmented-button-last:after {
+    bottom: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1201 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-notRed-small:after {
+    border-width: 1px;
+    border-color: #d7e9f6;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1215 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-notRed-small:after {
+    border-width: 1px;
+    border-color: #d6e7f3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1230 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-notRed-small:after,
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-notRed-small:after {
+    border-width: 1px;
+    border-color: #d4e2ec;
+}
 /* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
 .x-cmd-slicer.x-btn-focus.x-btn-notRed-small:before {
     /*<if slicer>*/
@@ -1296,6 +2545,101 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     opacity: 0.5;
 }
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1111 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-first {
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1113 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-first .x-btn-yellow-small-mc {
+    padding-right: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1117 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-middle {
+    border-right-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1119 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-middle .x-btn-yellow-small-mc {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1125 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-last .x-btn-yellow-small-mc {
+    padding-left: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1132 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-first {
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1134 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-first .x-btn-yellow-small-mc {
+    padding-bottom: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1138 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-middle {
+    border-bottom-width: 1px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1140 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-middle .x-btn-yellow-small-mc {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1146 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-last .x-btn-yellow-small-mc {
+    padding-top: 3px !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1152 */
+.x-nbr .x-segmented-button-item.x-btn-yellow-small:after {
+    content: ' ';
+    border-style: solid;
+    border-width: 0;
+    position: absolute;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1170 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small:after {
+    top: 1px;
+    right: 0;
+    bottom: 1px;
+    left: 0;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1176 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-first:after {
+    left: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1179 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-yellow-small.x-segmented-button-last:after {
+    right: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1185 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small:after {
+    top: 0;
+    right: 1px;
+    bottom: 0;
+    left: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1191 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-first:after {
+    top: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1194 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-yellow-small.x-segmented-button-last:after {
+    bottom: 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1201 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-yellow-small:after {
+    border-width: 1px;
+    border-color: #d7e9f6;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1215 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-yellow-small:after {
+    border-width: 1px;
+    border-color: #d6e7f3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-neutral/sass/src/button/Button.scss:1230 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-yellow-small:after,
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-yellow-small:after {
+    border-width: 1px;
+    border-color: #d4e2ec;
+}
 /* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
 .x-cmd-slicer.x-btn-focus.x-btn-yellow-small:before {
     /*<if slicer>*/
@@ -1331,6 +2675,156 @@
     /*<if slicer>*/
     display: none;
     content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-yellow-small-disabled-corners.gif), sides:url(images/btn/btn-yellow-small-disabled-sides.gif), stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-yellow-small-disabled-corners.gif), sides:url(images/btn/btn-yellow-small-disabled-sides.gif)" !important;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/draw/Surface.scss:1 */
+.x-surface {
+    position: absolute;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/draw/Surface.scss:5 */
+.x-surface-canvas {
+    position: absolute;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/draw/Container.scss:1 */
+.x-draw-container {
+    position: relative;
+    cursor: default;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:1 */
+.x-legend {
+    background: #fff;
+    outline: none;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:6 */
+.x-legend-horizontal {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:11 */
+.x-legend-horizontal .x-legend-item {
+    display: inline-block;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:18 */
+.x-legend-horizontal .x-legend-item:first-child {
+    border-left: 1px solid #ccc;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:24 */
+.x-legend-horizontal .x-legend-item:last-child {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:30 */
+.x-legend-horizontal.x-rtl .x-legend-item:first-child {
+    border-right: 1px solid #ccc;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:35 */
+.x-legend-horizontal.x-rtl .x-legend-item:last-child {
+    border-right: none;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:43 */
+.x-legend-vertical {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:48 */
+.x-legend-vertical .x-legend-item {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:53 */
+.x-legend-vertical .x-legend-item:first-child {
+    border-top: 1px solid #ccc;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:59 */
+.x-legend-vertical .x-legend-item:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:66 */
+.x-legend-item-inactive {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    opacity: 0.3;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:70 */
+.x-legend-item {
+    padding: 0.8em 1em 0.8em 1.8em;
+    color: #333;
+    background: rgba(255, 255, 255, 0);
+    max-width: 16em;
+    min-width: 0;
+    font-size: 13px;
+    font-family: helvetica, arial, verdana, sans-serif;
+    line-height: 13px;
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:86 */
+.x-rtl > * > .x-legend-item {
+    padding: 0.8em 1.8em 0.8em 1em;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:90 */
+.x-legend-item-marker {
+    position: absolute;
+    width: 0.8em;
+    height: 0.8em;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    border-radius: 0.4em;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0, rgba(0, 0, 0, 0.4) 0 1px 0 inset;
+    -moz-box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0, rgba(0, 0, 0, 0.4) 0 1px 0 inset;
+    box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0, rgba(0, 0, 0, 0.4) 0 1px 0 inset;
+    left: 0.7em;
+    top: 0.85em;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/sass/src/chart/legend/Legend.scss:102 */
+.x-rtl > * > * > .x-legend-item-marker {
+    right: 0.7em;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/classic/sass/src/chart/legend/Legend.scss:1 */
+.x-legend-inner {
+    display: table;
+    text-align: center;
+    padding: 5px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/classic/sass/src/chart/legend/Legend.scss:8 */
+.x-legend-horizontal .x-legend-inner {
+    min-width: 100%;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/classic/sass/src/chart/legend/Legend.scss:14 */
+.x-legend-vertical .x-legend-inner {
+    min-height: 100%;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/classic/sass/src/chart/legend/Legend.scss:19 */
+.x-legend-container {
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
+    line-height: 0;
+    background: #fff;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0 1px 1px;
+    -moz-box-shadow: rgba(255, 255, 255, 0.6) 0 1px 1px;
+    box-shadow: rgba(255, 255, 255, 0.6) 0 1px 1px;
+}
+/* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/charts/classic/sass/src/chart/AbstractChart.scss:1 */
+.x-chart-image {
+    width: 100%;
+    height: auto;
 }
 /* C:/Users/byz/IdeaProjects/byzcorp/src/main/resources/byzCorp/ext/packages/font-awesome/sass/etc/_path.scss:5 */
 @font-face {

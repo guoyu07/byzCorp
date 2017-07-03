@@ -10,7 +10,8 @@
         "designer|userClassName": "Library",
         "libraryRequires": [
             "font-awesome",
-            "exporter"
+            "exporter",
+            "sencha-charts"
         ],
         "theme": "MyCrispTheme"
     },

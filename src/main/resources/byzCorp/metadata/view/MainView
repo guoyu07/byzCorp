@@ -159,7 +159,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "focusable": true,
-                                        "hidden": true,
                                         "href": null,
                                         "iconCls": "fa fa-home",
                                         "itemId": "anaSayfa",
@@ -1714,7 +1713,7 @@
                                                         "formBind": true,
                                                         "height": 150,
                                                         "id": "cmbInternShipPeriod",
-                                                        "queryCaching": false,
+                                                        "minChars": 0,
                                                         "queryParam": null,
                                                         "reference": "cmbInternShipPeriod",
                                                         "store": "getLudPeriods",
@@ -1732,7 +1731,8 @@
                                                         "formBind": "boolean",
                                                         "queryCaching": "boolean",
                                                         "queryParam": "string",
-                                                        "height": "auto"
+                                                        "height": "auto",
+                                                        "minChars": "number"
                                                     },
                                                     "name": "MyComboBox8",
                                                     "designerId": "534113ed-b039-446f-9e93-f8c0476e586c"
@@ -2258,6 +2258,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "autoLoad": true,
+                                                "columnLines": true,
                                                 "forceFit": false,
                                                 "id": "internShipsGrid",
                                                 "layout|region": "center",
@@ -2266,7 +2267,8 @@
                                                 "renderData": null,
                                                 "rowViewModel": null,
                                                 "store": "getInternShips",
-                                                "title": "Staj Bilgileri"
+                                                "title": "Staj Bilgileri",
+                                                "titleCollapse": false
                                             },
                                             "configAlternates": {
                                                 "forceFit": "boolean",
@@ -2278,7 +2280,9 @@
                                                 "autoLoad": "boolean",
                                                 "store": "store",
                                                 "renderData": "object",
-                                                "rowViewModel": "object"
+                                                "rowViewModel": "object",
+                                                "columnLines": "boolean",
+                                                "titleCollapse": "boolean"
                                             },
                                             "name": "MyGridPanel5",
                                             "designerId": "4ad3f753-6935-4d9f-bb76-ccc07c491886",
@@ -3549,11 +3553,12 @@
                                                             "codeClass": null,
                                                             "userConfig": {
                                                                 "autoLoadOnValue": true,
+                                                                "autoRender": true,
                                                                 "displayField": "LOOKUPDETAILNAME",
                                                                 "emptyText": "Staj Yerleri",
                                                                 "fieldLabel": null,
                                                                 "formBind": true,
-                                                                "height": 150,
+                                                                "height": null,
                                                                 "id": "cmbInternShipDetailPlace",
                                                                 "queryParam": null,
                                                                 "reference": "cmbInternShipDetailPlace",
@@ -3571,7 +3576,8 @@
                                                                 "reference": "string",
                                                                 "valueField": "datafield",
                                                                 "queryParam": "string",
-                                                                "height": "auto"
+                                                                "height": "auto",
+                                                                "autoRender": "boolean"
                                                             },
                                                             "name": "MyComboBox11",
                                                             "designerId": "d92e0ee8-7015-49fd-853c-cf0ad0e60275"
@@ -5476,11 +5482,10 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "designer|uiInterfaceName": "default",
-                                        "hidden": true,
                                         "iconCls": "fa fa-unlock",
                                         "layout": "border",
                                         "margin": null,
-                                        "title": "Stajı Devam Eden Öğrenciler"
+                                        "title": "Staj Durum Grafikleri"
                                     },
                                     "configAlternates": {
                                         "designer|uiInterfaceName": "string",
@@ -5491,7 +5496,237 @@
                                         "hidden": "boolean"
                                     },
                                     "name": "MyPanel7",
-                                    "designerId": "f8fbf66e-5201-4c16-a527-3f0a14a709f4"
+                                    "designerId": "f8fbf66e-5201-4c16-a527-3f0a14a709f4",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.chart.CartesianChart",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "insetPadding": [
+                                                    "20"
+                                                ],
+                                                "layout|region": "center",
+                                                "layout|split": true,
+                                                "manageHeight": false,
+                                                "scrollable": true,
+                                                "store": "getInternShips",
+                                                "title": "Öğrencilere Göre Staj Tamamlanma Durumları"
+                                            },
+                                            "configAlternates": {
+                                                "insetPadding": "object",
+                                                "layout|region": "string",
+                                                "layout|split": "boolean",
+                                                "manageHeight": "boolean",
+                                                "scrollable": "auto",
+                                                "store": "store",
+                                                "title": "string"
+                                            },
+                                            "name": "ColumnChart",
+                                            "designerId": "2f739c1a-1f9a-4d92-b834-feda7db9372e",
+                                            "isBuiltIn": true,
+                                            "iconCls": "icon-column-chart",
+                                            "autoName": "ColumnChart",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.chart.axis.Category",
+                                                    "reference": {
+                                                        "name": "axes",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fields": [
+                                                            "STUDENTNO"
+                                                        ],
+                                                        "labelInSpan": null,
+                                                        "needHighPrecision": true,
+                                                        "reconcileRange": true,
+                                                        "title": null,
+                                                        "titleMargin": 2
+                                                    },
+                                                    "configAlternates": {
+                                                        "fields": "typedarray",
+                                                        "labelInSpan": "boolean",
+                                                        "needHighPrecision": "boolean",
+                                                        "reconcileRange": "boolean",
+                                                        "title": "object",
+                                                        "titleMargin": "number"
+                                                    },
+                                                    "name": "MyCategoryAxis1",
+                                                    "designerId": "261dfcb3-c173-4d5d-b8bb-0b0aafea329f"
+                                                },
+                                                {
+                                                    "type": "Ext.chart.axis.Numeric",
+                                                    "reference": {
+                                                        "name": "axes",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fields": [
+                                                            "INTERNSHIPDAY",
+                                                            "INTERNSHIPDONEDAY"
+                                                        ],
+                                                        "position": "left",
+                                                        "title": null
+                                                    },
+                                                    "configAlternates": {
+                                                        "fields": "typedarray",
+                                                        "position": "string",
+                                                        "title": "object"
+                                                    },
+                                                    "name": "MyNumericAxis1",
+                                                    "designerId": "aae85fb4-33f1-4d5c-af51-55743d61e7c3"
+                                                },
+                                                {
+                                                    "type": "Ext.chart.series.Bar",
+                                                    "reference": {
+                                                        "name": "series",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fullStackTotal": true,
+                                                        "xField": "STUDENTNO",
+                                                        "yField": [
+                                                            "INTERNSHIPDAY",
+                                                            "INTERNSHIPDONEDAY"
+                                                        ]
+                                                    },
+                                                    "configAlternates": {
+                                                        "fullStackTotal": "boolean",
+                                                        "xField": "datafield",
+                                                        "yField": "typedarray"
+                                                    },
+                                                    "name": "MyBarSeries1",
+                                                    "designerId": "1d08d02d-cdc9-4129-a586-2882d206bd75"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.chart.CartesianChart",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "colors": [
+                                                    "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                                                ],
+                                                "height": 278,
+                                                "layout|floatable": false,
+                                                "layout|region": "north",
+                                                "layout|split": true,
+                                                "scrollable": true,
+                                                "simpleDrag": true,
+                                                "store": "getInternShips"
+                                            },
+                                            "configAlternates": {
+                                                "colors": "array",
+                                                "height": "auto",
+                                                "layout|floatable": "boolean",
+                                                "layout|region": "string",
+                                                "layout|split": "boolean",
+                                                "scrollable": "auto",
+                                                "simpleDrag": "boolean",
+                                                "store": "store"
+                                            },
+                                            "name": "MyBarChart",
+                                            "designerId": "fb7229eb-dcee-44c8-97c3-7ca2e1416991",
+                                            "isBuiltIn": true,
+                                            "iconCls": "icon-bar-chart",
+                                            "autoName": "MyBarChart",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.chart.axis.Category",
+                                                    "reference": {
+                                                        "name": "axes",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fields": [
+                                                            "INTERNSHIPPLACE"
+                                                        ]
+                                                    },
+                                                    "configAlternates": {
+                                                        "fields": "typedarray"
+                                                    },
+                                                    "name": "MyCategoryAxis2",
+                                                    "designerId": "581a4cd0-1549-4545-ac04-f3ae72ef5d76"
+                                                },
+                                                {
+                                                    "type": "Ext.chart.axis.Numeric",
+                                                    "reference": {
+                                                        "name": "axes",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fields": [
+                                                            "INTERNSHIPDAY",
+                                                            "INTERNSHIPDONEDAY",
+                                                            "INTERNSHIPSTATUS",
+                                                            "INTERNSHIPACCEPTSTATUS"
+                                                        ],
+                                                        "grid": [
+                                                            "{",
+                                                            "    odd: {",
+                                                            "        fill: '#e8e8e8'",
+                                                            "    }",
+                                                            "}"
+                                                        ],
+                                                        "position": "left"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fields": "typedarray",
+                                                        "grid": "object",
+                                                        "position": "string"
+                                                    },
+                                                    "name": "MyNumericAxis3",
+                                                    "designerId": "d2cfc556-da68-4478-8dff-5349020b5745"
+                                                },
+                                                {
+                                                    "type": "Ext.chart.series.Bar",
+                                                    "reference": {
+                                                        "name": "series",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "xField": "INTERNSHIPPLACE",
+                                                        "yField": [
+                                                            "INTERNSHIPDAY",
+                                                            "INTERNSHIPDONEDAY",
+                                                            "INTERNSHIPSTATUS",
+                                                            "INTERNSHIPACCEPTSTATUS"
+                                                        ]
+                                                    },
+                                                    "configAlternates": {
+                                                        "xField": "datafield",
+                                                        "yField": "typedarray"
+                                                    },
+                                                    "name": "MyBarSeries2",
+                                                    "designerId": "42ea0bc1-24e9-408a-b46c-3fc4b4a46603"
+                                                },
+                                                {
+                                                    "type": "Ext.chart.interactions.PanZoom",
+                                                    "reference": {
+                                                        "name": "interactions",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "name": "MyPanZoomInteraction2",
+                                                    "designerId": "92831815-f714-4fcf-8a52-da674e9ca62b"
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.panel.Panel",
